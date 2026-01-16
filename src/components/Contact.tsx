@@ -63,7 +63,7 @@ export default function Contact() {
                     </div>
 
                     <footer className="text-slate-600 text-sm">
-                        <p>© 2026 Ph.D. Krich Intratip. All rights reserved.</p>
+                        <p>© 2026 Dr. Krich Intratip. All rights reserved.</p>
                     </footer>
                 </motion.div>
             </div>

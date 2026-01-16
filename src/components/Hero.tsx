@@ -39,7 +39,7 @@ export default function Hero() {
                         Professional Portfolio
                     </h2>
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-white">
-                        Ph.D. Krich Intratip
+                        Dr. Krich Intratip
                     </h1>
                     <div className="h-1 w-24 bg-gradient-to-r from-sky-400 to-indigo-500 mx-auto rounded-full mb-6" />
                 </motion.div>

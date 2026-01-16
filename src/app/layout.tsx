@@ -6,8 +6,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Ph.D. Krich Intratip | Portfolio",
+  title: "Dr.Krich Intratip",
   description: "Knowledge Manager & AI Implementation Specialist - Professional Portfolio",
+  icons: {
+    icon: '/assets/mypic.jpg',
+  },
 };
 
 export default function RootLayout({
