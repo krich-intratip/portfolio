@@ -18,23 +18,23 @@ export default function About() {
                         About Me
                     </h2>
 
-                    <div className="grid md:grid-cols-[400px,1fr] gap-8 items-start">
-                        {/* Profile Image with Frame */}
+                    <div className="grid md:grid-cols-[280px,1fr] gap-10 items-start">
+                        {/* Profile Image with Frame - ลดขนาดลง */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5 }}
-                            className="sticky top-24"
+                            className="md:sticky md:top-24"
                         >
-                            <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden border-4 border-slate-700/50 group hover:border-sky-500/50 transition-all shadow-2xl bg-slate-900">
+                            <div className="relative w-full max-w-[280px] mx-auto aspect-[3/4] rounded-2xl overflow-hidden border-4 border-slate-700/50 group hover:border-sky-500/50 transition-all shadow-2xl bg-slate-900">
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent z-10 opacity-40" />
                                 <Image
                                     src="/assets/portrait-new.png"
                                     alt="Dr. Krich Intratip - Professional Portrait"
                                     fill
                                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                                    sizes="400px"
+                                    sizes="280px"
                                     priority
                                 />
                             </div>
