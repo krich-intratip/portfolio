@@ -30,7 +30,7 @@ export default function About() {
                             <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden border-4 border-slate-700/50 group hover:border-sky-500/50 transition-all shadow-2xl bg-slate-900">
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent z-10 opacity-40" />
                                 <Image
-                                    src="/assets/professional-portrait.png"
+                                    src="/assets/portrait-new.png"
                                     alt="Dr. Krich Intratip - Professional Portrait"
                                     fill
                                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
