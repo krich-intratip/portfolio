@@ -1,0 +1,43 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Gradient -->
+  <circle cx="32" cy="32" r="30" fill="url(#gradient1)"/>
+
+  <!-- Brain/AI Symbol -->
+  <path d="M32 12C24.268 12 18 18.268 18 26C18 28.5 18.6 30.85 19.65 32.95L16 38L20 40L22.5 36.5C25.3 39.2 28.5 40.5 32 40.5C39.732 40.5 46 34.232 46 26.5C46 18.768 39.732 12.5 32 12.5Z" fill="white" opacity="0.9"/>
+
+  <!-- Neural Network Nodes -->
+  <circle cx="26" cy="22" r="2" fill="#38BDF8"/>
+  <circle cx="32" cy="20" r="2" fill="#818CF8"/>
+  <circle cx="38" cy="22" r="2" fill="#C084FC"/>
+  <circle cx="24" cy="28" r="2" fill="#38BDF8"/>
+  <circle cx="32" cy="26" r="2.5" fill="#F472B6"/>
+  <circle cx="40" cy="28" r="2" fill="#C084FC"/>
+  <circle cx="28" cy="34" r="2" fill="#818CF8"/>
+  <circle cx="36" cy="34" r="2" fill="#38BDF8"/>
+
+  <!-- Connecting Lines -->
+  <line x1="26" y1="22" x2="32" y2="20" stroke="#38BDF8" stroke-width="1" opacity="0.6"/>
+  <line x1="32" y1="20" x2="38" y2="22" stroke="#818CF8" stroke-width="1" opacity="0.6"/>
+  <line x1="26" y1="22" x2="24" y2="28" stroke="#38BDF8" stroke-width="1" opacity="0.6"/>
+  <line x1="32" y1="20" x2="32" y2="26" stroke="#F472B6" stroke-width="1.5" opacity="0.6"/>
+  <line x1="38" y1="22" x2="40" y2="28" stroke="#C084FC" stroke-width="1" opacity="0.6"/>
+  <line x1="24" y1="28" x2="28" y2="34" stroke="#818CF8" stroke-width="1" opacity="0.6"/>
+  <line x1="32" y1="26" x2="28" y2="34" stroke="#38BDF8" stroke-width="1" opacity="0.6"/>
+  <line x1="32" y1="26" x2="36" y2="34" stroke="#C084FC" stroke-width="1" opacity="0.6"/>
+  <line x1="40" y1="28" x2="36" y2="34" stroke="#38BDF8" stroke-width="1" opacity="0.6"/>
+
+  <!-- Knowledge Book Symbol at Bottom -->
+  <rect x="26" y="44" width="12" height="8" rx="1" fill="white" opacity="0.8"/>
+  <line x1="28" y1="46" x2="36" y2="46" stroke="#0F172A" stroke-width="0.5" opacity="0.4"/>
+  <line x1="28" y1="48" x2="36" y2="48" stroke="#0F172A" stroke-width="0.5" opacity="0.4"/>
+  <line x1="28" y1="50" x2="34" y2="50" stroke="#0F172A" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F172A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1E293B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F172A;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

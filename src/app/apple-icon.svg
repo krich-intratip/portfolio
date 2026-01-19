@@ -1,0 +1,46 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with Gradient -->
+  <rect width="180" height="180" rx="40" fill="url(#appleGradient)"/>
+
+  <!-- Brain/AI Symbol - Larger -->
+  <path d="M90 35C70.67 35 55 50.67 55 70C55 75 56.5 79.7 59 83.8L48 100L57 105L63 95C70.5 101.5 79 105 90 105C109.33 105 125 89.33 125 70C125 50.67 109.33 35 90 35Z" fill="white" opacity="0.95"/>
+
+  <!-- Neural Network Nodes - Larger -->
+  <circle cx="73" cy="60" r="5" fill="#38BDF8"/>
+  <circle cx="90" cy="55" r="5" fill="#818CF8"/>
+  <circle cx="107" cy="60" r="5" fill="#C084FC"/>
+  <circle cx="68" cy="75" r="5" fill="#38BDF8"/>
+  <circle cx="90" cy="70" r="6.5" fill="#F472B6"/>
+  <circle cx="112" cy="75" r="5" fill="#C084FC"/>
+  <circle cx="78" cy="90" r="5" fill="#818CF8"/>
+  <circle cx="102" cy="90" r="5" fill="#38BDF8"/>
+
+  <!-- Connecting Lines -->
+  <line x1="73" y1="60" x2="90" y2="55" stroke="#38BDF8" stroke-width="2.5" opacity="0.6"/>
+  <line x1="90" y1="55" x2="107" y2="60" stroke="#818CF8" stroke-width="2.5" opacity="0.6"/>
+  <line x1="73" y1="60" x2="68" y2="75" stroke="#38BDF8" stroke-width="2.5" opacity="0.6"/>
+  <line x1="90" y1="55" x2="90" y2="70" stroke="#F472B6" stroke-width="3" opacity="0.6"/>
+  <line x1="107" y1="60" x2="112" y2="75" stroke="#C084FC" stroke-width="2.5" opacity="0.6"/>
+  <line x1="68" y1="75" x2="78" y2="90" stroke="#818CF8" stroke-width="2.5" opacity="0.6"/>
+  <line x1="90" y1="70" x2="78" y2="90" stroke="#38BDF8" stroke-width="2.5" opacity="0.6"/>
+  <line x1="90" y1="70" x2="102" y2="90" stroke="#C084FC" stroke-width="2.5" opacity="0.6"/>
+  <line x1="112" y1="75" x2="102" y2="90" stroke="#38BDF8" stroke-width="2.5" opacity="0.6"/>
+
+  <!-- Knowledge Book Symbol -->
+  <rect x="72" y="120" width="36" height="24" rx="2" fill="white" opacity="0.85"/>
+  <line x1="78" y1="127" x2="102" y2="127" stroke="#0F172A" stroke-width="1.5" opacity="0.5"/>
+  <line x1="78" y1="132" x2="102" y2="132" stroke="#0F172A" stroke-width="1.5" opacity="0.5"/>
+  <line x1="78" y1="137" x2="96" y2="137" stroke="#0F172A" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Decorative Glow -->
+  <circle cx="90" cy="70" r="8" fill="#F472B6" opacity="0.2"/>
+  <circle cx="90" cy="70" r="12" fill="#818CF8" opacity="0.1"/>
+
+  <defs>
+    <linearGradient id="appleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0F172A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1E3A8A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F172A;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>

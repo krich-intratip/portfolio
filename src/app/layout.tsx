@@ -53,8 +53,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/assets/mypic.jpg',
-    apple: '/assets/mypic.jpg',
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-icon.svg', type: 'image/svg+xml' },
+    ],
   },
   verification: {
     google: 'your-google-verification-code',
