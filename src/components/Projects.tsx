@@ -5,6 +5,13 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
     {
+        title: "PMQA-ISOC Platform",
+        description: "ระบบประเมิน PMQA 4.0 สำหรับ กอ.รมน. ด้วย AI ครอบคลุมทุกหมวดเกณฑ์ พร้อมเครื่องมือวิเคราะห์ผลและจัดทำรายงาน",
+        tech: ["Next.js", "PMQA 4.0", "AI Analytics"],
+        link: "https://pmqa-isoc.vercel.app",
+        color: "from-amber-500 to-orange-400"
+    },
+    {
         title: "Academic SAR Platform",
         description: "AI ประเมินงานวิจัยโดยผู้เชี่ยวชาญ 3 บทบาท ช่วยลดภาระงานอาจารย์และเพิ่มคุณภาพรายงานการประเมินตนเอง",
         tech: ["Next.js", "AI Evaluation", "Role-Based Access"],
