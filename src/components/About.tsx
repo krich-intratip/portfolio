@@ -25,7 +25,7 @@ export default function About() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5 }}
-                            className="md:sticky md:top-24"
+                            className=""
                         >
                             <div className="relative w-full max-w-[280px] mx-auto aspect-[3/4] rounded-2xl overflow-hidden border-4 border-slate-700/50 group hover:border-sky-500/50 transition-all shadow-2xl bg-slate-900">
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent z-10 opacity-40" />
