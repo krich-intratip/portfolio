@@ -16,7 +16,7 @@ const timelineData = [
         title: "Ph.D. in Information Technology",
         organization: "Sripatum University",
         type: "education",
-        description: "วิจัยด้าน Assessment Systems และ AI Integration"
+        description: "ระเบียบวิธีการแปลงความรู้จากแบบจาลองทฤษฎีฐานรากและแบบจาลองสมการโครงสร้างเป็นความรู้ในรูปแบบออนโทโลยี (A Methodology of Transforming Knowledge from Grounded Theory and Structural Equation Modeling to Ontology-Based Knowledge)"
     },
     {
         year: "2010 - 2020",
