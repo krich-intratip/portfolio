@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function About() {
     return (
@@ -17,22 +18,43 @@ export default function About() {
                         About Me
                     </h2>
 
-                    <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div className="space-y-6 text-slate-300">
-                            <p className="text-lg leading-relaxed">
-                                <strong className="text-white">Knowledge Manager & AI Implementation Specialist</strong> ผู้มีประสบการณ์กว่า 20 ปีในการพัฒนาระบบประเมินและเทคโนโลยีป้องกันประเทศ
-                            </p>
-                            <p className="leading-relaxed">
-                                เชี่ยวชาญด้าน Assessment Systems, PMQA/ก.พ.ร. Framework และการบูรณาการ AI เพื่อการตัดสินใจเชิงกลยุทธ์ มีความเชี่ยวชาญด้านจิตวิทยาประยุกต์และการโค้ชผู้บริหารระดับสูง
-                            </p>
+                    <div className="grid md:grid-cols-2 gap-12 items-start">
+                        <div className="space-y-6">
+                            {/* Profile Image */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5 }}
+                                className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden border-2 border-slate-700/50 group hover:border-sky-500/30 transition-all shadow-2xl"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent z-10 opacity-60" />
+                                <Image
+                                    src="/assets/profile.png"
+                                    alt="Dr. Krich Intratip - Professional Portrait"
+                                    fill
+                                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    priority
+                                />
+                            </motion.div>
 
-                            <div className="pt-4">
-                                <h3 className="text-white font-semibold mb-2">Education</h3>
-                                <ul className="space-y-2 text-sm text-slate-400">
-                                    <li>🎓 <strong>Ph.D. in Information Technology</strong> — Sripatum University</li>
-                                    <li>🎓 <strong>M.Sc. in Information Technology</strong> — KMITL</li>
-                                    <li>🎓 <strong>B.Sc. Military Science</strong> — Chulachomklao Royal Military Academy</li>
-                                </ul>
+                            <div className="space-y-4 text-slate-300">
+                                <p className="text-lg leading-relaxed">
+                                    <strong className="text-white">Knowledge Manager & AI Implementation Specialist</strong> ผู้มีประสบการณ์กว่า 20 ปีในการพัฒนาระบบประเมินและเทคโนโลยีป้องกันประเทศ
+                                </p>
+                                <p className="leading-relaxed">
+                                    เชี่ยวชาญด้าน Assessment Systems, PMQA/ก.พ.ร. Framework และการบูรณาการ AI เพื่อการตัดสินใจเชิงกลยุทธ์ มีความเชี่ยวชาญด้านจิตวิทยาประยุกต์และการโค้ชผู้บริหารระดับสูง
+                                </p>
+
+                                <div className="pt-4">
+                                    <h3 className="text-white font-semibold mb-3">Education</h3>
+                                    <ul className="space-y-2 text-sm text-slate-400">
+                                        <li>🎓 <strong>Ph.D. in Information Technology</strong> — Sripatum University</li>
+                                        <li>🎓 <strong>M.Sc. in Information Technology</strong> — KMITL</li>
+                                        <li>🎓 <strong>B.Sc. Military Science</strong> — Chulachomklao Royal Military Academy</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 
