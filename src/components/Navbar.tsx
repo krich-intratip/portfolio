@@ -2,15 +2,18 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Github, Mail } from 'lucide-react';
+import { Menu, X, Github } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import ThemeToggle from './ThemeToggle';
 
 const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
+    { name: 'Timeline', href: '#timeline' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Achievements', href: '#achievements' },
     { name: 'Services', href: '#services' },
     { name: 'Contact', href: '#contact' },
 ];
@@ -38,7 +41,7 @@ export default function Navbar() {
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+                <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity" aria-label="Homepage">
                     Krich.Intratip
                 </Link>
 
@@ -57,15 +60,19 @@ export default function Navbar() {
 
                     <div className="w-px h-6 bg-slate-700 mx-2" />
 
-                    <a href="https://github.com/krich-intratip" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                    <a href="https://github.com/krich-intratip" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors" aria-label="GitHub profile">
                         <Github size={20} />
                     </a>
+
+                    <ThemeToggle />
                 </div>
 
                 {/* Mobile Menu Toggle */}
                 <button
                     className="md:hidden text-slate-300 hover:text-white"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={mobileMenuOpen}
                 >
                     {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>

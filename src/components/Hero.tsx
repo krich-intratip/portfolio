@@ -1,11 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Download } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Hero() {
     return (
-        <section id="home" className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden pt-16">
+        <section id="home" className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden pt-16" aria-label="Hero section">
             {/* Background Effects */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(56,189,248,0.1),rgba(15,23,42,0)_50%)]" />
             <div className="absolute top-20 right-20 w-72 h-72 bg-indigo-500/10 rounded-full blur-3xl animate-pulse" />
@@ -20,11 +21,13 @@ export default function Hero() {
                     className="w-40 h-40 mx-auto mb-8 rounded-full p-1 bg-gradient-to-tr from-sky-400 via-indigo-500 to-pink-500 shadow-2xl shadow-sky-500/20"
                 >
                     <div className="w-full h-full rounded-full overflow-hidden border-4 border-slate-950 bg-slate-800">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
+                        <Image
                             src="/assets/mypic.jpg"
-                            alt="Ph.D. Krich Intratip"
+                            alt="Dr. Krich Intratip - Knowledge Manager & AI Implementation Specialist"
+                            width={160}
+                            height={160}
                             className="w-full h-full object-cover"
+                            priority
                         />
                     </div>
                 </motion.div>
@@ -72,6 +75,14 @@ export default function Hero() {
                         className="px-8 py-3 rounded-full bg-sky-500 text-white font-medium hover:bg-sky-400 hover:shadow-lg hover:shadow-sky-500/25 transition-all transform hover:-translate-y-1"
                     >
                         View Projects
+                    </a>
+                    <a
+                        href="/assets/📊 Professional Portfolio 2026.pdf"
+                        download
+                        className="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium hover:from-indigo-400 hover:to-purple-400 hover:shadow-lg hover:shadow-indigo-500/25 transition-all transform hover:-translate-y-1 inline-flex items-center gap-2"
+                    >
+                        <Download size={18} />
+                        Download CV
                     </a>
                     <a
                         href="#contact"
