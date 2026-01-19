@@ -1,12 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, Trophy, Medal, Certificate } from 'lucide-react';
+import { Award, Trophy, Medal, BadgeCheck } from 'lucide-react';
 
 const achievements = [
     {
         category: "Certifications",
-        icon: Certificate,
+        icon: BadgeCheck,
         items: [
             "Certified AI Specialist",
             "PMQA Assessor Certification",
