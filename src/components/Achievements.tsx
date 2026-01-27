@@ -5,33 +5,33 @@ import { Award, Trophy, Medal, BadgeCheck } from 'lucide-react';
 
 const achievements = [
     {
-        category: "Certifications",
-        icon: BadgeCheck,
-        items: [
-            "Certified AI Specialist",
-            "PMQA Assessor Certification",
-            "Google Cloud Certified",
-            "Next.js Professional Certificate"
-        ]
-    },
-    {
-        category: "Awards & Recognition",
+        category: "Research & Publications",
         icon: Trophy,
         items: [
-            "Excellence in Innovation Award 2024",
-            "Best Research Paper - IT Conference 2023",
-            "Outstanding Leadership Award",
-            "Digital Transformation Champion"
+            "2553: International Conference - KICSS 2010 (pp.176~181)",
+            "2556: JCIT Journal Vol. 8, No. 15, pp. 23~32",
+            "2549: Excellence in Research Award - ATLAS Project",
+            "2556: Special Commendation - Royal Thai Army"
         ]
     },
     {
-        category: "Professional Achievements",
+        category: "Professional Certifications",
+        icon: BadgeCheck,
+        items: [
+            "LLM & RAG System Development (Engineer-level)",
+            "Prompt Engineering & AI Usecase Development",
+            "Advanced Research Methodology (SEM, Grounded Theory)",
+            "Professional Coach Certification Program"
+        ]
+    },
+    {
+        category: "Technical Certifications",
         icon: Medal,
         items: [
-            "20+ Years Defense Technology Experience",
-            "50+ Organizations Consulted",
-            "100+ Successful Projects Delivered",
-            "1,000+ Professionals Trained"
+            "MS-Windows NT Administrator (Microsoft Thailand)",
+            "Service-Oriented Architecture (SOA)",
+            "Project Management (PMI Bangkok)",
+            "Capability Maturity Model (CMM)"
         ]
     }
 ];

@@ -5,25 +5,28 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
     {
-        title: "PMQA-ISOC Platform",
-        description: "ระบบประเมิน PMQA 4.0 สำหรับ กอ.รมน. ด้วย AI ครอบคลุมทุกหมวดเกณฑ์ พร้อมเครื่องมือวิเคราะห์ผลและจัดทำรายงาน",
-        tech: ["Next.js", "PMQA 4.0", "AI Analytics"],
-        link: "https://pmqa-isoc.vercel.app",
-        color: "from-amber-500 to-orange-400"
-    },
-    {
-        title: "Academic SAR Platform",
-        description: "AI ประเมินงานวิจัยโดยผู้เชี่ยวชาญ 3 บทบาท ช่วยลดภาระงานอาจารย์และเพิ่มคุณภาพรายงานการประเมินตนเอง",
-        tech: ["Next.js", "AI Evaluation", "Role-Based Access"],
+        title: "SAR for Academic Research Paper",
+        description: "ระบบรีวิวและประเมินคุณภาพงานวิจัยทางวิชาการโดย AI ผู้เชี่ยวชาญ 3 ท่าน สำหรับการศึกษาระดับ Master & Ph.D.",
+        tech: ["Next.js 16", "Google Gemini", "OpenAI", "OpenRouter"],
         link: "https://academic-sar.vercel.app",
+        github: "https://github.com/krich-intratip/academic-sar",
         color: "from-blue-500 to-cyan-400"
     },
     {
         title: "CQI Self-Assessment System",
-        description: "ระบบประเมิน CQI และ Knowledge Management สำหรับหน่วยงาน RTA เพื่อการพัฒนาอย่างต่อเนื่อง",
-        tech: ["Next.js", "KM Platform", "Data Analytics"],
+        description: "ระบบประเมินโครงการ CQI และ Knowledge Management ด้วยตนเองสำหรับหน่วยงานในกองทัพบก",
+        tech: ["Next.js", "TypeScript", "Tailwind CSS", "PMQA Framework"],
         link: "https://cqi-sar.vercel.app",
+        github: "https://github.com/krich-intratip/cqi-sar",
         color: "from-emerald-500 to-teal-400"
+    },
+    {
+        title: "RTA Full Research Project SAR",
+        description: "ระบบประเมินโครงการวิจัยแบบเต็ม (Full Research Project Assessment) สำหรับ ทบ. พร้อม PRD และ Implementation Guide",
+        tech: ["Next.js", "TypeScript", "Markdown Docs"],
+        link: "https://rta-pas-fullproject.vercel.app",
+        github: "https://github.com/krich-intratip/rta-pas-fullproject",
+        color: "from-amber-500 to-orange-400"
     },
     {
         title: "ARDO SAR Landing",

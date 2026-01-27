@@ -5,67 +5,60 @@ import { Briefcase, GraduationCap, BookOpen } from 'lucide-react';
 
 const timelineData = [
     {
-        year: "2020 - Present",
-        title: "Knowledge Manager & AI Implementation Specialist",
-        organization: "Royal Thai Army Research and Development Office",
+        year: "2567 - ปัจจุบัน",
+        title: "เลขานุการ กมธ.เทคโนโลยีสารสนเทศฯ วุฒิสภา",
+        organization: "วุฒิสภา",
         type: "career",
-        description: "พัฒนาระบบ Self-Assessment และบูรณาการ AI เพื่อการตัดสินใจเชิงกลยุทธ์"
+        description: "ดำเนินการด้านนโยบายเทคโนโลยีสารสนเทศและไซเบอร์เทคโนโลยี สนับสนุนการพัฒนาระบบป้องกันประเทศและความมั่นคง"
     },
     {
-        year: "2023",
+        year: "2566 - 2567",
+        title: "ผู้ทรงคุณวุฒิกองทัพบก",
+        organization: "ที่ปรึกษากรมกำลังพลทหารบก",
+        type: "career",
+        description: "ให้คำปรึกษาด้านเทคโนโลยีสารสนเทศ พัฒนาระบบ HR Development และบริหารจัดการกำลังพล"
+    },
+    {
+        year: "2560 - 2565",
+        title: "หัวหน้า/รองหัวหน้าคณะทำงานด้านกำลังพล",
+        organization: "กองทัพบก",
+        type: "career",
+        description: "จัดทำงาน HR Development Systems สำหรับทหาร บริหารระบบพัฒนาสมรรถนะกำลังพล ดำเนินการฝึกอบรมพัฒนาผู้นำระดับสูง"
+    },
+    {
+        year: "2556 - 2560",
+        title: "หัวหน้าฝ่าย IT + อาจารย์หัวหน้าวิชา",
+        organization: "โรงเรียนเสนาธิการทหารบก",
+        type: "career",
+        description: "พัฒนาระบบ IT สำหรับการศึกษา บรรยายวิชาระเบียบวิธีวิจัย ประกันคุณภาพการศึกษาระดับมหาวิทยาลัย อาจารย์ประจำหลักสูตรระดับ ป.โท"
+    },
+    {
+        year: "2550 - 2556",
         title: "Ph.D. in Information Technology",
         organization: "Sripatum University",
         type: "education",
-        description: "ระเบียบวิธีการแปลงความรู้จากแบบจาลองทฤษฎีฐานรากและแบบจาลองสมการโครงสร้างเป็นความรู้ในรูปแบบออนโทโลยี (A Methodology of Transforming Knowledge from Grounded Theory and Structural Equation Modeling to Ontology-Based Knowledge)"
+        description: "A Methodology of Transforming Knowledge from Grounded Theory and Structural Equation Modeling to Ontology-Based Knowledge"
     },
     {
-        year: "2018",
-        title: "คณะทำงานพัฒนาสมรรถนะด้านดิจิทัล",
-        organization: "สำนักงาน ก.พ. / สคช.",
+        year: "2546 - 2548",
+        title: "หัวหน้าโครงการ ATLAS",
+        organization: "กองทัพบก",
         type: "career",
-        description: "พัฒนาสมรรถนะด้านดิจิทัลสำหรับข้าราชการและบุคลากรภาครัฐ"
+        description: "Military Tactical Level Advanced Simulation - รับรางวัลดีเยี่ยมโครงการวิจัย (2549)"
     },
     {
-        year: "2015",
+        year: "2542 - 2544",
         title: "M.Sc. in Information Technology",
         organization: "King Mongkut's Institute of Technology Ladkrabang",
         type: "education",
-        description: "เชี่ยวชาญด้าน Information Systems และ Software Engineering"
+        description: "Information System for Computer Department"
     },
     {
-        year: "2013-2014",
-        title: "วิทยากรจัดทำยุทธศาสตร์และวิสัยทัศน์",
-        organization: "กองทัพบก (ตามมาตรฐาน ก.พ.ร. / PMQA)",
-        type: "career",
-        description: "ดำเนินการจัดทำยุทธศาสตร์และวิสัยทัศน์ให้หน่วยต่าง ๆ ของกองทัพบก"
-    },
-    {
-        year: "2010",
-        title: "International Conference Publication",
-        organization: "KICSS 2010",
-        type: "publication",
-        description: "Stepwise Approach for Improving Ontology using Optimizing Rules (ตีพิมพ์ในการประชุมวิชาการนานาชาติ)"
-    },
-    {
-        year: "2005",
+        year: "2527 - 2532",
         title: "B.Sc. Military Science",
         organization: "Chulachomklao Royal Military Academy",
         type: "education",
-        description: "สำเร็จการศึกษาจากโรงเรียนนายร้อยพระจุลจอมเกล้า"
-    },
-    {
-        year: "2003-2005",
-        title: "หัวหน้าโครงการวิจัยระบบจำลองยุทธ์ทางทหาร (ATLAS)",
-        organization: "กองทัพบก",
-        type: "career",
-        description: "รับรางวัลดีเยี่ยมโครงการวิจัยด้านหลักการและนายทหารโครงการดีเด่น"
-    },
-    {
-        year: "2001-2002",
-        title: "คณะทำงานโครงการรัฐบาลอิเล็กทรอนิกส์",
-        organization: "สำนักนายกรัฐมนตรี",
-        type: "career",
-        description: "พัฒนาระบบรัฐบาลอิเล็กทรอนิกส์ระดับชาติ"
+        description: "จปร.รุ่นที่ 36 (นรต.รุ่นที่ 25) - Comprehensive military education and leadership training"
     }
 ];
 

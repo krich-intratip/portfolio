@@ -31,7 +31,7 @@ export default function About() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent z-10 opacity-40" />
                                 <Image
                                     src="/assets/portrait-new.png"
-                                    alt="Dr. Krich Intratip - Professional Portrait"
+                                    alt="พล.ท.ดร.กริช อินทราทิพย์ - Professional Portrait"
                                     fill
                                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                                     sizes="280px"
@@ -41,7 +41,7 @@ export default function About() {
 
                             {/* Image Caption */}
                             <div className="mt-4 text-center">
-                                <p className="text-white font-semibold text-lg">Dr. Krich Intratip</p>
+                                <p className="text-white font-semibold text-lg">พล.ท.ดร.กริช อินทราทิพย์</p>
                                 <p className="text-sky-400 text-sm">Knowledge Manager & AI Specialist</p>
                             </div>
                         </motion.div>

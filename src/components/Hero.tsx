@@ -23,7 +23,7 @@ export default function Hero() {
                     <div className="w-full h-full rounded-full overflow-hidden border-4 border-slate-950 bg-slate-800">
                         <Image
                             src="/assets/mypic.jpg"
-                            alt="Dr. Krich Intratip - Knowledge Manager & AI Implementation Specialist"
+                            alt="พล.ท.ดร.กริช อินทราทิพย์ - Knowledge Manager & AI Implementation Specialist"
                             width={160}
                             height={160}
                             className="w-full h-full object-cover"
@@ -42,7 +42,7 @@ export default function Hero() {
                         Professional Portfolio
                     </h2>
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-white">
-                        Dr. Krich Intratip
+                        พล.ท.ดร.กริช อินทราทิพย์
                     </h1>
                     <div className="h-1 w-24 bg-gradient-to-r from-sky-400 to-indigo-500 mx-auto rounded-full mb-6" />
                 </motion.div>
