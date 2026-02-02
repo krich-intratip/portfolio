@@ -199,6 +199,7 @@ export default function Contact() {
 
                     <footer className="text-slate-600 text-sm mt-16">
                         <p>© 2026 Dr. Krich Intratip. All rights reserved.</p>
+                        <p className="mt-2">Version 1.0.0 | อัพเดทล่าสุด: 2 กุมภาพันธ์ 2568</p>
                     </footer>
                 </motion.div>
             </div>

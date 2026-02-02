@@ -13,11 +13,25 @@ const projects = [
     },
     {
         title: "SAR for Academic Research Paper",
-        description: "ระบบรีวิวและประเมินคุณภาพงานวิจัยทางวิชาการโดย AI ผู้เชี่ยวชาญ 3 ท่าน สำหรับการศึกษาระดับ Master & Ph.D.",
-        tech: ["Next.js 16", "Google Gemini", "OpenAI", "OpenRouter"],
-        link: "https://academic-sar.vercel.app",
+        description: "ระบบรีวิวและประเมินคุณภาพงานวิจัยทางวิชาการโดย AI ผู้เชี่ยวชาญ 3 ท่าน สำหรับการศึกษาระดับ Master",
+        tech: ["Next.js", "Google Gemini", "DeepSeek", "Kimi", "OpenRouter"],
+        link: "https://academic-sar.pk-research.work/",
         github: "https://github.com/krich-intratip/academic-sar",
         color: "from-blue-500 to-cyan-400"
+    },
+    {
+        title: "ระบบประเมินโครงการวิจัยขั้นกลั่นกรองโครงการ (Rubric ใหม่)",
+        description: "ระบบประเมินโครงการวิจัยผ่าน AI ผู้ทรงคุณวุฒิ 3 ท่าน ด้านยุทธศาสตร์ ด้านเทคนิค และด้านงบประมาณ สำหรับการกลั่นกรองโครงการวิจัย",
+        tech: ["Next.js", "Google Gemini", "DeepSeek", "Kimi", "OpenRouter"],
+        link: "https://proposal-sar.pk-research.work/",
+        color: "from-violet-500 to-purple-400"
+    },
+    {
+        title: "ระบบประเมินโครงการวิจัย ขั้นปิดโครงการ (Rubric ใหม่)",
+        description: "ระบบประเมินโครงการวิจัยขั้นปิดโครงการ สวพ.ทบ. ด้วย AI ผู้ทรงคุณวุฒิ 3 ท่าน ด้านผลสัมฤทธิ์ ผลกระทบ และความคุ้มค่า",
+        tech: ["Next.js", "Google Gemini", "DeepSeek", "Kimi", "OpenRouter"],
+        link: "https://full-project-eval.pk-research.work/",
+        color: "from-teal-500 to-cyan-400"
     },
     {
         title: "CQI Self-Assessment System",
