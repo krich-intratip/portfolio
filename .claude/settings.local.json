@@ -9,7 +9,11 @@
       "Bash(npm run build:*)",
       "Bash(git reset:*)",
       "Bash(git ls-tree:*)",
-      "Bash(xargs ls:*)"
+      "Bash(xargs ls:*)",
+      "Bash(tree:*)",
+      "Bash(wc:*)",
+      "Bash(npx next build:*)",
+      "Bash(timeout 5 npx next dev:*)"
     ]
   }
 }

@@ -2,10 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Github } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import ThemeToggle from './ThemeToggle';
 
 const navItems = [
     { name: 'Home', href: '#home' },
@@ -58,13 +57,6 @@ export default function Navbar() {
                         </Link>
                     ))}
 
-                    <div className="w-px h-6 bg-slate-700 mx-2" />
-
-                    <a href="https://github.com/krich-intratip" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors" aria-label="GitHub profile">
-                        <Github size={20} />
-                    </a>
-
-                    <ThemeToggle />
                 </div>
 
                 {/* Mobile Menu Toggle */}
