@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, Github, Send } from 'lucide-react';
+import { Mail, Phone, Github, Linkedin, Send } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Contact() {
@@ -56,7 +56,7 @@ export default function Contact() {
                         ติดต่อเพื่อพูดคุยแลกเปลี่ยนวิสัยทัศน์
                     </p>
 
-                    <div className="grid md:grid-cols-3 gap-6 mb-16">
+                    <div className="grid md:grid-cols-4 gap-6 mb-16">
                         <a
                             href="mailto:krich.intratip@gmail.com"
                             className="flex flex-col items-center p-6 bg-slate-800/40 rounded-2xl border border-slate-700 hover:bg-slate-800 hover:border-sky-500/50 transition-all group"
@@ -65,7 +65,7 @@ export default function Contact() {
                                 <Mail size={24} />
                             </div>
                             <h3 className="text-sm font-semibold text-slate-300 mb-1">Email</h3>
-                            <p className="text-sky-400 font-medium">krich.intratip@gmail.com</p>
+                            <p className="text-sky-400 font-medium text-xs">krich.intratip@gmail.com</p>
                         </a>
 
                         <a
@@ -90,6 +90,19 @@ export default function Contact() {
                             </div>
                             <h3 className="text-sm font-semibold text-slate-300 mb-1">GitHub</h3>
                             <p className="text-purple-400 font-medium">@krich-intratip</p>
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/krich-intratip-b1203a3a7/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex flex-col items-center p-6 bg-slate-800/40 rounded-2xl border border-slate-700 hover:bg-slate-800 hover:border-blue-500/50 transition-all group"
+                        >
+                            <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition-transform">
+                                <Linkedin size={24} />
+                            </div>
+                            <h3 className="text-sm font-semibold text-slate-300 mb-1">LinkedIn</h3>
+                            <p className="text-blue-400 font-medium">krich-intratip</p>
                         </a>
                     </div>
 
