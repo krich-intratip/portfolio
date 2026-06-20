@@ -4,21 +4,21 @@ import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
 import Services from '@/components/Services';
 import Timeline from '@/components/Timeline';
-import Testimonials from '@/components/Testimonials';
 import Achievements from '@/components/Achievements';
+import BlogCarousel from '@/components/BlogCarousel';
 import Contact from '@/components/Contact';
 
 export default function Home() {
   return (
-    <main className="bg-slate-950 min-h-screen selection:bg-sky-500/30">
+    <main className="bg-void-navy min-h-screen">
       <Hero />
       <About />
       <Timeline />
-      <Projects />
       <Skills />
-      <Achievements />
+      <Projects />
       <Services />
-      <Testimonials />
+      <Achievements />
+      <BlogCarousel />
       <Contact />
     </main>
   );

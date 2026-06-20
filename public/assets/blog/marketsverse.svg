@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg8" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#09111e"/>
+      <stop offset="0.5" stop-color="#0c1828"/>
+      <stop offset="1" stop-color="#0a0e17"/>
+    </linearGradient>
+    <radialGradient id="screenGlow8" cx="50%" cy="45%" r="45%">
+      <stop offset="0" stop-color="#1a3a6e" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#09111e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="goldGlow8" cx="50%" cy="55%" r="35%">
+      <stop offset="0" stop-color="#c9a227" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#c9a227" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg8)"/>
+  <rect width="1200" height="630" fill="url(#screenGlow8)"/>
+  <rect width="1200" height="630" fill="url(#goldGlow8)"/>
+
+  <!-- Floor -->
+  <rect x="0" y="500" width="1200" height="130" fill="#070d16"/>
+  <line x1="0" y1="500" x2="1200" y2="500" stroke="#152030" stroke-width="1"/>
+  <!-- Floor tiles grid -->
+  <g stroke="#0e1e30" stroke-width="0.5" opacity="0.4">
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="150" y1="500" x2="150" y2="630"/><line x1="300" y1="500" x2="300" y2="630"/>
+    <line x1="450" y1="500" x2="450" y2="630"/><line x1="600" y1="500" x2="600" y2="630"/>
+    <line x1="750" y1="500" x2="750" y2="630"/><line x1="900" y1="500" x2="900" y2="630"/>
+    <line x1="1050" y1="500" x2="1050" y2="630"/>
+  </g>
+
+  <!-- Back wall with Bangkok skyline window panorama -->
+  <rect x="0" y="0" width="1200" height="500" fill="#0a1422"/>
+  <!-- Large panoramic window -->
+  <rect x="80" y="60" width="1040" height="360" fill="#080f1c"/>
+  <rect x="80" y="60" width="1040" height="360" fill="none" stroke="#162438" stroke-width="3"/>
+  <!-- Window frame mullions -->
+  <line x1="340" y1="60" x2="340" y2="420" stroke="#162438" stroke-width="2"/>
+  <line x1="600" y1="60" x2="600" y2="420" stroke="#162438" stroke-width="2"/>
+  <line x1="860" y1="60" x2="860" y2="420" stroke="#162438" stroke-width="2"/>
+  <line x1="80" y1="240" x2="1120" y2="240" stroke="#162438" stroke-width="1.5"/>
+
+  <!-- Bangkok night skyline through window -->
+  <g fill="#0c1a2e">
+    <rect x="90" y="260" width="22" height="160"/>
+    <rect x="118" y="220" width="28" height="200"/>
+    <rect x="152" y="280" width="20" height="140"/>
+    <rect x="178" y="240" width="32" height="180"/>
+    <!-- Mahanakhon-style tower -->
+    <rect x="218" y="160" width="35" height="260"/>
+    <rect x="218" y="160" width="35" height="70" fill="#0e2040"/>
+    <rect x="224" y="130" width="23" height="38"/>
+    <rect x="229" y="110" width="13" height="28"/>
+    <line x1="235" y1="110" x2="235" y2="78" stroke="#0c1a2e" stroke-width="4"/>
+    <rect x="260" y="250" width="30" height="170"/>
+    <rect x="296" y="210" width="38" height="210"/>
+    <!-- Baiyoke-style tower left area -->
+    <rect x="100" y="190" width="24" height="230"/>
+    <rect x="104" y="172" width="16" height="24"/>
+    <line x1="112" y1="172" x2="112" y2="140" stroke="#0c1a2e" stroke-width="3"/>
+    <!-- Right section buildings -->
+    <rect x="610" y="250" width="28" height="170"/>
+    <rect x="644" y="200" width="36" height="220"/>
+    <rect x="686" y="270" width="26" height="150"/>
+    <rect x="718" y="230" width="40" height="190"/>
+    <rect x="764" y="185" width="32" height="235"/>
+    <rect x="802" y="260" width="28" height="160"/>
+    <!-- Tall slender towers right -->
+    <rect x="870" y="175" width="26" height="245"/>
+    <rect x="870" y="175" width="26" height="60" fill="#0e2040"/>
+    <rect x="904" y="230" width="32" height="190"/>
+    <rect x="942" y="260" width="24" height="160"/>
+    <rect x="972" y="215" width="35" height="205"/>
+    <rect x="1014" y="255" width="28" height="165"/>
+    <rect x="1050" y="235" width="30" height="185"/>
+    <rect x="1086" y="260" width="25" height="160"/>
+  </g>
+
+  <!-- Night window lights in buildings -->
+  <g fill="#c9a227" opacity="0.2">
+    <rect x="220" y="172" width="5" height="7"/><rect x="229" y="172" width="5" height="7"/>
+    <rect x="220" y="186" width="5" height="7"/>
+    <rect x="299" y="220" width="5" height="8"/><rect x="309" y="220" width="5" height="8"/>
+    <rect x="647" y="212" width="5" height="7"/>
+    <rect x="721" y="240" width="6" height="8"/><rect x="731" y="240" width="6" height="8"/>
+    <rect x="767" y="196" width="5" height="7"/><rect x="776" y="196" width="5" height="7"/>
+    <rect x="873" y="188" width="4" height="6"/>
+    <rect x="975" y="225" width="5" height="7"/>
+    <rect x="1053" y="246" width="5" height="7"/><rect x="1062" y="246" width="5" height="7"/>
+  </g>
+
+  <!-- Co-working space interior elements -->
+  <!-- Long communal work table -->
+  <rect x="180" y="430" width="840" height="28" rx="3" fill="#0d1e34"/>
+  <rect x="180" y="458" width="840" height="42" rx="2" fill="#0b1828"/>
+  <!-- Table legs -->
+  <rect x="220" y="458" width="16" height="42" fill="#091422"/>
+  <rect x="970" y="458" width="16" height="42" fill="#091422"/>
+  <rect x="580" y="458" width="16" height="42" fill="#091422"/>
+
+  <!-- Laptops / monitors on table -->
+  <g opacity="0.55">
+    <!-- Laptop 1 -->
+    <rect x="240" y="400" width="100" height="65" rx="2" fill="#0c1a2c"/>
+    <rect x="242" y="402" width="96" height="55" rx="1" fill="#0e2040"/>
+    <!-- Chart on screen 1 -->
+    <polyline points="252,445 270,432 288,440 306,425 324,430 338,418" fill="none" stroke="#c9a227" stroke-width="1.5" opacity="0.7"/>
+    <circle cx="338" cy="418" r="3" fill="#c9a227" opacity="0.8"/>
+    <!-- Laptop 2 -->
+    <rect x="400" y="400" width="100" height="65" rx="2" fill="#0c1a2c"/>
+    <rect x="402" y="402" width="96" height="55" rx="1" fill="#0e2040"/>
+    <!-- Grid/dashboard on screen 2 -->
+    <rect x="410" y="410" width="38" height="22" rx="1" fill="#c9a227" opacity="0.12"/>
+    <rect x="452" y="410" width="38" height="22" rx="1" fill="#c9a227" opacity="0.08"/>
+    <rect x="410" y="436" width="80" height="14" rx="1" fill="#c9a227" opacity="0.07"/>
+    <!-- Laptop 3 -->
+    <rect x="700" y="400" width="100" height="65" rx="2" fill="#0c1a2c"/>
+    <rect x="702" y="402" width="96" height="55" rx="1" fill="#0e2040"/>
+    <!-- Network graph on screen 3 -->
+    <circle cx="730" cy="425" r="5" fill="#c9a227" opacity="0.5"/>
+    <circle cx="758" cy="418" r="5" fill="#c9a227" opacity="0.5"/>
+    <circle cx="782" cy="432" r="4" fill="#c9a227" opacity="0.4"/>
+    <line x1="735" y1="425" x2="753" y2="418" stroke="#c9a227" stroke-width="1" opacity="0.4"/>
+    <line x1="763" y1="418" x2="778" y2="432" stroke="#c9a227" stroke-width="1" opacity="0.4"/>
+  </g>
+
+  <!-- 3 entrepreneur silhouettes seated -->
+  <g fill="#0d1828">
+    <circle cx="290" cy="400" r="20"/>
+    <ellipse cx="290" cy="435" rx="24" ry="30"/>
+    <circle cx="550" cy="400" r="20"/>
+    <ellipse cx="550" cy="435" rx="24" ry="30"/>
+    <circle cx="850" cy="400" r="20"/>
+    <ellipse cx="850" cy="435" rx="24" ry="30"/>
+  </g>
+
+  <!-- Marketplace connection network — floating in upper space -->
+  <g opacity="0.5">
+    <!-- Hub nodes -->
+    <circle cx="600" cy="180" r="12" fill="#c9a227"/>
+    <circle cx="420" cy="130" r="8" fill="#c9a227"/>
+    <circle cx="780" cy="130" r="8" fill="#c9a227"/>
+    <circle cx="340" cy="200" r="7" fill="#c9a227"/>
+    <circle cx="860" cy="200" r="7" fill="#c9a227"/>
+    <circle cx="500" cy="240" r="7" fill="#c9a227"/>
+    <circle cx="700" cy="240" r="7" fill="#c9a227"/>
+    <!-- Hub connections -->
+    <g stroke="#c9a227" stroke-width="1" opacity="0.3" fill="none">
+      <line x1="600" y1="180" x2="420" y2="130"/>
+      <line x1="600" y1="180" x2="780" y2="130"/>
+      <line x1="420" y1="130" x2="340" y2="200"/>
+      <line x1="780" y1="130" x2="860" y2="200"/>
+      <line x1="600" y1="180" x2="500" y2="240"/>
+      <line x1="600" y1="180" x2="700" y2="240"/>
+      <line x1="420" y1="130" x2="500" y2="240"/>
+      <line x1="780" y1="130" x2="700" y2="240"/>
+      <line x1="340" y1="200" x2="500" y2="240"/>
+      <line x1="860" y1="200" x2="700" y2="240"/>
+    </g>
+  </g>
+
+  <!-- Category pill -->
+  <rect x="58" y="46" width="170" height="30" rx="15" fill="#c9a227" opacity="0.1"/>
+  <rect x="58" y="46" width="170" height="30" rx="15" fill="none" stroke="#c9a227" stroke-width="0.8" opacity="0.35"/>
+  <text x="143" y="66" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#c9a227" opacity="0.8" letter-spacing="2">ENTREPRENEURSHIP</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="555" width="1200" height="75" fill="#070b11" opacity="0.9"/>
+  <line x1="0" y1="555" x2="1200" y2="555" stroke="#c9a227" stroke-width="0.8" opacity="0.3"/>
+  <text x="60" y="598" font-family="Georgia, serif" font-size="19" fill="#c9a227" opacity="0.8">Marketsverse · Intelligent Digital Market Infrastructure · Bangkok</text>
+  <text x="1140" y="598" text-anchor="end" font-family="Georgia, serif" font-size="13" fill="#c9a227" opacity="0.45">AI · Marketplace</text>
+</svg>

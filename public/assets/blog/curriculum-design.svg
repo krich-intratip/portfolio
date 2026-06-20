@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg10" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1e32"/>
+      <stop offset="0.4" stop-color="#102030"/>
+      <stop offset="1" stop-color="#0a0e17"/>
+    </linearGradient>
+    <radialGradient id="dawnGlow" cx="50%" cy="25%" r="50%">
+      <stop offset="0" stop-color="#c97828" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#0d1e32" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="goldGlow10" cx="50%" cy="65%" r="35%">
+      <stop offset="0" stop-color="#c9a227" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#c9a227" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg10)"/>
+  <rect width="1200" height="630" fill="url(#dawnGlow)"/>
+  <rect width="1200" height="630" fill="url(#goldGlow10)"/>
+
+  <!-- Dawn horizon -->
+  <rect x="0" y="290" width="1200" height="30" fill="#c97828" opacity="0.04"/>
+
+  <!-- Stars (pre-dawn) -->
+  <g fill="#ffffff" opacity="0.25">
+    <circle cx="80" cy="50" r="1"/><circle cx="200" cy="80" r="0.8"/><circle cx="350" cy="40" r="1"/>
+    <circle cx="500" cy="65" r="0.8"/><circle cx="650" cy="30" r="1"/><circle cx="800" cy="55" r="0.8"/>
+    <circle cx="950" cy="42" r="1"/><circle cx="1100" cy="68" r="0.8"/>
+  </g>
+
+  <!-- Ground -->
+  <rect x="0" y="520" width="1200" height="110" fill="#07101a"/>
+  <line x1="0" y1="520" x2="1200" y2="520" stroke="#142030" stroke-width="1"/>
+  <!-- Parade ground / courtyard tiles -->
+  <g stroke="#0e1c2a" stroke-width="0.5" opacity="0.4">
+    <line x1="0" y1="560" x2="1200" y2="560"/>
+    <line x1="200" y1="520" x2="200" y2="630"/><line x1="400" y1="520" x2="400" y2="630"/>
+    <line x1="600" y1="520" x2="600" y2="630"/><line x1="800" y1="520" x2="800" y2="630"/>
+    <line x1="1000" y1="520" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Thai Military Academy building — grand neo-classical Thai -->
+  <g transform="translate(520,520)">
+    <!-- Foundation -->
+    <rect x="-320" y="-20" width="640" height="20" fill="#0c1a2c"/>
+    <rect x="-300" y="-36" width="600" height="16" fill="#0e1e34"/>
+    <rect x="-280" y="-50" width="560" height="14" fill="#102240"/>
+
+    <!-- Main body two-story -->
+    <rect x="-260" y="-310" width="520" height="260" fill="#0d1e34"/>
+    <!-- Ground floor columns -->
+    <g fill="#0b1828">
+      <rect x="-240" y="-310" width="18" height="260"/>
+      <rect x="-208" y="-310" width="18" height="260"/>
+      <rect x="-176" y="-310" width="18" height="260"/>
+      <rect x="-144" y="-310" width="18" height="260"/>
+      <rect x="-112" y="-310" width="18" height="260"/>
+      <rect x="94"  y="-310" width="18" height="260"/>
+      <rect x="126" y="-310" width="18" height="260"/>
+      <rect x="158" y="-310" width="18" height="260"/>
+      <rect x="190" y="-310" width="18" height="260"/>
+      <rect x="222" y="-310" width="18" height="260"/>
+    </g>
+    <!-- Windows ground floor -->
+    <g fill="#c9a227" opacity="0.18">
+      <rect x="-225" y="-280" width="30" height="42" rx="2"/>
+      <rect x="-188" y="-280" width="30" height="42" rx="2"/>
+      <rect x="-151" y="-280" width="30" height="42" rx="2"/>
+      <rect x="-114" y="-280" width="30" height="42" rx="2"/>
+      <rect x="94"   y="-280" width="30" height="42" rx="2"/>
+      <rect x="131"  y="-280" width="30" height="42" rx="2"/>
+      <rect x="168"  y="-280" width="30" height="42" rx="2"/>
+      <rect x="199"  y="-280" width="30" height="42" rx="2"/>
+    </g>
+    <!-- Windows upper floor -->
+    <g fill="#c9a227" opacity="0.13">
+      <rect x="-225" y="-225" width="30" height="38" rx="2"/>
+      <rect x="-188" y="-225" width="30" height="38" rx="2"/>
+      <rect x="-114" y="-225" width="30" height="38" rx="2"/>
+      <rect x="131"  y="-225" width="30" height="38" rx="2"/>
+      <rect x="168"  y="-225" width="30" height="38" rx="2"/>
+      <rect x="199"  y="-225" width="30" height="38" rx="2"/>
+    </g>
+    <!-- Central portico projection -->
+    <rect x="-80" y="-330" width="160" height="280" fill="#0e2040"/>
+    <g fill="#0c1a30">
+      <rect x="-70" y="-330" width="15" height="280"/>
+      <rect x="-45" y="-330" width="15" height="280"/>
+      <rect x="-20" y="-330" width="15" height="280"/>
+      <rect x="5"   y="-330" width="15" height="280"/>
+      <rect x="30"  y="-330" width="15" height="280"/>
+      <rect x="55"  y="-330" width="15" height="280"/>
+    </g>
+    <!-- Portico pediment -->
+    <rect x="-85" y="-338" width="170" height="12" fill="#183050"/>
+    <polygon points="-85,-338 0,-395 85,-338" fill="#0e2040"/>
+    <polygon points="-70,-338 0,-378 70,-338" fill="#122848"/>
+    <polyline points="-82,-338 0,-392 82,-338" fill="none" stroke="#c9a227" stroke-width="0.8" opacity="0.3"/>
+    <!-- Thai-style layered roof hint (small ornament) -->
+    <polygon points="0,-395 -8,-378 8,-378" fill="#c9a227" opacity="0.3"/>
+    <!-- Flag pole -->
+    <line x1="0" y1="-395" x2="0" y2="-450" stroke="#c9a227" stroke-width="1.5" opacity="0.45"/>
+    <polygon points="0,-450 20,-438 0,-426" fill="#c9a227" opacity="0.35"/>
+    <!-- Main door double arch -->
+    <rect x="-32" y="-170" width="64" height="120" rx="5" fill="#080f1c"/>
+    <path d="M-32,-168 Q0,-198 32,-168" fill="none" stroke="#152848" stroke-width="3"/>
+
+    <!-- Side wings — lower -->
+    <rect x="-380" y="-210" width="130" height="160" fill="#0c1c30"/>
+    <rect x="250"  y="-210" width="130" height="160" fill="#0c1c30"/>
+    <!-- Wing windows -->
+    <g fill="#c9a227" opacity="0.14">
+      <rect x="-365" y="-195" width="26" height="38" rx="2"/>
+      <rect x="-330" y="-195" width="26" height="38" rx="2"/>
+      <rect x="-295" y="-195" width="26" height="38" rx="2"/>
+      <rect x="264"  y="-195" width="26" height="38" rx="2"/>
+      <rect x="299"  y="-195" width="26" height="38" rx="2"/>
+      <rect x="334"  y="-195" width="26" height="38" rx="2"/>
+    </g>
+  </g>
+
+  <!-- Curriculum design framework — left floating -->
+  <g transform="translate(130, 160)" opacity="0.5">
+    <!-- Pyramid 3 tiers -->
+    <polygon points="100,-100 180,0 20,0" fill="#0d1e34" stroke="#c9a227" stroke-width="1"/>
+    <polygon points="70,0 200,80 0,80" fill="#0d1e34" stroke="#c9a227" stroke-width="1"/>
+    <polygon points="30,80 230,170 -30,170" fill="#0d1e34" stroke="#c9a227" stroke-width="1"/>
+    <!-- Labels -->
+    <text x="100" y="-72" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.65">Vision</text>
+    <text x="100" y="48" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.6">Competency</text>
+    <text x="100" y="132" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.55">Practice</text>
+  </g>
+
+  <!-- Blueprint / course map — right floating -->
+  <g transform="translate(870, 130)" opacity="0.35">
+    <rect x="0" y="0" width="240" height="180" rx="3" fill="#0c1828" stroke="#c9a227" stroke-width="1"/>
+    <!-- Grid lines blueprint -->
+    <g stroke="#c9a227" stroke-width="0.5" opacity="0.3">
+      <line x1="0" y1="45" x2="240" y2="45"/>
+      <line x1="0" y1="90" x2="240" y2="90"/>
+      <line x1="0" y1="135" x2="240" y2="135"/>
+      <line x1="60" y1="0" x2="60" y2="180"/>
+      <line x1="120" y1="0" x2="120" y2="180"/>
+      <line x1="180" y1="0" x2="180" y2="180"/>
+    </g>
+    <!-- Course boxes -->
+    <rect x="10" y="10" width="40" height="25" rx="2" fill="none" stroke="#c9a227" stroke-width="0.8"/>
+    <rect x="70" y="10" width="40" height="25" rx="2" fill="none" stroke="#c9a227" stroke-width="0.8"/>
+    <rect x="130" y="10" width="40" height="25" rx="2" fill="none" stroke="#c9a227" stroke-width="0.8"/>
+    <rect x="190" y="10" width="40" height="25" rx="2" fill="#c9a227" opacity="0.1"/>
+    <rect x="190" y="10" width="40" height="25" rx="2" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+    <!-- Arrows between boxes -->
+    <line x1="50" y1="22" x2="70" y2="22" stroke="#c9a227" stroke-width="0.8"/>
+    <line x1="110" y1="22" x2="130" y2="22" stroke="#c9a227" stroke-width="0.8"/>
+    <line x1="170" y1="22" x2="190" y2="22" stroke="#c9a227" stroke-width="0.8"/>
+    <polygon points="70,22 62,18 62,26" fill="#c9a227" opacity="0.6"/>
+    <polygon points="130,22 122,18 122,26" fill="#c9a227" opacity="0.6"/>
+    <polygon points="190,22 182,18 182,26" fill="#c9a227" opacity="0.6"/>
+    <!-- Graduation cap sketch -->
+    <g transform="translate(120,140)">
+      <polygon points="0,-20 40,-8 40,8 0,20 -40,8 -40,-8" fill="none" stroke="#c9a227" stroke-width="1"/>
+      <rect x="-8" y="-20" width="16" height="16" fill="none" stroke="#c9a227" stroke-width="1"/>
+      <line x1="35" y1="8" x2="35" y2="26" stroke="#c9a227" stroke-width="1"/>
+      <circle cx="35" cy="28" r="3" fill="none" stroke="#c9a227" stroke-width="1"/>
+    </g>
+  </g>
+
+  <!-- Category pill -->
+  <rect x="58" y="46" width="140" height="30" rx="15" fill="#c9a227" opacity="0.1"/>
+  <rect x="58" y="46" width="140" height="30" rx="15" fill="none" stroke="#c9a227" stroke-width="0.8" opacity="0.35"/>
+  <text x="128" y="66" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#c9a227" opacity="0.8" letter-spacing="2">EDUCATION</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="555" width="1200" height="75" fill="#070b11" opacity="0.9"/>
+  <line x1="0" y1="555" x2="1200" y2="555" stroke="#c9a227" stroke-width="0.8" opacity="0.3"/>
+  <text x="60" y="598" font-family="Georgia, serif" font-size="19" fill="#c9a227" opacity="0.8">Curriculum Design · Military Academy · Public Sector Education</text>
+  <text x="1140" y="598" text-anchor="end" font-family="Georgia, serif" font-size="13" fill="#c9a227" opacity="0.45">Vision → Practice</text>
+</svg>

@@ -11,26 +11,21 @@ export const ANIMATION_DURATIONS = {
   slow: 0.8,
 } as const;
 
-// Color gradients
-export const GRADIENTS = {
-  primary: 'from-sky-400 to-indigo-400',
-  secondary: 'from-indigo-500 to-purple-400',
-  success: 'from-emerald-400 to-teal-400',
-  warning: 'from-amber-400 to-orange-400',
-  accent: 'from-yellow-400 to-amber-400',
-} as const;
-
 // Social links
 export const SOCIAL_LINKS = {
   github: 'https://github.com/krich-intratip',
   email: 'krich.intratip@gmail.com',
   phone: '061-632-9956',
+  linkedin: 'https://www.linkedin.com/in/krich-intratip-b1203a3a7/',
+  marketsverse: 'https://www.marketsverse.app',
 } as const;
 
 // Site metadata
 export const SITE_CONFIG = {
-  name: 'Dr. Krich Intratip',
-  title: 'Knowledge Manager & AI Implementation Specialist',
-  description: 'ผู้เชี่ยวชาญด้าน Assessment Systems, PMQA/ก.พ.ร. Framework และการบูรณาการ AI เพื่อการตัดสินใจเชิงกลยุทธ์',
+  name: 'พลโท ดร.กริช อินทราทิพย์',
+  nameEn: 'Lt.Gen. Krich Intratip, Ph.D.',
+  title: 'ยุทธศาสตร์ ความมั่นคง การพัฒนาทรัพยากรมนุษย์ และการประยุกต์ใช้ AI',
+  titleEn: 'Strategic Security, Human Development & AI Governance',
+  description: 'ผู้เชี่ยวชาญด้านยุทธศาสตร์ ความมั่นคง การพัฒนาทรัพยากรมนุษย์ และการประยุกต์ใช้ AI',
   url: 'https://krich-intratip-portfolio.vercel.app',
 } as const;

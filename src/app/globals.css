@@ -1,66 +1,78 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f172a; /* Slate 950 */
-  --foreground: #f8fafc; /* Slate 50 */
-  --primary: #38bdf8; /* Sky 400 */
-  --secondary: #94a3b8; /* Slate 400 */
-  --accent: #f472b6; /* Pink 400 */
+  --void-navy: #0a0e17;
+  --deep-surface: #111722;
+  --elevated-surface: #1a2230;
+  --subtle-border: #1e2a3d;
+  --ink-primary: #e2e8f0;
+  --ink-secondary: #94a3b8;
+  --ink-muted: #64748b;
+  --strategic-gold: #c9a227;
+  --gold-light: #e0b540;
+  --defense-crimson: #8b2020;
 }
 
 @theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
-  
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-fade-in: fadeIn 0.8s ease-out forwards;
-}
+  --color-void-navy: var(--void-navy);
+  --color-deep-surface: var(--deep-surface);
+  --color-elevated-surface: var(--elevated-surface);
+  --color-subtle-border: var(--subtle-border);
+  --color-ink-primary: var(--ink-primary);
+  --color-ink-secondary: var(--ink-secondary);
+  --color-ink-muted: var(--ink-muted);
+  --color-strategic-gold: var(--strategic-gold);
+  --color-gold-light: var(--gold-light);
+  --color-defense-crimson: var(--defense-crimson);
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  --font-display: var(--font-trirong), Georgia, serif;
+  --font-body: var(--font-sarabun), system-ui, sans-serif;
+
+  --animate-fade-in: fadeIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  --animate-slide-up: slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: var(--void-navy);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--secondary);
-  border-radius: 4px;
+  background: var(--subtle-border);
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
+  background: var(--strategic-gold);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
+  background: var(--void-navy);
+  color: var(--ink-primary);
+  font-family: var(--font-body);
   overflow-x: hidden;
+  line-height: 1.7;
 }
 
-/* Glassmorphism Utilities */
-.glass {
-  background: rgba(15, 23, 42, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+::selection {
+  background: rgba(201, 162, 39, 0.25);
+  color: var(--gold-light);
 }
 
-.glass-card {
-  background: rgba(30, 41, 59, 0.4);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -1,20 +1,31 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Trirong, Sarabun } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import { ThemeProvider } from "@/contexts/ThemeContext";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const trirong = Trirong({
+  subsets: ["latin", "thai"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-trirong",
+  display: "swap",
+});
+
+const sarabun = Sarabun({
+  subsets: ["latin", "thai"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sarabun",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Dr. Krich Intratip | Knowledge Manager & AI Implementation Specialist",
-  description: "ผู้เชี่ยวชาญด้าน Assessment Systems, PMQA/ก.พ.ร. Framework และการบูรณาการ AI เพื่อการตัดสินใจเชิงกลยุทธ์ มีประสบการณ์กว่า 20 ปี",
-  keywords: ["Knowledge Manager", "AI Implementation", "PMQA", "Assessment Systems", "AI Specialist", "Thailand"],
-  authors: [{ name: "Dr. Krich Intratip" }],
-  creator: "Dr. Krich Intratip",
-  publisher: "Dr. Krich Intratip",
+  title: "พลโท ดร.กริช อินทราทิพย์ | Lt.Gen. Krich Intratip, Ph.D.",
+  description: "ผู้เชี่ยวชาญด้านยุทธศาสตร์ ความมั่นคง การพัฒนาทรัพยากรมนุษย์ และการประยุกต์ใช้ AI | Strategic Security, Human Development & AI Governance Specialist",
+  keywords: ["Krich Intratip", "Lt.Gen. Krich", "AI Governance", "Strategic Security", "Human Development", "Digital Transformation", "Thailand", "Military Strategy"],
+  authors: [{ name: "Lt.Gen. Krich Intratip, Ph.D." }],
+  creator: "Lt.Gen. Krich Intratip, Ph.D.",
+  publisher: "Lt.Gen. Krich Intratip, Ph.D.",
   metadataBase: new URL('https://krich-intratip-portfolio.vercel.app'),
   alternates: {
     canonical: '/',
@@ -23,22 +34,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'th_TH',
     url: 'https://krich-intratip-portfolio.vercel.app',
-    title: 'Dr. Krich Intratip | Knowledge Manager & AI Implementation Specialist',
-    description: 'ผู้เชี่ยวชาญด้าน Assessment Systems, PMQA/ก.พ.ร. Framework และการบูรณาการ AI เพื่อการตัดสินใจเชิงกลยุทธ์',
-    siteName: 'Dr. Krich Intratip Portfolio',
+    title: 'พลโท ดร.กริช อินทราทิพย์ | Lt.Gen. Krich Intratip, Ph.D.',
+    description: 'ผู้เชี่ยวชาญด้านยุทธศาสตร์ ความมั่นคง การพัฒนาทรัพยากรมนุษย์ และการประยุกต์ใช้ AI',
+    siteName: 'Lt.Gen. Krich Intratip — Executive Portfolio',
     images: [
       {
         url: '/assets/mypic.jpg',
         width: 1200,
         height: 630,
-        alt: 'Dr. Krich Intratip',
+        alt: 'พลโท ดร.กริช อินทราทิพย์',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dr. Krich Intratip | Knowledge Manager & AI Implementation Specialist',
-    description: 'ผู้เชี่ยวชาญด้าน Assessment Systems และการบูรณาการ AI',
+    title: 'พลโท ดร.กริช อินทราทิพย์ | Lt.Gen. Krich Intratip, Ph.D.',
+    description: 'ผู้เชี่ยวชาญด้านยุทธศาสตร์ ความมั่นคง และการประยุกต์ใช้ AI',
     images: ['/assets/mypic.jpg'],
   },
   robots: {
@@ -60,9 +71,6 @@ export const metadata: Metadata = {
       { url: '/icon.jpg', type: 'image/jpeg' },
     ],
   },
-  verification: {
-    google: 'your-google-verification-code',
-  },
 };
 
 export default function RootLayout({
@@ -71,14 +79,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} font-sans antialiased text-slate-200 bg-slate-950 selection:bg-sky-500/30 selection:text-sky-200`}>
-        <ThemeProvider>
-          <Navbar />
-          {children}
-          <Analytics />
-          <SpeedInsights />
-        </ThemeProvider>
+    <html lang="th" className={`scroll-smooth ${trirong.variable} ${sarabun.variable}`}>
+      <body className="font-body antialiased text-ink-primary bg-void-navy">
+        <Navbar />
+        {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

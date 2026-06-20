@@ -1,118 +1,113 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { Briefcase, GraduationCap, Award, Users } from 'lucide-react';
 
 export default function About() {
     return (
-        <section id="about" className="py-20 bg-slate-900/50">
-            <div className="container mx-auto px-6">
+        <section id="profile" className="py-24 md:py-32 relative">
+            {/* Subtle background accent */}
+            <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                    background: 'radial-gradient(ellipse 50% 40% at 20% 50%, rgba(201, 162, 39, 0.03), transparent 60%)',
+                }}
+            />
+            <div className="container mx-auto px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                     className="max-w-4xl mx-auto"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">
-                        About Me
+                    {/* Section label */}
+                    <div className="flex items-center gap-3 mb-6">
+                        <div className="h-px w-8 bg-strategic-gold" />
+                        <span className="text-xs font-medium text-strategic-gold tracking-widest uppercase">
+                            Profile
+                        </span>
+                    </div>
+
+                    <h2 className="font-display text-3xl md:text-4xl font-medium text-ink-primary mb-3">
+                        Executive Profile
                     </h2>
+                    <div className="h-px w-12 bg-strategic-gold mb-10" />
 
-                    <div className="grid md:grid-cols-[280px,1fr] gap-10 items-start">
-                        {/* Profile Image with Frame - ลดขนาดลง */}
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5 }}
-                            className=""
-                        >
-                            <div className="relative w-full max-w-[280px] mx-auto aspect-[3/4] rounded-2xl overflow-hidden border-4 border-slate-700/50 group hover:border-sky-500/50 transition-all shadow-2xl bg-slate-900">
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent z-10 opacity-40" />
-                                <Image
-                                    src="/assets/portrait-new.png"
-                                    alt="พล.ท.ดร.กริช อินทราทิพย์ - Professional Portrait"
-                                    fill
-                                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                                    sizes="280px"
-                                    priority
-                                />
-                            </div>
+                    <div className="space-y-6 text-ink-secondary leading-relaxed" style={{ lineHeight: 1.8 }}>
+                        <p>
+                            พลโท ดร.กริช อินทราทิพย์ เป็นผู้ทรงคุณวุฒิและที่ปรึกษาเชิงยุทธศาสตร์
+                            ด้านความมั่นคง การบริหารภาครัฐ การพัฒนากำลังพล การวิจัย การจัดการความรู้
+                            และเทคโนโลยีดิจิทัล มีประสบการณ์การทำงานกว่า 20 ปีในกองทัพบกและภาครัฐ
+                        </p>
+                        <p>
+                            ปัจจุบันดำรงตำแหน่งเลขานุการประจำคณะกรรมาธิการการเทคโนโลยีสารสนเทศ
+                            การสื่อสาร และการโทรคมนาคม วุฒิสภา และอนุกรรมาธิการด้านกิจการทางทหาร
+                            ไซเบอร์เทคโนโลยี อาวุธยุทโธปกรณ์ และอุตสาหกรรมป้องกันประเทศ
+                            รวมถึงเป็นคณะรับรองพิจารณายกร่างกรอบสมรรถนะปัญญาประดิษฐ์แห่งชาติ (TH-AICF)
+                        </p>
+                        <p>
+                            ผู้ก่อตั้งและผู้พัฒนา <a href="https://www.marketsverse.app" target="_blank" rel="noopener noreferrer" className="text-strategic-gold hover:text-gold-light transition-colors">Marketsverse</a> —
+                            แพลตฟอร์มโครงสร้างพื้นฐานตลาดดิจิทัลอัจฉริยะ และเป็นวิทยากร ที่ปรึกษา
+                            และผู้เชี่ยวชาญด้านยุทธศาสตร์ เทคโนโลยีดิจิทัล AI การพัฒนาผู้นำ การโค้ช
+                            การปรับ Mindset และจิตวิทยาการนำ
+                        </p>
+                    </div>
 
-                            {/* Image Caption */}
-                            <div className="mt-4 text-center">
-                                <p className="text-white font-semibold text-lg">พล.ท.ดร.กริช อินทราทิพย์</p>
-                                <p className="text-sky-400 text-sm">Knowledge Manager & AI Specialist</p>
-                            </div>
-                        </motion.div>
+                    {/* Stats row */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 mb-12">
+                        {[
+                            { icon: Briefcase, value: '20+', label: 'ปีประสบการณ์' },
+                            { icon: GraduationCap, value: 'Ph.D.', label: 'เทคโนโลยีสารสนเทศ' },
+                            { icon: Award, value: 'TH-AICF', label: 'คณะรับรองยกร่าง' },
+                            { icon: Users, value: 'วุฒิสภา', label: 'เลขานุการ กมธ.' },
+                        ].map((stat, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 15 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1, duration: 0.5 }}
+                                className="p-5 rounded-[14px] bg-deep-surface border border-subtle-border"
+                            >
+                                <stat.icon size={20} className="text-strategic-gold mb-3" />
+                                <p className="font-display text-lg font-medium text-ink-primary">{stat.value}</p>
+                                <p className="text-xs text-ink-muted mt-1">{stat.label}</p>
+                            </motion.div>
+                        ))}
+                    </div>
 
-                        {/* Content Section */}
-                        <div className="space-y-8">
-                            {/* Bio */}
-                            <div className="space-y-4 text-slate-300">
-                                <p className="text-lg leading-relaxed">
-                                    <strong className="text-white">Knowledge Manager & AI Implementation Specialist</strong> ผู้มีประสบการณ์กว่า 20 ปีในการพัฒนาระบบประเมินและเทคโนโลยีป้องกันประเทศ
-                                </p>
-                                <p className="leading-relaxed">
-                                    เชี่ยวชาญด้าน Assessment Systems, PMQA/ก.พ.ร. Framework และการบูรณาการ AI เพื่อการตัดสินใจเชิงกลยุทธ์ มีความเชี่ยวชาญด้านจิตวิทยาประยุกต์และการโค้ชผู้บริหารระดับสูง
-                                </p>
-                            </div>
-
-                            {/* Education */}
-                            <div className="bg-slate-800/30 p-6 rounded-xl border border-slate-700/50">
-                                <h3 className="text-white font-semibold mb-4 flex items-center gap-2">
-                                    <span className="text-xl">🎓</span>
-                                    Education
-                                </h3>
-                                <ul className="space-y-3 text-sm text-slate-300">
-                                    <li className="flex items-start gap-3">
-                                        <span className="text-indigo-400 mt-1">▸</span>
-                                        <div>
-                                            <strong className="text-white">Ph.D. in Information Technology</strong>
-                                            <p className="text-slate-400">Sripatum University</p>
-                                        </div>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <span className="text-indigo-400 mt-1">▸</span>
-                                        <div>
-                                            <strong className="text-white">M.Sc. in Information Technology</strong>
-                                            <p className="text-slate-400">KMITL</p>
-                                        </div>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <span className="text-indigo-400 mt-1">▸</span>
-                                        <div>
-                                            <strong className="text-white">B.Sc. Military Science</strong>
-                                            <p className="text-slate-400">Chulachomklao Royal Military Academy</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            {/* Vision Statement */}
-                            <div className="bg-slate-800/50 p-8 rounded-2xl border border-slate-700/50 relative overflow-hidden group hover:border-sky-500/30 transition-colors">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/10 rounded-full blur-2xl -mr-16 -mt-16 group-hover:bg-sky-500/20 transition-colors" />
-
-                                <h3 className="text-xl font-bold text-white mb-6">Vision Statement</h3>
-                                <blockquote className="relative z-10 italic text-slate-300 space-y-4 text-sm leading-relaxed">
-                                    <p>
-                                        "เราเชื่อว่า <strong className="text-sky-400 not-italic font-semibold">Self-Assessment Report Platform</strong> ไม่ใช่เพียงเครื่องมือประเมินผล แต่คือ <strong className="text-indigo-400 not-italic font-semibold">กลไกการเปลี่ยนผ่านองค์กร (Transformation Engine)</strong> ที่ทำให้องค์กร <em className="text-white">รู้จักตนเองอย่างเป็นระบบ</em> เห็นช่องว่างเชิงยุทธศาสตร์อย่างชัดเจน และยกระดับผลลัพธ์ได้แบบต่อเนื่อง"
-                                    </p>
-                                    <p>
-                                        แพลตฟอร์มของเราถูกออกแบบด้วยสถาปัตยกรรม <strong className="text-white not-italic">No-Code / Fully Customizable</strong> เพื่อให้ทุกหน่วยงาน "ปรับใช้ได้จริง" ตามบริบทของตน—ตั้งแต่การสร้าง <strong className="text-amber-400 not-italic">PMQA Platform</strong> ไปจนถึงการเชื่อมกระบวนการ <strong className="text-emerald-400 not-italic">KM/CQI</strong> ให้กลายเป็นวงจรเรียนรู้ที่วัดผลได้
-                                    </p>
-                                    <div className="not-italic text-slate-400 space-y-2 pl-4 border-l-2 border-sky-500/30">
-                                        <p className="font-semibold text-white text-base">เรายกระดับองค์กรด้วย 3 พลังหลัก</p>
-                                        <p><strong className="text-purple-400">1. Mindset Transformation & Leadership Development</strong>: ฝึกอบรมผู้นำการเปลี่ยนแปลง สร้างวัฒนธรรมองค์กรแห่งการเรียนรู้</p>
-                                        <p><strong className="text-sky-400">2. AI-Enabled KM/CQI</strong>: ประยุกต์ใช้ AI เพื่อเร่งการจัดการความรู้ การวิเคราะห์สาเหตุเชิงระบบ และการตัดสินใจบนข้อมูล</p>
-                                        <p><strong className="text-indigo-400">3. Digital & AI Upskilling + Research & Analytics Excellence</strong>: เพิ่มทักษะดิจิทัลและ AI ควบคู่การให้คำปรึกษาด้านการวิจัยและสถิติ</p>
-                                    </div>
-                                    <footer className="mt-6 pt-4 border-t border-slate-700 text-sm font-semibold text-sky-400 not-italic">
-                                        💡 Software ไม่ได้แค่แก้ปัญหา แต่สร้างความสามารถใหม่ให้กับองค์กร—ทำให้ "การประเมิน" กลายเป็น "การเรียนรู้" และ "การเรียนรู้" กลายเป็น "สมรรถนะที่เหนือกว่า" อย่างยั่งยืน
-                                    </footer>
-                                </blockquote>
-                            </div>
+                    {/* Education */}
+                    <div className="p-8 rounded-[14px] bg-deep-surface border border-subtle-border">
+                        <div className="flex items-center gap-3 mb-6">
+                            <GraduationCap size={22} className="text-strategic-gold" />
+                            <h3 className="font-display text-xl font-medium text-ink-primary">
+                                การศึกษา
+                            </h3>
                         </div>
+                        <ul className="space-y-5">
+                            <li className="flex items-start gap-4">
+                                <span className="w-1.5 h-1.5 rounded-full bg-strategic-gold mt-2.5 flex-shrink-0" />
+                                <div>
+                                    <p className="text-ink-primary font-medium">ปรัชญาดุษฎีบัณฑิต สาขาเทคโนโลยีสารสนเทศ (Ph.D. in Information Technology)</p>
+                                    <p className="text-sm text-ink-muted mt-1">มหาวิทยาลัยศรีปทุม</p>
+                                </div>
+                            </li>
+                            <li className="flex items-start gap-4">
+                                <span className="w-1.5 h-1.5 rounded-full bg-strategic-gold mt-2.5 flex-shrink-0" />
+                                <div>
+                                    <p className="text-ink-primary font-medium">วิทยาศาสตรมหาบัณฑิต สาขาเทคโนโลยีสารสนเทศ (M.Sc. in IT)</p>
+                                    <p className="text-sm text-ink-muted mt-1">สถาบันเทคโนโลยีพระจอมเกล้าฯ ลาดกระบัง</p>
+                                </div>
+                            </li>
+                            <li className="flex items-start gap-4">
+                                <span className="w-1.5 h-1.5 rounded-full bg-strategic-gold mt-2.5 flex-shrink-0" />
+                                <div>
+                                    <p className="text-ink-primary font-medium">วิทยาศาสตรบัณฑิต วิทยาศาสตร์ทหาร (B.Sc. Military Science)</p>
+                                    <p className="text-sm text-ink-muted mt-1">โรงเรียนนายร้อยพระจุลจอมเกล้า (จปร.รุ่นที่ 36)</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </motion.div>
             </div>

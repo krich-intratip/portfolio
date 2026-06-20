@@ -1,115 +1,129 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
-const projects = [
+const initiatives = [
+    {
+        title: "Marketsverse",
+        description: "Ecosystem แบบใหม่สำหรับตลาด niche — เชื่อมต่อผู้ซื้อ-ผู้ขายในชุมชนเฉพาะทางด้วย AI ระบบจัดการที่ปรับขนาดได้ และโครงสร้างพื้นฐานดิจิทัลที่ออกแบบเพื่อตลาดที่มีเอกลักษณ์",
+        tags: ["Niche Market Ecosystem", "AI Marketplace", "Digital Infrastructure", "Next.js"],
+        link: "https://www.marketsverse.app",
+        featured: true,
+        vision: "สร้างโลกที่ตลาดเฉพาะทางไม่ถูกทอดทิ้งจากการเติบโตของ platform เศรษฐกิจยักษ์ใหญ่ — Marketsverse คือความตั้งใจที่จะให้ทุกชุมชนตลาดมีพื้นที่ของตัวเอง มีเครื่องมือของตัวเอง และเติบโตด้วยเอกลักษณ์ของตัวเอง"
+    },
     {
         title: "PMQA-ISOC Platform",
         description: "ระบบประเมิน PMQA 4.0 สำหรับ กอ.รมน. ด้วย AI ครอบคลุมทุกหมวดเกณฑ์ พร้อมเครื่องมือวิเคราะห์ผลและจัดทำรายงาน",
-        tech: ["Next.js", "PMQA 4.0", "AI Analytics", "TypeScript"],
+        tags: ["PMQA 4.0", "AI Analytics", "Government Assessment"],
         link: "https://pmqa-isoc.vercel.app",
-        color: "from-rose-500 to-pink-400"
     },
     {
-        title: "SAR for Academic Research Paper",
+        title: "SAR for Academic Research",
         description: "ระบบรีวิวและประเมินคุณภาพงานวิจัยทางวิชาการโดย AI ผู้เชี่ยวชาญ 3 ท่าน สำหรับการศึกษาระดับ Master",
-        tech: ["Next.js", "Google Gemini", "DeepSeek", "Kimi", "OpenRouter"],
+        tags: ["AI Review", "Academic Research", "Gemini API"],
         link: "https://academic-sar.pk-research.work/",
-        github: "https://github.com/krich-intratip/academic-sar",
-        color: "from-blue-500 to-cyan-400"
     },
     {
-        title: "ระบบประเมินโครงการวิจัยขั้นกลั่นกรองโครงการ (Rubric ใหม่)",
-        description: "ระบบประเมินโครงการวิจัยผ่าน AI ผู้ทรงคุณวุฒิ 3 ท่าน ด้านยุทธศาสตร์ ด้านเทคนิค และด้านงบประมาณ สำหรับการกลั่นกรองโครงการวิจัย",
-        tech: ["Next.js", "Google Gemini", "DeepSeek", "Kimi", "OpenRouter"],
+        title: "ระบบประเมินโครงการวิจัย ขั้นกลั่นกรอง",
+        description: "ระบบประเมินโครงการวิจัยผ่าน AI ผู้ทรงคุณวุฒิ 3 ท่าน ด้านยุทธศาสตร์ เทคนิค และงบประมาณ",
+        tags: ["Research Evaluation", "Multi-Agent AI", "Proposal Screening"],
         link: "https://proposal-sar.pk-research.work/",
-        color: "from-violet-500 to-purple-400"
     },
     {
-        title: "ระบบประเมินโครงการวิจัย ขั้นปิดโครงการ (Rubric ใหม่)",
-        description: "ระบบประเมินโครงการวิจัยขั้นปิดโครงการ สวพ.ทบ. ด้วย AI ผู้ทรงคุณวุฒิ 3 ท่าน ด้านผลสัมฤทธิ์ ผลกระทบ และความคุ้มค่า",
-        tech: ["Next.js", "Google Gemini", "DeepSeek", "Kimi", "OpenRouter"],
+        title: "ระบบประเมินโครงการวิจัย ขั้นปิดโครงการ",
+        description: "ระบบประเมินโครงการวิจัยขั้นปิดโครงการ สวพ.ทบ. ด้วย AI ด้านผลสัมฤทธิ์ ผลกระทบ และความคุ้มค่า",
+        tags: ["Project Closure", "AI Evaluation", "Impact Assessment"],
         link: "https://full-project-eval.pk-research.work/",
-        color: "from-teal-500 to-cyan-400"
     },
     {
         title: "CQI Self-Assessment System",
-        description: "ระบบประเมินโครงการ CQI และ Knowledge Management ด้วยตนเองสำหรับหน่วยงานในกองทัพบก",
-        tech: ["Next.js", "TypeScript", "Tailwind CSS", "PMQA Framework"],
+        description: "ระบบประเมิน CQI และ Knowledge Management ด้วยตนเองสำหรับหน่วยงานในกองทัพบก",
+        tags: ["CQI", "KM", "Self-Assessment"],
         link: "https://cqi-sar.vercel.app",
-        github: "https://github.com/krich-intratip/cqi-sar",
-        color: "from-emerald-500 to-teal-400"
     },
     {
         title: "RTA Full Research Project SAR",
-        description: "ระบบประเมินโครงการวิจัยแบบเต็ม (Full Research Project Assessment) สำหรับ ทบ. พร้อม PRD และ Implementation Guide",
-        tech: ["Next.js", "TypeScript", "Markdown Docs"],
+        description: "ระบบประเมินโครงการวิจัยแบบเต็มสำหรับ ทบ. พร้อม PRD และ Implementation Guide",
+        tags: ["Full Research", "Military Research", "Assessment"],
         link: "https://rta-pas-fullproject.vercel.app",
-        github: "https://github.com/krich-intratip/rta-pas-fullproject",
-        color: "from-amber-500 to-orange-400"
     },
     {
-        title: "ARDO SAR Landing",
-        description: "Landing Page สำหรับเข้าสู่ระบบ RTA Research Project (Proposal & Project Closure) รวบรวมเครื่องมือประเมินไว้ในที่เดียว",
-        tech: ["Next.js", "Tailwind CSS", "Portal System"],
+        title: "ARDO SAR Portal",
+        description: "Portal รวบรวมเครื่องมือประเมินโครงการวิจัย ทบ. (Proposal & Project Closure) ไว้ในที่เดียว",
+        tags: ["Portal", "Research Tools", "RTA"],
         link: "https://ardo-sar-page.vercel.app/",
-        color: "from-indigo-500 to-purple-400"
     }
 ];
 
 export default function Projects() {
     return (
-        <section id="projects" className="py-20">
+        <section id="initiatives" className="py-24 md:py-32 bg-deep-surface/30">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">
-                        Featured Projects
+                    <h2 className="font-display text-3xl md:text-4xl font-medium text-ink-primary mb-3">
+                        Strategic Initiatives
                     </h2>
+                    <div className="h-px w-12 bg-strategic-gold mb-4" />
+                    <p className="text-ink-muted mb-16 max-w-2xl">
+                        โครงการและแพลตฟอร์มที่ออกแบบเพื่อขับเคลื่อนยุทธศาสตร์ การประเมิน และการตัดสินใจเชิงข้อมูล
+                    </p>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {projects.map((project, index) => (
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {initiatives.map((item, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.1, duration: 0.5 }}
-                                className="group relative bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden hover:border-slate-600 transition-colors"
+                                transition={{ delay: index * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                                className={`group p-7 rounded-[14px] border transition-all hover:border-strategic-gold/30 ${
+                                    item.featured
+                                        ? 'bg-elevated-surface border-strategic-gold/20 md:col-span-2 lg:col-span-2 lg:row-span-1'
+                                        : 'bg-deep-surface border-subtle-border hover:bg-elevated-surface'
+                                }`}
                             >
-                                {/* Gradient Decoration */}
-                                <div className={`h-2 w-full bg-gradient-to-r ${project.color}`} />
-
-                                <div className="p-8">
-                                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-sky-400 transition-colors">
-                                        {project.title}
-                                    </h3>
-                                    <p className="text-slate-400 mb-6 min-h-[80px]">
-                                        {project.description}
-                                    </p>
-
-                                    <div className="flex flex-wrap gap-2 mb-8">
-                                        {project.tech.map((t) => (
-                                            <span key={t} className="px-3 py-1 text-xs font-medium rounded-full bg-slate-800 text-slate-300 border border-slate-700">
-                                                {t}
-                                            </span>
-                                        ))}
+                                {item.featured && (
+                                    <span className="inline-block text-xs font-medium text-strategic-gold mb-3 px-2 py-1 rounded-md bg-strategic-gold/10">
+                                        Featured
+                                    </span>
+                                )}
+                                <h3 className="font-display text-lg font-medium text-ink-primary mb-3 leading-snug group-hover:text-strategic-gold transition-colors">
+                                    {item.title}
+                                </h3>
+                                <p className="text-sm text-ink-secondary leading-relaxed mb-4">
+                                    {item.description}
+                                </p>
+                                {item.vision && (
+                                    <div className="mb-5 pl-4 border-l-2 border-strategic-gold/30">
+                                        <p className="text-sm text-ink-muted leading-relaxed italic" style={{ lineHeight: 1.8 }}>
+                                            {item.vision}
+                                        </p>
                                     </div>
-
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-sky-400 transition-colors"
-                                    >
-                                        Visit Website <ExternalLink size={16} />
-                                    </a>
+                                )}
+                                <div className="flex flex-wrap gap-2 mb-6">
+                                    {item.tags.map((tag) => (
+                                        <span
+                                            key={tag}
+                                            className="px-3 py-1.5 rounded-md bg-elevated-surface text-ink-muted text-xs font-medium"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
                                 </div>
+                                <a
+                                    href={item.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 text-sm font-medium text-strategic-gold hover:text-gold-light transition-colors"
+                                >
+                                    Visit <ExternalLink size={14} />
+                                </a>
                             </motion.div>
                         ))}
                     </div>

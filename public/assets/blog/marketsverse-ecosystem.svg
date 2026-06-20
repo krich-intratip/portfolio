@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg11" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#080f1c"/>
+      <stop offset="0.5" stop-color="#0b1525"/>
+      <stop offset="1" stop-color="#0a0e17"/>
+    </linearGradient>
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="35%">
+      <stop offset="0" stop-color="#c9a227" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#c9a227" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="edgeGlow" cx="50%" cy="50%" r="80%">
+      <stop offset="0" stop-color="#1a3060" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#080f1c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg11)"/>
+  <rect width="1200" height="630" fill="url(#edgeGlow)"/>
+  <rect width="1200" height="630" fill="url(#coreGlow)"/>
+
+  <!-- Background infrastructure grid -->
+  <g stroke="#c9a227" stroke-width="0.4" opacity="0.05">
+    <line x1="0" y1="105" x2="1200" y2="105"/><line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/><line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="150" y1="0" x2="150" y2="630"/><line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="450" y1="0" x2="450" y2="630"/><line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="750" y1="0" x2="750" y2="630"/><line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="1050" y1="0" x2="1050" y2="630"/>
+  </g>
+
+  <!-- Orbit rings -->
+  <circle cx="600" cy="315" r="240" fill="none" stroke="#c9a227" stroke-width="0.8" opacity="0.12" stroke-dasharray="8,6"/>
+  <circle cx="600" cy="315" r="160" fill="none" stroke="#c9a227" stroke-width="0.6" opacity="0.1" stroke-dasharray="5,5"/>
+  <circle cx="600" cy="315" r="90" fill="none" stroke="#c9a227" stroke-width="0.6" opacity="0.15"/>
+
+  <!-- Spoke lines hub to outer nodes -->
+  <g stroke="#c9a227" stroke-width="1" opacity="0.22" fill="none">
+    <line x1="600" y1="225" x2="600" y2="75"/>
+    <line x1="667" y1="257" x2="798" y2="144"/>
+    <line x1="690" y1="315" x2="840" y2="315"/>
+    <line x1="667" y1="373" x2="798" y2="486"/>
+    <line x1="600" y1="405" x2="600" y2="555"/>
+    <line x1="533" y1="373" x2="402" y2="486"/>
+    <line x1="510" y1="315" x2="360" y2="315"/>
+    <line x1="533" y1="257" x2="402" y2="144"/>
+    <!-- Outer ring cross-connections -->
+    <line x1="600" y1="75" x2="798" y2="144" stroke-dasharray="4,4" opacity="0.1"/>
+    <line x1="798" y1="144" x2="840" y2="315" stroke-dasharray="4,4" opacity="0.1"/>
+    <line x1="840" y1="315" x2="798" y2="486" stroke-dasharray="4,4" opacity="0.1"/>
+    <line x1="798" y1="486" x2="600" y2="555" stroke-dasharray="4,4" opacity="0.1"/>
+    <line x1="600" y1="555" x2="402" y2="486" stroke-dasharray="4,4" opacity="0.1"/>
+    <line x1="402" y1="486" x2="360" y2="315" stroke-dasharray="4,4" opacity="0.1"/>
+    <line x1="360" y1="315" x2="402" y2="144" stroke-dasharray="4,4" opacity="0.1"/>
+    <line x1="402" y1="144" x2="600" y2="75" stroke-dasharray="4,4" opacity="0.1"/>
+  </g>
+
+  <!-- Central platform node -->
+  <circle cx="600" cy="315" r="75" fill="#0d1e34"/>
+  <circle cx="600" cy="315" r="75" fill="none" stroke="#c9a227" stroke-width="2"/>
+  <circle cx="600" cy="315" r="62" fill="none" stroke="#c9a227" stroke-width="0.6" opacity="0.4"/>
+  <polygon points="600,255 652,285 652,345 600,375 548,345 548,285" fill="none" stroke="#c9a227" stroke-width="0.8" opacity="0.3"/>
+  <text x="600" y="308" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#c9a227" opacity="0.9" letter-spacing="1">MARKETS</text>
+  <text x="600" y="328" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#c9a227" opacity="0.9" letter-spacing="1">VERSE</text>
+
+  <!-- 8 outer niche market nodes -->
+  <circle cx="600" cy="75" r="42" fill="#0c1a2e"/>
+  <circle cx="600" cy="75" r="42" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+  <text x="600" y="70" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">Health &amp;</text>
+  <text x="600" y="84" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">Wellness</text>
+
+  <circle cx="798" cy="144" r="42" fill="#0c1a2e"/>
+  <circle cx="798" cy="144" r="42" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+  <text x="798" y="139" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">Education</text>
+  <text x="798" y="153" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">&amp; Learning</text>
+
+  <circle cx="840" cy="315" r="42" fill="#0c1a2e"/>
+  <circle cx="840" cy="315" r="42" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+  <text x="840" y="310" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">Finance</text>
+  <text x="840" y="324" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">&amp; Fintech</text>
+
+  <circle cx="798" cy="486" r="42" fill="#0c1a2e"/>
+  <circle cx="798" cy="486" r="42" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+  <text x="798" y="481" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">Creative</text>
+  <text x="798" y="495" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">Economy</text>
+
+  <circle cx="600" cy="555" r="42" fill="#0c1a2e"/>
+  <circle cx="600" cy="555" r="42" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+  <text x="600" y="550" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">Social</text>
+  <text x="600" y="564" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">Commerce</text>
+
+  <circle cx="402" cy="486" r="42" fill="#0c1a2e"/>
+  <circle cx="402" cy="486" r="42" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+  <text x="402" y="481" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">AgriTech</text>
+  <text x="402" y="495" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">&amp; Food</text>
+
+  <circle cx="360" cy="315" r="42" fill="#0c1a2e"/>
+  <circle cx="360" cy="315" r="42" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+  <text x="360" y="310" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">Smart</text>
+  <text x="360" y="324" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">Mobility</text>
+
+  <circle cx="402" cy="144" r="42" fill="#0c1a2e"/>
+  <circle cx="402" cy="144" r="42" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+  <text x="402" y="139" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">B2B</text>
+  <text x="402" y="153" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">Trade</text>
+
+  <!-- Data flow particles along spokes -->
+  <g fill="#c9a227" opacity="0.45">
+    <circle cx="600" cy="195" r="3"/>
+    <circle cx="699" cy="231" r="3"/>
+    <circle cx="765" cy="315" r="3"/>
+    <circle cx="699" cy="399" r="3"/>
+    <circle cx="600" cy="435" r="3"/>
+    <circle cx="501" cy="399" r="3"/>
+    <circle cx="435" cy="315" r="3"/>
+    <circle cx="501" cy="231" r="3"/>
+  </g>
+
+  <!-- Category pill -->
+  <rect x="40" y="22" width="175" height="30" rx="15" fill="#c9a227" opacity="0.1"/>
+  <rect x="40" y="22" width="175" height="30" rx="15" fill="none" stroke="#c9a227" stroke-width="0.8" opacity="0.35"/>
+  <text x="127" y="42" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#c9a227" opacity="0.8" letter-spacing="2">ECOSYSTEM</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="592" width="1200" height="38" fill="#070b11" opacity="0.9"/>
+  <line x1="0" y1="592" x2="1200" y2="592" stroke="#c9a227" stroke-width="0.8" opacity="0.3"/>
+  <text x="60" y="614" font-family="Georgia, serif" font-size="16" fill="#c9a227" opacity="0.8">Marketsverse · Niche Market Ecosystem · Digital Era</text>
+  <text x="1140" y="614" text-anchor="end" font-family="Georgia, serif" font-size="11" fill="#c9a227" opacity="0.45">Hub-and-Spoke</text>
+</svg>

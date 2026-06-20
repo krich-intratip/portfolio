@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg7" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0c1828"/>
+      <stop offset="0.5" stop-color="#0f1e34"/>
+      <stop offset="1" stop-color="#0a0e17"/>
+    </linearGradient>
+    <radialGradient id="stageGlow" cx="50%" cy="55%" r="40%">
+      <stop offset="0" stop-color="#c9a227" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#c9a227" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg7)"/>
+  <rect width="1200" height="630" fill="url(#stageGlow)"/>
+
+  <!-- Audience floor area -->
+  <rect x="0" y="460" width="1200" height="170" fill="#070d16"/>
+  <line x1="0" y1="460" x2="1200" y2="460" stroke="#1a2a40" stroke-width="1"/>
+
+  <!-- Stage platform -->
+  <rect x="160" y="320" width="880" height="140" fill="#0c1a2e"/>
+  <rect x="160" y="318" width="880" height="6" fill="#c9a227" opacity="0.2"/>
+  <!-- Stage step -->
+  <rect x="200" y="455" width="800" height="12" fill="#0e1e34"/>
+  <rect x="240" y="467" width="720" height="10" fill="#0c1a2c"/>
+
+  <!-- Backdrop wall -->
+  <rect x="160" y="60" width="880" height="260" fill="#0a1628"/>
+  <rect x="160" y="60" width="880" height="260" fill="none" stroke="#14253e" stroke-width="2"/>
+  <!-- Backdrop vertical panels -->
+  <g fill="#0c1a2e">
+    <rect x="160" y="60" width="4" height="260"/>
+    <rect x="160" y="60" width="880" height="4"/>
+    <rect x="1036" y="60" width="4" height="260"/>
+    <rect x="160" y="316" width="880" height="4"/>
+  </g>
+  <!-- Thai emblem / seal center -->
+  <circle cx="600" cy="190" r="60" fill="none" stroke="#c9a227" stroke-width="1" opacity="0.25"/>
+  <circle cx="600" cy="190" r="45" fill="none" stroke="#c9a227" stroke-width="0.8" opacity="0.2"/>
+  <!-- Star pattern in emblem -->
+  <g transform="translate(600,190)" opacity="0.35">
+    <polygon points="0,-40 8,-14 34,-14 13,5 21,31 0,18 -21,31 -13,5 -34,-14 -8,-14" fill="none" stroke="#c9a227" stroke-width="1"/>
+    <circle r="10" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+  </g>
+  <!-- Backdrop light rays -->
+  <g stroke="#c9a227" stroke-width="0.5" opacity="0.08">
+    <line x1="600" y1="190" x2="160" y2="60"/>
+    <line x1="600" y1="190" x2="320" y2="60"/>
+    <line x1="600" y1="190" x2="880" y2="60"/>
+    <line x1="600" y1="190" x2="1040" y2="60"/>
+    <line x1="600" y1="190" x2="160" y2="320"/>
+    <line x1="600" y1="190" x2="1040" y2="320"/>
+  </g>
+
+  <!-- Award trophy — center stage -->
+  <g transform="translate(600,355)">
+    <!-- Trophy cup -->
+    <path d="M-28,-80 Q-45,-80 -45,-40 Q-45,0 -20,15 L-12,20 L-12,45 L12,45 L12,20 Q35,5 35,-40 Q35,-80 28,-80 Z" fill="#c9a227" opacity="0.55"/>
+    <!-- Trophy handles -->
+    <path d="M-45,-60 Q-62,-60 -62,-30 Q-62,0 -45,-10" fill="none" stroke="#c9a227" stroke-width="2.5" opacity="0.5"/>
+    <path d="M45,-60 Q62,-60 62,-30 Q62,0 45,-10" fill="none" stroke="#c9a227" stroke-width="2.5" opacity="0.5"/>
+    <!-- Trophy base -->
+    <rect x="-22" y="45" width="44" height="8" rx="2" fill="#c9a227" opacity="0.55"/>
+    <rect x="-30" y="53" width="60" height="6" rx="2" fill="#c9a227" opacity="0.45"/>
+    <rect x="-18" y="59" width="36" height="8" rx="2" fill="#c9a227" opacity="0.55"/>
+    <!-- Star on cup -->
+    <polygon points="0,-50 5,-35 20,-35 8,-25 13,-10 0,-20 -13,-10 -8,-25 -20,-35 -5,-35" fill="#c9a227" opacity="0.7"/>
+  </g>
+
+  <!-- Award presenter silhouette — left of trophy -->
+  <g transform="translate(480,355)">
+    <circle r="22" fill="#0d1828" cy="-40"/>
+    <ellipse cx="0" cy="20" rx="28" ry="38" fill="#0d1828"/>
+  </g>
+  <!-- Award recipient silhouette — right of trophy -->
+  <g transform="translate(720,355)">
+    <circle r="22" fill="#0d1828" cy="-40"/>
+    <ellipse cx="0" cy="20" rx="28" ry="38" fill="#0d1828"/>
+  </g>
+
+  <!-- Audience rows -->
+  <g fill="#0c1828" opacity="0.7">
+    <!-- Row 1 -->
+    <circle cx="280" cy="490" r="14"/><circle cx="330" cy="490" r="14"/><circle cx="380" cy="490" r="14"/>
+    <circle cx="430" cy="490" r="14"/><circle cx="480" cy="490" r="14"/><circle cx="530" cy="490" r="14"/>
+    <circle cx="580" cy="490" r="14"/><circle cx="630" cy="490" r="14"/><circle cx="680" cy="490" r="14"/>
+    <circle cx="730" cy="490" r="14"/><circle cx="780" cy="490" r="14"/><circle cx="830" cy="490" r="14"/>
+    <circle cx="880" cy="490" r="14"/><circle cx="930" cy="490" r="14"/>
+    <!-- Row 2 -->
+    <circle cx="260" cy="530" r="13"/><circle cx="310" cy="530" r="13"/><circle cx="360" cy="530" r="13"/>
+    <circle cx="410" cy="530" r="13"/><circle cx="460" cy="530" r="13"/><circle cx="510" cy="530" r="13"/>
+    <circle cx="560" cy="530" r="13"/><circle cx="610" cy="530" r="13"/><circle cx="660" cy="530" r="13"/>
+    <circle cx="710" cy="530" r="13"/><circle cx="760" cy="530" r="13"/><circle cx="810" cy="530" r="13"/>
+    <circle cx="860" cy="530" r="13"/><circle cx="910" cy="530" r="13"/><circle cx="960" cy="530" r="13"/>
+  </g>
+
+  <!-- PMQA 7 criteria boxes — left side floating -->
+  <g transform="translate(60, 120)" opacity="0.45">
+    <text x="55" y="-8" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.6" letter-spacing="2">PMQA 4.0</text>
+    <!-- 7 criteria boxes stacked -->
+    <rect x="0" y="0" width="110" height="28" rx="3" fill="none" stroke="#c9a227" stroke-width="0.8"/>
+    <rect x="0" y="34" width="110" height="28" rx="3" fill="none" stroke="#c9a227" stroke-width="0.8"/>
+    <rect x="0" y="68" width="110" height="28" rx="3" fill="none" stroke="#c9a227" stroke-width="0.8"/>
+    <rect x="0" y="102" width="110" height="28" rx="3" fill="none" stroke="#c9a227" stroke-width="0.8"/>
+    <rect x="0" y="136" width="110" height="28" rx="3" fill="none" stroke="#c9a227" stroke-width="0.8"/>
+    <rect x="0" y="170" width="110" height="28" rx="3" fill="none" stroke="#c9a227" stroke-width="0.8"/>
+    <rect x="0" y="204" width="110" height="28" rx="3" fill="#c9a227" opacity="0.08"/>
+    <rect x="0" y="204" width="110" height="28" rx="3" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+    <!-- Category numbers -->
+    <text x="10" y="18" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.5">1. Leadership</text>
+    <text x="10" y="52" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.5">2. Strategy</text>
+    <text x="10" y="86" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.5">3. Customers</text>
+    <text x="10" y="120" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.5">4. Measurement</text>
+    <text x="10" y="154" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.5">5. Workforce</text>
+    <text x="10" y="188" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.5">6. Operations</text>
+    <text x="10" y="222" font-family="Georgia, serif" font-size="10" fill="#c9a227" opacity="0.7">7. Results</text>
+  </g>
+
+  <!-- Category pill -->
+  <rect x="58" y="22" width="170" height="30" rx="15" fill="#c9a227" opacity="0.1"/>
+  <rect x="58" y="22" width="170" height="30" rx="15" fill="none" stroke="#c9a227" stroke-width="0.8" opacity="0.35"/>
+  <text x="143" y="42" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#c9a227" opacity="0.8" letter-spacing="2">PUBLIC SECTOR</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="555" width="1200" height="75" fill="#070b11" opacity="0.9"/>
+  <line x1="0" y1="555" x2="1200" y2="555" stroke="#c9a227" stroke-width="0.8" opacity="0.3"/>
+  <text x="60" y="598" font-family="Georgia, serif" font-size="19" fill="#c9a227" opacity="0.8">PMQA 4.0 · Public Sector Excellence Award · Thailand</text>
+  <text x="1140" y="598" text-anchor="end" font-family="Georgia, serif" font-size="13" fill="#c9a227" opacity="0.45">7 Criteria</text>
+</svg>

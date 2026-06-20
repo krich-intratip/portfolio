@@ -18,12 +18,10 @@ export default function Contact() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission (replace with actual API call)
         setTimeout(() => {
             setIsSubmitting(false);
             setSubmitStatus('success');
             setFormData({ name: '', email: '', subject: '', message: '' });
-
             setTimeout(() => setSubmitStatus('idle'), 5000);
         }, 1500);
     };
@@ -36,60 +34,58 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="py-24 relative overflow-hidden">
-            {/* Background Glow */}
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none" />
-
+        <section id="contact" className="py-24 md:py-32">
             <div className="container mx-auto px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="max-w-3xl mx-auto text-center"
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                    className="max-w-3xl mx-auto"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">
-                        Let's Work Together
+                    <h2 className="font-display text-3xl md:text-4xl font-medium text-ink-primary mb-3">
+                        Get in Touch
                     </h2>
-                    <p className="text-lg text-slate-400 mb-12 leading-relaxed">
-                        สนใจในการพัฒนาองค์กรด้วยเทคโนโลยี AI หรือต้องการที่ปรึกษาด้าน Knowledge Management? <br className="hidden md:block" />
+                    <div className="h-px w-12 bg-strategic-gold mb-4" />
+                    <p className="text-ink-muted mb-12 max-w-xl">
+                        สนใจในการให้คำปรึกษา การพัฒนาองค์กร หรือการเชิญเป็นวิทยากร
                         ติดต่อเพื่อพูดคุยแลกเปลี่ยนวิสัยทัศน์
                     </p>
 
-                    <div className="grid md:grid-cols-3 gap-6 mb-16">
+                    <div className="grid md:grid-cols-3 gap-4 mb-16">
                         <a
                             href="mailto:krich.intratip@gmail.com"
-                            className="flex flex-col items-center p-6 bg-slate-800/40 rounded-2xl border border-slate-700 hover:bg-slate-800 hover:border-sky-500/50 transition-all group"
+                            className="flex flex-col items-center p-6 rounded-[14px] bg-deep-surface border border-subtle-border hover:border-strategic-gold/30 transition-all group"
                         >
-                            <div className="w-12 h-12 bg-sky-500/10 rounded-full flex items-center justify-center text-sky-400 mb-4 group-hover:scale-110 transition-transform">
-                                <Mail size={24} />
+                            <div className="w-11 h-11 rounded-[14px] bg-elevated-surface flex items-center justify-center mb-4 group-hover:bg-strategic-gold/10 transition-colors">
+                                <Mail size={20} className="text-strategic-gold" />
                             </div>
-                            <h3 className="text-sm font-semibold text-slate-300 mb-1">Email</h3>
-                            <p className="text-sky-400 font-medium text-xs">krich.intratip@gmail.com</p>
+                            <h3 className="text-xs font-medium text-ink-muted mb-1">Email</h3>
+                            <p className="text-sm text-ink-primary">krich.intratip@gmail.com</p>
                         </a>
 
                         <a
                             href="tel:0616329956"
-                            className="flex flex-col items-center p-6 bg-slate-800/40 rounded-2xl border border-slate-700 hover:bg-slate-800 hover:border-green-500/50 transition-all group"
+                            className="flex flex-col items-center p-6 rounded-[14px] bg-deep-surface border border-subtle-border hover:border-strategic-gold/30 transition-all group"
                         >
-                            <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center text-green-400 mb-4 group-hover:scale-110 transition-transform">
-                                <Phone size={24} />
+                            <div className="w-11 h-11 rounded-[14px] bg-elevated-surface flex items-center justify-center mb-4 group-hover:bg-strategic-gold/10 transition-colors">
+                                <Phone size={20} className="text-strategic-gold" />
                             </div>
-                            <h3 className="text-sm font-semibold text-slate-300 mb-1">Phone</h3>
-                            <p className="text-green-400 font-medium">061-632-9956</p>
+                            <h3 className="text-xs font-medium text-ink-muted mb-1">Phone</h3>
+                            <p className="text-sm text-ink-primary">061-632-9956</p>
                         </a>
 
                         <a
                             href="https://www.linkedin.com/in/krich-intratip-b1203a3a7/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex flex-col items-center p-6 bg-slate-800/40 rounded-2xl border border-slate-700 hover:bg-slate-800 hover:border-blue-500/50 transition-all group"
+                            className="flex flex-col items-center p-6 rounded-[14px] bg-deep-surface border border-subtle-border hover:border-strategic-gold/30 transition-all group"
                         >
-                            <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition-transform">
-                                <Linkedin size={24} />
+                            <div className="w-11 h-11 rounded-[14px] bg-elevated-surface flex items-center justify-center mb-4 group-hover:bg-strategic-gold/10 transition-colors">
+                                <Linkedin size={20} className="text-strategic-gold" />
                             </div>
-                            <h3 className="text-sm font-semibold text-slate-300 mb-1">LinkedIn</h3>
-                            <p className="text-blue-400 font-medium">krich-intratip</p>
+                            <h3 className="text-xs font-medium text-ink-muted mb-1">LinkedIn</h3>
+                            <p className="text-sm text-ink-primary">krich-intratip</p>
                         </a>
                     </div>
 
@@ -99,21 +95,21 @@ export default function Contact() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2, duration: 0.6 }}
-                        className="max-w-2xl mx-auto mt-16"
+                        className="max-w-2xl mx-auto"
                     >
-                        <div className="bg-slate-900/50 p-8 rounded-2xl border border-slate-800">
-                            <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
+                        <div className="p-8 rounded-[14px] bg-deep-surface border border-subtle-border">
+                            <h3 className="font-display text-xl font-medium text-ink-primary mb-6">Send a Message</h3>
 
                             {submitStatus === 'success' && (
-                                <div className="mb-6 p-4 bg-green-500/10 border border-green-500/30 rounded-lg text-green-400">
-                                    ✓ ส่งข้อความสำเร็จ! เราจะติดต่อกลับโดยเร็วที่สุด
+                                <div className="mb-6 p-4 rounded-md bg-strategic-gold/10 border border-strategic-gold/30 text-strategic-gold text-sm">
+                                    ส่งข้อความสำเร็จ เราจะติดต่อกลับโดยเร็วที่สุด
                                 </div>
                             )}
 
-                            <form onSubmit={handleSubmit} className="space-y-6">
-                                <div className="grid md:grid-cols-2 gap-6">
+                            <form onSubmit={handleSubmit} className="space-y-5">
+                                <div className="grid md:grid-cols-2 gap-5">
                                     <div>
-                                        <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
+                                        <label htmlFor="name" className="block text-sm font-medium text-ink-secondary mb-2">
                                             ชื่อ-นามสกุล *
                                         </label>
                                         <input
@@ -123,12 +119,12 @@ export default function Contact() {
                                             value={formData.name}
                                             onChange={handleChange}
                                             required
-                                            className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all"
-                                            placeholder="John Doe"
+                                            className="w-full px-4 py-3 bg-elevated-surface border border-subtle-border rounded-md text-ink-primary placeholder-ink-muted focus:outline-none focus:ring-1 focus:ring-strategic-gold focus:border-strategic-gold transition-all"
+                                            placeholder="ชื่อของคุณ"
                                         />
                                     </div>
                                     <div>
-                                        <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+                                        <label htmlFor="email" className="block text-sm font-medium text-ink-secondary mb-2">
                                             Email *
                                         </label>
                                         <input
@@ -138,14 +134,14 @@ export default function Contact() {
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
-                                            className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all"
+                                            className="w-full px-4 py-3 bg-elevated-surface border border-subtle-border rounded-md text-ink-primary placeholder-ink-muted focus:outline-none focus:ring-1 focus:ring-strategic-gold focus:border-strategic-gold transition-all"
                                             placeholder="john@example.com"
                                         />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label htmlFor="subject" className="block text-sm font-medium text-slate-300 mb-2">
+                                    <label htmlFor="subject" className="block text-sm font-medium text-ink-secondary mb-2">
                                         หัวข้อ *
                                     </label>
                                     <input
@@ -155,13 +151,13 @@ export default function Contact() {
                                         value={formData.subject}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all"
-                                        placeholder="สนใจบริการให้คำปรึกษา"
+                                        className="w-full px-4 py-3 bg-elevated-surface border border-subtle-border rounded-md text-ink-primary placeholder-ink-muted focus:outline-none focus:ring-1 focus:ring-strategic-gold focus:border-strategic-gold transition-all"
+                                        placeholder="สนใจให้คำปรึกษา"
                                     />
                                 </div>
 
                                 <div>
-                                    <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
+                                    <label htmlFor="message" className="block text-sm font-medium text-ink-secondary mb-2">
                                         ข้อความ *
                                     </label>
                                     <textarea
@@ -171,7 +167,7 @@ export default function Contact() {
                                         onChange={handleChange}
                                         required
                                         rows={5}
-                                        className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all resize-none"
+                                        className="w-full px-4 py-3 bg-elevated-surface border border-subtle-border rounded-md text-ink-primary placeholder-ink-muted focus:outline-none focus:ring-1 focus:ring-strategic-gold focus:border-strategic-gold transition-all resize-none"
                                         placeholder="เขียนข้อความของคุณที่นี่..."
                                     />
                                 </div>
@@ -179,16 +175,13 @@ export default function Contact() {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full px-8 py-4 bg-gradient-to-r from-sky-500 to-indigo-500 text-white font-semibold rounded-lg hover:from-sky-400 hover:to-indigo-400 transition-all transform hover:-translate-y-0.5 hover:shadow-lg hover:shadow-sky-500/25 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
+                                    className="w-full px-8 py-4 bg-strategic-gold text-void-navy font-semibold rounded-md hover:bg-gold-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                                 >
                                     {isSubmitting ? (
-                                        <>
-                                            <span className="animate-spin">⏳</span>
-                                            กำลังส่ง...
-                                        </>
+                                        <>กำลังส่ง...</>
                                     ) : (
                                         <>
-                                            <Send size={20} />
+                                            <Send size={18} />
                                             ส่งข้อความ
                                         </>
                                     )}
@@ -197,9 +190,11 @@ export default function Contact() {
                         </div>
                     </motion.div>
 
-                    <footer className="text-slate-600 text-sm mt-16">
-                        <p>© 2026 Dr. Krich Intratip. All rights reserved.</p>
-                        <p className="mt-2">Version 1.0.0 | อัพเดทล่าสุด: 2 กุมภาพันธ์ 2568</p>
+                    <footer className="text-ink-muted text-sm mt-16 text-center">
+                        <p>© 2026 Lt.Gen. Krich Intratip, Ph.D. All rights reserved.</p>
+                        <p className="mt-2 text-xs text-ink-muted/70">
+                            Version 2.1.0 · Last updated: 20 June 2026
+                        </p>
                     </footer>
                 </motion.div>
             </div>

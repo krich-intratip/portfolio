@@ -1,17 +1,17 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, Trophy, Medal, BadgeCheck } from 'lucide-react';
+import { Trophy, Medal, BadgeCheck } from 'lucide-react';
 
 const achievements = [
     {
         category: "Research & Publications",
         icon: Trophy,
         items: [
-            "2553: International Conference - KICSS 2010 (pp.176~181)",
+            "2553: International Conference — KICSS 2010 (pp.176~181)",
             "2556: JCIT Journal Vol. 8, No. 15, pp. 23~32",
-            "2549: Excellence in Research Award - ATLAS Project",
-            "2556: Special Commendation - Royal Thai Army"
+            "2549: Excellence in Research Award — ATLAS Project",
+            "2556: Special Commendation — Royal Thai Army"
         ]
     },
     {
@@ -19,13 +19,13 @@ const achievements = [
         icon: BadgeCheck,
         items: [
             "LLM & RAG System Development (Engineer-level)",
-            "Prompt Engineering & AI Usecase Development",
+            "Prompt Engineering & AI Use Case Development",
             "Advanced Research Methodology (SEM, Grounded Theory)",
             "Professional Coach Certification Program"
         ]
     },
     {
-        category: "Technical Certifications",
+        category: "Technical & Management Certifications",
         icon: Medal,
         items: [
             "MS-Windows NT Administrator (Microsoft Thailand)",
@@ -38,43 +38,44 @@ const achievements = [
 
 export default function Achievements() {
     return (
-        <section id="achievements" className="py-20">
+        <section id="recognition" className="py-24 md:py-32 bg-deep-surface/30">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent">
+                    <h2 className="font-display text-3xl md:text-4xl font-medium text-ink-primary mb-3">
                         Certifications & Awards
                     </h2>
-                    <p className="text-slate-400 text-center mb-16 max-w-2xl mx-auto">
+                    <div className="h-px w-12 bg-strategic-gold mb-4" />
+                    <p className="text-ink-muted mb-16 max-w-2xl">
                         รางวัลและความสำเร็จที่ได้รับตลอดอาชีพการงาน
                     </p>
 
-                    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                         {achievements.map((achievement, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.1, duration: 0.5 }}
-                                className="bg-slate-900/50 p-8 rounded-2xl border border-slate-800 hover:border-yellow-500/30 transition-all group"
+                                transition={{ delay: index * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                                className="p-8 rounded-[14px] bg-deep-surface border border-subtle-border hover:border-strategic-gold/30 transition-colors"
                             >
-                                <div className="w-14 h-14 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                    <achievement.icon className="w-7 h-7 text-white" />
+                                <div className="w-12 h-12 rounded-[14px] bg-elevated-surface flex items-center justify-center mb-6">
+                                    <achievement.icon className="w-6 h-6 text-strategic-gold" />
                                 </div>
 
-                                <h3 className="text-xl font-bold text-white mb-6">
+                                <h3 className="font-display text-lg font-medium text-ink-primary mb-6">
                                     {achievement.category}
                                 </h3>
 
                                 <ul className="space-y-3">
                                     {achievement.items.map((item, idx) => (
-                                        <li key={idx} className="flex items-start gap-3 text-slate-300">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2 flex-shrink-0" />
+                                        <li key={idx} className="flex items-start gap-3 text-sm text-ink-secondary">
+                                            <span className="w-1.5 h-1.5 rounded-full bg-strategic-gold mt-2 flex-shrink-0" />
                                             <span className="leading-relaxed">{item}</span>
                                         </li>
                                     ))}

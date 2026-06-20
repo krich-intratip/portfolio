@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e1a2e"/>
+      <stop offset="0.4" stop-color="#131f38"/>
+      <stop offset="1" stop-color="#0a0e17"/>
+    </linearGradient>
+    <radialGradient id="duskGlow" cx="50%" cy="30%" r="55%">
+      <stop offset="0" stop-color="#c97020" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#0e1a2e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="goldGlow5" cx="50%" cy="65%" r="40%">
+      <stop offset="0" stop-color="#c9a227" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#c9a227" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg5)"/>
+  <rect width="1200" height="630" fill="url(#duskGlow)"/>
+  <rect width="1200" height="630" fill="url(#goldGlow5)"/>
+
+  <!-- Sky horizon glow (dusk) -->
+  <rect x="0" y="310" width="1200" height="50" fill="#c97020" opacity="0.04"/>
+
+  <!-- Ground / river reflection plane -->
+  <rect x="0" y="490" width="1200" height="140" fill="#080e18"/>
+  <rect x="0" y="488" width="1200" height="6" fill="#c9a227" opacity="0.06"/>
+
+  <!-- Bangkok skyline silhouette — detailed -->
+  <g fill="#0d1828">
+    <!-- Far background buildings (lighter) -->
+    <rect x="0" y="350" width="25" height="140" opacity="0.5"/>
+    <rect x="30" y="300" width="30" height="190" opacity="0.5"/>
+    <rect x="65" y="370" width="22" height="120" opacity="0.5"/>
+    <rect x="92" y="320" width="28" height="170" opacity="0.5"/>
+    <rect x="125" y="280" width="35" height="210" opacity="0.6"/>
+    <!-- Baiyoke II style tower -->
+    <rect x="165" y="200" width="28" height="290"/>
+    <rect x="169" y="180" width="20" height="28"/>
+    <rect x="173" y="165" width="12" height="20"/>
+    <line x1="179" y1="165" x2="179" y2="130" stroke="#0d1828" stroke-width="5"/>
+    <!-- More buildings -->
+    <rect x="200" y="310" width="40" height="180"/>
+    <rect x="248" y="260" width="32" height="230"/>
+    <rect x="286" y="340" width="45" height="150"/>
+    <rect x="338" y="290" width="38" height="200"/>
+    <!-- Center tall tower (Mahanakhon-style stepped) -->
+    <rect x="385" y="160" width="45" height="330"/>
+    <rect x="385" y="160" width="45" height="80" fill="#102030"/>
+    <rect x="390" y="130" width="35" height="40"/>
+    <rect x="395" y="108" width="25" height="30"/>
+    <rect x="400" y="88" width="15" height="25"/>
+    <line x1="407" y1="88" x2="407" y2="55" stroke="#0d1828" stroke-width="4"/>
+    <polygon points="407,50 403,60 411,60" fill="#0d1828"/>
+    <!-- Windows on tower — lit -->
+    <g fill="#c9a227" opacity="0.15">
+      <rect x="389" y="170" width="8" height="12"/><rect x="400" y="170" width="8" height="12"/>
+      <rect x="389" y="190" width="8" height="12"/><rect x="400" y="190" width="8" height="12"/>
+      <rect x="389" y="210" width="8" height="12"/>
+      <rect x="389" y="250" width="8" height="12"/><rect x="400" y="250" width="8" height="12"/>
+    </g>
+    <!-- More skyline right of center -->
+    <rect x="440" y="320" width="36" height="170"/>
+    <rect x="484" y="280" width="42" height="210"/>
+    <rect x="534" y="250" width="38" height="240"/>
+    <!-- Central government complex hint -->
+    <rect x="580" y="340" width="120" height="150"/>
+    <path d="M580,340 L640,310 L700,340 Z" fill="#0d1828"/>
+    <!-- Right skyline -->
+    <rect x="710" y="300" width="40" height="190"/>
+    <rect x="758" y="260" width="35" height="230"/>
+    <rect x="800" y="330" width="42" height="160"/>
+    <rect x="850" y="290" width="38" height="200"/>
+    <rect x="896" y="250" width="32" height="240"/>
+    <rect x="936" y="360" width="28" height="130"/>
+    <rect x="972" y="310" width="40" height="180"/>
+    <rect x="1020" y="270" width="35" height="220"/>
+    <rect x="1063" y="350" width="30" height="140"/>
+    <rect x="1100" y="290" width="38" height="200"/>
+    <rect x="1146" y="340" width="54" height="150"/>
+  </g>
+
+  <!-- Building window lights scattered -->
+  <g fill="#c9a227" opacity="0.18">
+    <rect x="32" y="310" width="5" height="7"/><rect x="32" y="325" width="5" height="7"/>
+    <rect x="95" y="330" width="5" height="7"/>
+    <rect x="127" y="295" width="6" height="8"/><rect x="127" y="310" width="6" height="8"/>
+    <rect x="205" y="320" width="6" height="8"/>
+    <rect x="250" y="275" width="5" height="7"/><rect x="250" y="290" width="5" height="7"/>
+    <rect x="341" y="300" width="5" height="7"/>
+    <rect x="444" y="330" width="6" height="8"/><rect x="456" y="330" width="6" height="8"/>
+    <rect x="488" y="290" width="6" height="8"/>
+    <rect x="540" y="265" width="6" height="8"/><rect x="540" y="282" width="6" height="8"/>
+    <rect x="714" y="315" width="6" height="8"/>
+    <rect x="762" y="272" width="5" height="7"/><rect x="762" y="287" width="5" height="7"/>
+    <rect x="854" y="300" width="5" height="7"/>
+    <rect x="898" y="260" width="6" height="8"/><rect x="910" y="260" width="6" height="8"/>
+    <rect x="975" y="320" width="5" height="7"/>
+    <rect x="1025" y="282" width="6" height="8"/>
+    <rect x="1104" y="300" width="5" height="7"/>
+  </g>
+
+  <!-- Data flow streams — horizontal waves across sky -->
+  <g fill="none" stroke="#c9a227" opacity="0.18">
+    <path d="M0,160 Q200,140 400,165 Q600,190 800,160 Q1000,135 1200,155" stroke-width="1.5"/>
+    <path d="M0,195 Q200,175 400,200 Q600,225 800,195 Q1000,170 1200,190" stroke-width="1"/>
+    <path d="M0,225 Q300,205 500,230 Q700,255 900,225 Q1100,200 1200,218" stroke-width="0.8"/>
+  </g>
+
+  <!-- Data nodes on streams -->
+  <g fill="#c9a227" opacity="0.45">
+    <circle cx="150" cy="157" r="4"/><circle cx="380" cy="167" r="5"/><circle cx="600" cy="190" r="4"/>
+    <circle cx="820" cy="160" r="5"/><circle cx="1050" cy="148" r="4"/>
+  </g>
+  <!-- Node connection verticals to buildings -->
+  <g stroke="#c9a227" stroke-width="0.7" opacity="0.15" stroke-dasharray="4,4">
+    <line x1="380" y1="167" x2="407" y2="88"/>
+    <line x1="600" y1="190" x2="640" y2="310"/>
+    <line x1="820" y1="160" x2="820" y2="260"/>
+  </g>
+
+  <!-- Transformation arrow — people → digital -->
+  <g transform="translate(600, 430)" opacity="0.3">
+    <!-- Person icon left -->
+    <circle cx="-120" cy="-15" r="12" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+    <path d="M-132,5 Q-120,20 -108,5" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+    <!-- Arrow -->
+    <path d="M-90,0 L-60,0 L-50,-8 L-30,0 L-50,8 L-60,0" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+    <!-- Digital device icon right -->
+    <rect x="30" y="-25" width="50" height="35" rx="3" fill="none" stroke="#c9a227" stroke-width="1.2"/>
+    <rect x="45" y="10" width="20" height="4" rx="1" fill="none" stroke="#c9a227" stroke-width="1"/>
+    <!-- Lines in device -->
+    <line x1="38" y1="-18" x2="72" y2="-18" stroke="#c9a227" stroke-width="1"/>
+    <line x1="38" y1="-10" x2="65" y2="-10" stroke="#c9a227" stroke-width="1"/>
+    <line x1="38" y1="-2" x2="58" y2="-2" stroke="#c9a227" stroke-width="1"/>
+  </g>
+
+  <!-- Category pill -->
+  <rect x="58" y="46" width="230" height="30" rx="15" fill="#c9a227" opacity="0.1"/>
+  <rect x="58" y="46" width="230" height="30" rx="15" fill="none" stroke="#c9a227" stroke-width="0.8" opacity="0.35"/>
+  <text x="173" y="66" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#c9a227" opacity="0.8" letter-spacing="2">DIGITAL TRANSFORMATION</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="555" width="1200" height="75" fill="#070b11" opacity="0.9"/>
+  <line x1="0" y1="555" x2="1200" y2="555" stroke="#c9a227" stroke-width="0.8" opacity="0.3"/>
+  <text x="60" y="598" font-family="Georgia, serif" font-size="19" fill="#c9a227" opacity="0.8">Digital Transformation · Public Sector · Bangkok Smart City</text>
+  <text x="1140" y="598" text-anchor="end" font-family="Georgia, serif" font-size="13" fill="#c9a227" opacity="0.45">People-First</text>
+</svg>
