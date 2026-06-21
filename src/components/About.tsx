@@ -1,113 +1,84 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Briefcase, GraduationCap, Award, Users } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
+import { educationItems, profileNarrative, profileSignals } from '@/lib/portfolio-content';
+
+const signalToneClasses = [
+    { accent: 'bg-strategic-gold', value: 'text-strategic-gold' },
+    { accent: 'bg-atlas-teal', value: 'text-atlas-teal' },
+    { accent: 'bg-[#b9c7ff]', value: 'text-[#b9c7ff]' },
+    { accent: 'bg-[#e06b6b]', value: 'text-[#e06b6b]' },
+] as const;
+
+const educationTitleClasses = [
+    'text-strategic-gold',
+    'text-atlas-teal',
+    'text-[#b9c7ff]',
+] as const;
 
 export default function About() {
     return (
-        <section id="profile" className="py-24 md:py-32 relative">
-            {/* Subtle background accent */}
+        <section id="profile" className="relative py-24 md:py-32">
             <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                    background: 'radial-gradient(ellipse 50% 40% at 20% 50%, rgba(201, 162, 39, 0.03), transparent 60%)',
+                    background: 'radial-gradient(ellipse 48% 36% at 18% 42%, rgba(56, 198, 217, 0.05), transparent 62%)',
                 }}
             />
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container relative z-10 mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="max-w-4xl mx-auto"
+                    className="mx-auto max-w-6xl"
                 >
-                    {/* Section label */}
-                    <div className="flex items-center gap-3 mb-6">
-                        <div className="h-px w-8 bg-strategic-gold" />
-                        <span className="text-xs font-medium text-strategic-gold tracking-widest uppercase">
-                            Profile
-                        </span>
-                    </div>
-
-                    <h2 className="font-display text-3xl md:text-4xl font-medium text-ink-primary mb-3">
-                        Executive Profile
-                    </h2>
-                    <div className="h-px w-12 bg-strategic-gold mb-10" />
-
-                    <div className="space-y-6 text-ink-secondary leading-relaxed" style={{ lineHeight: 1.8 }}>
-                        <p>
-                            พลโท ดร.กริช อินทราทิพย์ เป็นผู้ทรงคุณวุฒิและที่ปรึกษาเชิงยุทธศาสตร์
-                            ด้านความมั่นคง การบริหารภาครัฐ การพัฒนากำลังพล การวิจัย การจัดการความรู้
-                            และเทคโนโลยีดิจิทัล มีประสบการณ์การทำงานกว่า 20 ปีในกองทัพบกและภาครัฐ
-                        </p>
-                        <p>
-                            ปัจจุบันดำรงตำแหน่งเลขานุการประจำคณะกรรมาธิการการเทคโนโลยีสารสนเทศ
-                            การสื่อสาร และการโทรคมนาคม วุฒิสภา และอนุกรรมาธิการด้านกิจการทางทหาร
-                            ไซเบอร์เทคโนโลยี อาวุธยุทโธปกรณ์ และอุตสาหกรรมป้องกันประเทศ
-                            รวมถึงเป็นคณะรับรองพิจารณายกร่างกรอบสมรรถนะปัญญาประดิษฐ์แห่งชาติ (TH-AICF)
-                        </p>
-                        <p>
-                            ผู้ก่อตั้งและผู้พัฒนา <a href="https://www.marketsverse.app" target="_blank" rel="noopener noreferrer" className="text-strategic-gold hover:text-gold-light transition-colors">Marketsverse</a> —
-                            แพลตฟอร์มโครงสร้างพื้นฐานตลาดดิจิทัลอัจฉริยะ และเป็นวิทยากร ที่ปรึกษา
-                            และผู้เชี่ยวชาญด้านยุทธศาสตร์ เทคโนโลยีดิจิทัล AI การพัฒนาผู้นำ การโค้ช
-                            การปรับ Mindset และจิตวิทยาการนำ
-                        </p>
-                    </div>
-
-                    {/* Stats row */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 mb-12">
-                        {[
-                            { icon: Briefcase, value: '20+', label: 'ปีประสบการณ์' },
-                            { icon: GraduationCap, value: 'Ph.D.', label: 'เทคโนโลยีสารสนเทศ' },
-                            { icon: Award, value: 'TH-AICF', label: 'คณะรับรองยกร่าง' },
-                            { icon: Users, value: 'วุฒิสภา', label: 'เลขานุการ กมธ.' },
-                        ].map((stat, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 15 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1, duration: 0.5 }}
-                                className="p-5 rounded-[14px] bg-deep-surface border border-subtle-border"
-                            >
-                                <stat.icon size={20} className="text-strategic-gold mb-3" />
-                                <p className="font-display text-lg font-medium text-ink-primary">{stat.value}</p>
-                                <p className="text-xs text-ink-muted mt-1">{stat.label}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                    {/* Education */}
-                    <div className="p-8 rounded-[14px] bg-deep-surface border border-subtle-border">
-                        <div className="flex items-center gap-3 mb-6">
-                            <GraduationCap size={22} className="text-strategic-gold" />
-                            <h3 className="font-display text-xl font-medium text-ink-primary">
-                                การศึกษา
-                            </h3>
+                    <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+                        <div>
+                            <p className="mb-4 text-sm font-medium text-atlas-teal">บทบาทและแกนความเชี่ยวชาญ</p>
+                            <h2 className="text-balance font-display text-3xl font-medium leading-tight text-ink-primary md:text-4xl">
+                                {profileNarrative.title}
+                            </h2>
+                            <div className="mt-6 h-px w-16 bg-strategic-gold" />
                         </div>
-                        <ul className="space-y-5">
-                            <li className="flex items-start gap-4">
-                                <span className="w-1.5 h-1.5 rounded-full bg-strategic-gold mt-2.5 flex-shrink-0" />
-                                <div>
-                                    <p className="text-ink-primary font-medium">ปรัชญาดุษฎีบัณฑิต สาขาเทคโนโลยีสารสนเทศ (Ph.D. in Information Technology)</p>
-                                    <p className="text-sm text-ink-muted mt-1">มหาวิทยาลัยศรีปทุม</p>
+
+                        <div className="space-y-6 text-base leading-[1.85] text-ink-secondary">
+                            {profileNarrative.paragraphs.map((paragraph) => (
+                                <p key={paragraph}>{paragraph}</p>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="mt-14 grid gap-px border border-subtle-border bg-subtle-border/70 md:grid-cols-4">
+                        {profileSignals.map((signal, index) => {
+                            const tone = signalToneClasses[index % signalToneClasses.length];
+
+                            return (
+                                <div key={signal.value} className="bg-deep-surface p-5 transition-colors hover:bg-elevated-surface">
+                                    <span className={`mb-4 block h-0.5 w-10 ${tone.accent}`} aria-hidden="true" />
+                                    <p className={`font-display text-xl font-semibold ${tone.value}`}>{signal.value}</p>
+                                    <p className="mt-2 text-sm leading-relaxed text-ink-muted">{signal.label}</p>
                                 </div>
-                            </li>
-                            <li className="flex items-start gap-4">
-                                <span className="w-1.5 h-1.5 rounded-full bg-strategic-gold mt-2.5 flex-shrink-0" />
-                                <div>
-                                    <p className="text-ink-primary font-medium">วิทยาศาสตรมหาบัณฑิต สาขาเทคโนโลยีสารสนเทศ (M.Sc. in IT)</p>
-                                    <p className="text-sm text-ink-muted mt-1">สถาบันเทคโนโลยีพระจอมเกล้าฯ ลาดกระบัง</p>
+                            );
+                        })}
+                    </div>
+
+                    <div className="mt-14 border border-subtle-border bg-deep-surface p-7 md:p-8">
+                        <div className="mb-6 flex items-center gap-3">
+                            <GraduationCap size={22} className="text-strategic-gold" aria-hidden="true" />
+                            <h3 className="font-display text-xl font-medium text-ink-primary">การศึกษาและฐานความรู้</h3>
+                        </div>
+                        <div className="grid gap-5 md:grid-cols-3">
+                            {educationItems.map((item, index) => (
+                                <div key={item.title} className="border-t border-subtle-border pt-4">
+                                    <p className={`text-sm font-semibold leading-relaxed ${educationTitleClasses[index % educationTitleClasses.length]}`}>
+                                        {item.title}
+                                    </p>
+                                    <p className="mt-2 text-sm text-ink-muted">{item.meta}</p>
                                 </div>
-                            </li>
-                            <li className="flex items-start gap-4">
-                                <span className="w-1.5 h-1.5 rounded-full bg-strategic-gold mt-2.5 flex-shrink-0" />
-                                <div>
-                                    <p className="text-ink-primary font-medium">วิทยาศาสตรบัณฑิต วิทยาศาสตร์ทหาร (B.Sc. Military Science)</p>
-                                    <p className="text-sm text-ink-muted mt-1">โรงเรียนนายร้อยพระจุลจอมเกล้า (จปร.รุ่นที่ 36)</p>
-                                </div>
-                            </li>
-                        </ul>
+                            ))}
+                        </div>
                     </div>
                 </motion.div>
             </div>

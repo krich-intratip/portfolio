@@ -124,6 +124,17 @@ Typography pairs Trirong (a Thai serif with quiet authority) for display with Sa
 - Imagery-led hero with portrait photography
 - Motion is purposeful: reveals enhance content, never gate it
 
+## Defense-Tech Atlas Direction
+
+The selected redesign direction is **Defense-Tech Atlas** with **AI Governance Statesman** as the secondary tone. The first viewport must communicate a Thai executive strategist who connects defense, public policy, systems, people development, and responsible AI into one decision map.
+
+Implementation rules:
+- Thai leads the experience. English is used only where precise terms matter, such as Defense-Tech, AI Governance, Strategic Advisory, and Digital Transformation.
+- Use the approved portrait at `public/assets/krich-2026.png`; do not introduce organization logos, seals, flags, crests, or official-looking symbols.
+- Visual material may use abstract atlas lines, data topography, coordinate grids, tactical teal, strategic gold, and restrained crimson only where the content is explicitly security-related.
+- Blog imagery must be newly generated photorealistic Thai-context imagery, relevant to each topic and free of logos, seals, flags, readable agency names, or fake official documents.
+- The blog surface must support SEO and GEO through visible summaries, direct answers, Thai executive takeaways, FAQ, article metadata, and JSON-LD that matches visible content.
+
 ## 2. Colors: The Strategist's Palette
 
 A disciplined palette where darkness carries authority and gold carries attention.

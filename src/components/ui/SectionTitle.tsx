@@ -5,13 +5,11 @@ import { motion } from 'framer-motion';
 interface SectionTitleProps {
   title: string;
   subtitle?: string;
-  gradient?: string;
 }
 
 export default function SectionTitle({
   title,
   subtitle,
-  gradient = "from-sky-400 to-indigo-400"
 }: SectionTitleProps) {
   return (
     <motion.div
@@ -21,11 +19,12 @@ export default function SectionTitle({
       transition={{ duration: 0.6 }}
       className="text-center mb-16"
     >
-      <h2 className={`text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>
+      <h2 className="font-display text-3xl md:text-4xl font-medium mb-4 text-ink-primary">
         {title}
       </h2>
+      <div className="h-px w-12 bg-strategic-gold mx-auto mb-5" />
       {subtitle && (
-        <p className="text-slate-400 max-w-2xl mx-auto">
+        <p className="text-ink-muted max-w-2xl mx-auto leading-relaxed">
           {subtitle}
         </p>
       )}

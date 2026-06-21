@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import Link from 'next/link';
@@ -11,23 +11,20 @@ const AUTO_ROTATE_MS = 5000;
 
 export default function BlogCarousel() {
     const posts = getLatestPosts(5);
-    // Now selecting from 10 total posts
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isPaused, setIsPaused] = useState(false);
-
-    const next = useCallback(() => {
-        setCurrentIndex((prev) => (prev + 1) % posts.length);
-    }, [posts.length]);
+    const isPausedRef = useRef(false);
 
     const goTo = (index: number) => {
         setCurrentIndex(index);
     };
 
     useEffect(() => {
-        if (isPaused) return;
-        const timer = setInterval(next, AUTO_ROTATE_MS);
+        const timer = setInterval(() => {
+            if (isPausedRef.current) return;
+            setCurrentIndex((prev) => (prev + 1) % posts.length);
+        }, AUTO_ROTATE_MS);
         return () => clearInterval(timer);
-    }, [next, isPaused]);
+    }, [posts.length]);
 
     const currentPost = posts[currentIndex];
 
@@ -43,26 +40,30 @@ export default function BlogCarousel() {
                     <div className="flex items-end justify-between mb-12">
                         <div>
                             <h2 className="font-display text-3xl md:text-4xl font-medium text-ink-primary mb-3">
-                                Latest Articles
+                                บทความเชิงยุทธศาสตร์
                             </h2>
                             <div className="h-px w-12 bg-strategic-gold mb-4" />
                             <p className="text-ink-muted max-w-xl">
-                                บทความและวิเคราะห์ด้านยุทธศาสตร์ ความมั่นคง AI และการพัฒนาองค์กร
+                                มุมมองด้านความมั่นคง AI Governance ระบบประเมิน และการพัฒนาผู้นำในบริบทไทย
                             </p>
                         </div>
                         <Link
                             href="/blog"
                             className="hidden md:inline-flex items-center gap-2 text-sm font-medium text-strategic-gold hover:text-gold-light transition-colors"
                         >
-                            View All <ArrowRight size={16} />
+                            บทความทั้งหมด <ArrowRight size={16} />
                         </Link>
                     </div>
 
                     {/* Carousel */}
                     <div
                         className="relative overflow-hidden rounded-[14px]"
-                        onMouseEnter={() => setIsPaused(true)}
-                        onMouseLeave={() => setIsPaused(false)}
+                        onMouseEnter={() => {
+                            isPausedRef.current = true;
+                        }}
+                        onMouseLeave={() => {
+                            isPausedRef.current = false;
+                        }}
                     >
                         <AnimatePresence mode="wait">
                             <motion.div
@@ -119,7 +120,7 @@ export default function BlogCarousel() {
                                         href={`/blog/${currentPost.slug}`}
                                         className="inline-flex items-center gap-2 text-sm font-medium text-strategic-gold hover:text-gold-light transition-colors w-fit"
                                     >
-                                        Read Article <ArrowRight size={16} />
+                                        อ่านบทความ <ArrowRight size={16} />
                                     </Link>
                                 </div>
                             </motion.div>
@@ -129,11 +130,12 @@ export default function BlogCarousel() {
                     {/* Dots + mobile View All */}
                     <div className="flex items-center justify-between mt-8">
                         <div className="flex items-center gap-2.5">
-                            {posts.map((_, index) => (
+                            {posts.map((post, index) => (
                                 <button
-                                    key={index}
+                                    key={post.slug}
+                                    type="button"
                                     onClick={() => goTo(index)}
-                                    aria-label={`Go to article ${index + 1}`}
+                                    aria-label={`ไปยังบทความที่ ${index + 1}`}
                                     className={`h-2 rounded-full transition-all ${
                                         index === currentIndex
                                             ? 'w-8 bg-strategic-gold'
@@ -146,7 +148,7 @@ export default function BlogCarousel() {
                             href="/blog"
                             className="md:hidden inline-flex items-center gap-2 text-sm font-medium text-strategic-gold hover:text-gold-light transition-colors"
                         >
-                            View All <ArrowRight size={16} />
+                            บทความทั้งหมด <ArrowRight size={16} />
                         </Link>
                     </div>
                 </motion.div>

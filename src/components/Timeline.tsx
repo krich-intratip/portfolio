@@ -1,86 +1,23 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, FileText } from 'lucide-react';
+import Image from 'next/image';
+import { publications, strategicArc } from '@/lib/portfolio-content';
 
-const timelineData = [
-    {
-        year: "2567 - ปัจจุบัน",
-        title: "เลขานุการประจำคณะกรรมาธิการการเทคโนโลยีสารสนเทศ การสื่อสาร และการโทรคมนาคม",
-        organization: "วุฒิสภา",
-        type: "career",
-        description: "ดำเนินการด้านนโยบายเทคโนโลยีสารสนเทศและการสื่อสาร สนับสนุนการพัฒนาระบบป้องกันประเทศและความมั่นคงทางไซเบอร์"
-    },
-    {
-        year: "2567 - 2568",
-        title: "อนุกรรมาธิการด้านกิจการทางทหาร ไซเบอร์เทคโนโลยี อาวุธยุทโธปกรณ์ และอุตสาหกรรมป้องกันประเทศ",
-        organization: "คณะกรรมาธิการการทหารและความมั่นคงของรัฐ วุฒิสภา",
-        type: "career",
-        description: "ดำเนินการด้านนโยบายไซเบอร์ เทคโนโลยีทางทหาร อาวุธยุทโธปกรณ์ และอุตสาหกรรมป้องกันประเทศ"
-    },
-    {
-        year: "2567 - ปัจจุบัน",
-        title: "คณะรับรองพิจารณายกร่างกรอบสมรรถนะปัญญาประดิษฐ์แห่งชาติ (TH-AICF)",
-        organization: "สำนักงานพัฒนาวิทยาศาสตร์และเทคโนโลยีแห่งชาติ (สวทช.)",
-        type: "career",
-        description: "ร่วมพิจารณาและยกร่างกรอบสมรรถนะปัญญาประดิษฐ์แห่งชาติ เพื่อกำหนดมาตรฐาน AI สำหรับประเทศไทย"
-    },
-    {
-        year: "2566 - 2567",
-        title: "ผู้ทรงคุณวุฒิและที่ปรึกษากองทัพบก",
-        organization: "กรมกำลังพลทหารบก",
-        type: "career",
-        description: "ให้คำปรึกษาด้านกำลังพล เทคโนโลยี การบริหารเชิงยุทธศาสตร์ และการพัฒนาองค์กร"
-    },
-    {
-        year: "2556 - 2560",
-        title: "อาจารย์และอาจารย์หัวหน้าวิชา ระเบียบวิธีวิจัยและความมั่นคงศึกษา",
-        organization: "โรงเรียนเสนาธิการทหารบก",
-        type: "career",
-        description: "บรรยายวิชาระเบียบวิธีวิจัย ประกันคุณภาพการศึกษาระดับมหาวิทยาลัย อาจารย์ประจำหลักสูตรระดับปริญญาโท และหัวหน้าฝ่าย IT"
-    },
-    {
-        year: "2560 - ปัจจุบัน",
-        title: "ผู้นำและคณะทำงานด้านการจัดการความรู้ การพัฒนาสมรรถนะ และการเปลี่ยนผ่านสู่ดิจิทัล",
-        organization: "หน่วยงานในกองทัพบกและภาครัฐ",
-        type: "career",
-        description: "นำการจัดการความรู้ การพัฒนาสมรรถนะ การพัฒนาคุณภาพองค์กร (CQI) และการเปลี่ยนผ่านองค์กรสู่ดิจิทัล"
-    },
-    {
-        year: "2560 - ปัจจุบัน",
-        title: "วิทยากร ที่ปรึกษา และผู้เชี่ยวชาญอิสระ",
-        organization: "สถาบันการศึกษา หน่วยงานรัฐ และองค์กรต่างๆ",
-        type: "career",
-        description: "วิทยากรและที่ปรึกษาด้านยุทธศาสตร์ เทคโนโลยีดิจิทัล AI การพัฒนาผู้นำ การโค้ช การปรับ Mindset และจิตวิทยาการนำ"
-    }
-];
+const arcTitleClasses = [
+    'text-strategic-gold',
+    'text-atlas-teal',
+    'text-[#b9c7ff]',
+    'text-[#e06b6b]',
+] as const;
 
-const publicationData = [
-    {
-        year: "2558",
-        title: "การประยุกต์ใช้กระบวนการ NGT++ ในการสัมมนาเชิงปฏิบัติการ",
-        journal: "วารสารเสนาธิปัตย์ ปีที่ 64 ฉบับที่ 2",
-        type: "บทความวิชาการ"
-    },
-    {
-        year: "2558",
-        title: "แนวคิดการจัดตั้งศูนย์ความเป็นเลิศด้านการวิเคราะห์ข้อมูล/การวิจัยการปฏิบัติการทางทหาร กองทัพบก",
-        journal: "วารสารเสนาธิปัตย์ ปีที่ 64 ฉบับที่ 1",
-        type: "บทความวิชาการ"
-    },
-    {
-        year: "2556",
-        title: "Stepwise Approach for Applying Coding Method of Grounded Theory to Ontology Design",
-        journal: "JCIT: Journal of Convergence Information Technology, Vol. 8, No. 15, pp. 23~32",
-        type: "วารสารนานาชาติ"
-    },
-    {
-        year: "2553",
-        title: "Stepwise Approach for Improving Ontology using Optimizing Rules",
-        journal: "The Fifth International Conference on Knowledge, Information and Creativity Support Systems (KICSS 2010)",
-        type: "การประชุมวิชาการนานาชาติ"
-    }
-];
+const publicationToneClasses = [
+    'text-strategic-gold',
+    'text-atlas-teal',
+    'text-[#b9c7ff]',
+    'text-[#e06b6b]',
+] as const;
 
 export default function Timeline() {
     return (
@@ -91,83 +28,77 @@ export default function Timeline() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                    className="mx-auto max-w-6xl"
                 >
-                    <h2 className="font-display text-3xl md:text-4xl font-medium text-ink-primary mb-3">
-                        Professional Experience
-                    </h2>
-                    <div className="h-px w-12 bg-strategic-gold mb-4" />
-                    <p className="text-ink-muted mb-16 max-w-2xl">
-                        เส้นทางอาชีพในภาครัฐ กองทัพ และวุฒิสภา
-                    </p>
+                    <div className="mb-14 grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
+                        <div>
+                            <p className="mb-4 text-sm font-medium text-atlas-teal">ประสบการณ์เชิงยุทธศาสตร์</p>
+                            <h2 className="font-display text-3xl font-medium leading-tight text-ink-primary md:text-4xl">
+                                เส้นทางที่เชื่อมกองทัพ ภาครัฐ การศึกษา และ AI
+                            </h2>
+                        </div>
+                        <p className="max-w-[72ch] text-base leading-[1.85] text-ink-muted">
+                            เส้นทางอาชีพถูกออกแบบให้ผู้อ่านเห็นความต่อเนื่อง: จากภารกิจความมั่นคงและนโยบาย สู่ระบบประเมิน องค์ความรู้ การวิจัย และการพัฒนาคนสำหรับองค์กรที่ต้องตัดสินใจในสภาพแวดล้อมซับซ้อน
+                        </p>
+                    </div>
 
-                    <div className="max-w-3xl mx-auto mb-24">
-                        {timelineData.map((item, index) => (
+                    <div className="grid gap-5 lg:grid-cols-4">
+                        {strategicArc.map((item, index) => (
                             <motion.div
-                                key={index}
-                                initial={{ opacity: 0, x: -30 }}
-                                whileInView={{ opacity: 1, x: 0 }}
+                                key={item.phase}
+                                initial={{ opacity: 0, y: 18 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.05, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                                className="relative pl-10 pb-10 border-l border-subtle-border last:pb-0"
+                                transition={{ delay: index * 0.08, duration: 0.52, ease: [0.16, 1, 0.3, 1] }}
+                                className="group overflow-hidden border border-subtle-border bg-deep-surface transition-colors hover:border-atlas-teal/35 hover:bg-elevated-surface"
                             >
-                                <div className="absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-strategic-gold/60 border border-strategic-gold" />
-
-                                <div className="p-6 rounded-[14px] bg-deep-surface border border-subtle-border hover:bg-elevated-surface transition-colors">
-                                    <span className="text-xs font-medium text-strategic-gold mb-3 block">
-                                        {item.year}
-                                    </span>
-                                    <h3 className="font-display text-lg font-medium text-ink-primary mb-2 leading-snug">
+                                <div className="relative aspect-[16/11] overflow-hidden bg-void-navy">
+                                    <Image
+                                        src={item.image}
+                                        alt={item.imageAlt}
+                                        fill
+                                        sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                                        className="object-cover opacity-90 transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+                                    />
+                                    <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-deep-surface via-deep-surface/60 to-transparent" />
+                                    <div className="absolute left-4 top-4 border border-strategic-gold/40 bg-void-navy/90 px-3 py-1 text-[11px] font-semibold text-strategic-gold">
+                                        {item.phase}
+                                    </div>
+                                </div>
+                                <div className="p-5 md:p-6">
+                                    <p className="text-xs text-ink-muted">{item.period}</p>
+                                    <h3 className={`mt-4 font-display text-lg font-semibold leading-snug ${arcTitleClasses[index % arcTitleClasses.length]}`}>
                                         {item.title}
                                     </h3>
-                                    <p className="text-sm text-ink-secondary mb-3">
-                                        {item.organization}
-                                    </p>
-                                    <p className="text-sm text-ink-muted leading-relaxed">
-                                        {item.description}
-                                    </p>
+                                    <p className="mt-4 text-sm leading-[1.8] text-ink-secondary">{item.body}</p>
                                 </div>
                             </motion.div>
                         ))}
                     </div>
 
-                    {/* Publications */}
-                    <div className="max-w-3xl mx-auto">
-                        <h3 className="font-display text-2xl font-medium text-ink-primary mb-3">
-                            Academic Publications
-                        </h3>
-                        <div className="h-px w-12 bg-strategic-gold mb-10" />
+                    <div className="mt-16 border border-subtle-border bg-deep-surface p-7 md:p-8">
+                        <div className="mb-7 flex items-center gap-3">
+                            <BookOpen size={20} className="text-strategic-gold" aria-hidden="true" />
+                            <h3 className="font-display text-xl font-medium text-ink-primary">ฐานวิชาการและงานเขียน</h3>
+                        </div>
+                        <div className="grid gap-4 md:grid-cols-2">
+                            {publications.map((publication, index) => {
+                                const tone = publicationToneClasses[index % publicationToneClasses.length];
 
-                        <div className="grid md:grid-cols-2 gap-5">
-                            {publicationData.map((pub, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.08, duration: 0.5 }}
-                                    className="p-6 rounded-[14px] bg-deep-surface border border-subtle-border hover:border-strategic-gold/30 transition-colors"
+                                return (
+                                <div
+                                    key={publication}
+                                    className="flex gap-3 border-t border-subtle-border pt-4 text-sm leading-relaxed text-ink-secondary"
                                 >
-                                    <div className="flex items-start gap-4">
-                                        <BookOpen size={18} className="text-strategic-gold flex-shrink-0 mt-1" />
-                                        <div>
-                                            <div className="flex items-center gap-2 mb-2">
-                                                <span className="text-xs font-medium text-strategic-gold">
-                                                    {pub.year}
-                                                </span>
-                                                <span className="text-xs text-ink-muted">
-                                                    {pub.type}
-                                                </span>
-                                            </div>
-                                            <h4 className="text-sm font-medium text-ink-primary mb-2 leading-snug">
-                                                {pub.title}
-                                            </h4>
-                                            <p className="text-xs text-ink-muted leading-relaxed">
-                                                {pub.journal}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            ))}
+                                    <FileText
+                                        size={17}
+                                        className={`mt-0.5 shrink-0 ${tone}`}
+                                        aria-hidden="true"
+                                    />
+                                    <p className={tone}>{publication}</p>
+                                </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </motion.div>

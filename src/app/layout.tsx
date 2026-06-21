@@ -21,8 +21,8 @@ const sarabun = Sarabun({
 
 export const metadata: Metadata = {
   title: "พลโท ดร.กริช อินทราทิพย์ | Lt.Gen. Krich Intratip, Ph.D.",
-  description: "ผู้เชี่ยวชาญด้านยุทธศาสตร์ ความมั่นคง การพัฒนาทรัพยากรมนุษย์ และการประยุกต์ใช้ AI | Strategic Security, Human Development & AI Governance Specialist",
-  keywords: ["Krich Intratip", "Lt.Gen. Krich", "AI Governance", "Strategic Security", "Human Development", "Digital Transformation", "Thailand", "Military Strategy"],
+  description: "ผู้บริหารยุทธศาสตร์ด้านความมั่นคง Defense-Tech, AI Governance, ระบบประเมิน และการพัฒนาผู้นำสำหรับองค์กรภาครัฐ การศึกษา และผู้บริหารระดับสูง",
+  keywords: ["Krich Intratip", "พลโท ดร.กริช อินทราทิพย์", "AI Governance", "Defense-Tech", "Strategic Security", "Digital Transformation", "Thailand", "Executive Coaching", "PMQA", "CQI"],
   authors: [{ name: "Lt.Gen. Krich Intratip, Ph.D." }],
   creator: "Lt.Gen. Krich Intratip, Ph.D.",
   publisher: "Lt.Gen. Krich Intratip, Ph.D.",
@@ -35,11 +35,11 @@ export const metadata: Metadata = {
     locale: 'th_TH',
     url: 'https://krich-intratip-portfolio.vercel.app',
     title: 'พลโท ดร.กริช อินทราทิพย์ | Lt.Gen. Krich Intratip, Ph.D.',
-    description: 'ผู้เชี่ยวชาญด้านยุทธศาสตร์ ความมั่นคง การพัฒนาทรัพยากรมนุษย์ และการประยุกต์ใช้ AI',
+    description: 'ผู้บริหารยุทธศาสตร์ด้านความมั่นคง Defense-Tech, AI Governance, ระบบประเมิน และการพัฒนาผู้นำ',
     siteName: 'Lt.Gen. Krich Intratip — Executive Portfolio',
     images: [
       {
-        url: '/assets/mypic.jpg',
+        url: '/assets/krich-2026.png',
         width: 1200,
         height: 630,
         alt: 'พลโท ดร.กริช อินทราทิพย์',
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'พลโท ดร.กริช อินทราทิพย์ | Lt.Gen. Krich Intratip, Ph.D.',
-    description: 'ผู้เชี่ยวชาญด้านยุทธศาสตร์ ความมั่นคง และการประยุกต์ใช้ AI',
-    images: ['/assets/mypic.jpg'],
+    description: 'ผู้บริหารยุทธศาสตร์ด้านความมั่นคง Defense-Tech, AI Governance และการพัฒนาผู้นำ',
+    images: ['/assets/krich-2026.png'],
   },
   robots: {
     index: true,

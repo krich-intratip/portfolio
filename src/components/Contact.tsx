@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, Linkedin, Send } from 'lucide-react';
+import { FileDown, Linkedin, Mail, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
+import { contactIntents } from '@/lib/portfolio-content';
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -14,19 +15,35 @@ export default function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const submitContactMessage = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setSubmitStatus('idle');
 
-        setTimeout(() => {
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error('Contact request failed');
+            }
+
+            const result = await response.json() as { mailtoUrl: string };
+            window.location.href = result.mailtoUrl;
             setIsSubmitting(false);
             setSubmitStatus('success');
             setFormData({ name: '', email: '', subject: '', message: '' });
             setTimeout(() => setSubmitStatus('idle'), 5000);
-        }, 1500);
+        } catch {
+            setIsSubmitting(false);
+            setSubmitStatus('error');
+        }
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const updateContactField = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData(prev => ({
             ...prev,
             [e.target.name]: e.target.value
@@ -35,81 +52,87 @@ export default function Contact() {
 
     return (
         <section id="contact" className="py-24 md:py-32">
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container relative z-10 mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="max-w-3xl mx-auto"
+                    className="mx-auto max-w-6xl"
                 >
-                    <h2 className="font-display text-3xl md:text-4xl font-medium text-ink-primary mb-3">
-                        Get in Touch
-                    </h2>
-                    <div className="h-px w-12 bg-strategic-gold mb-4" />
-                    <p className="text-ink-muted mb-12 max-w-xl">
-                        สนใจในการให้คำปรึกษา การพัฒนาองค์กร หรือการเชิญเป็นวิทยากร
-                        ติดต่อเพื่อพูดคุยแลกเปลี่ยนวิสัยทัศน์
-                    </p>
+                    <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr]">
+                        <div>
+                            <p className="mb-4 text-sm font-medium text-atlas-teal">ติดต่อเพื่อหารือ</p>
+                            <h2 className="font-display text-3xl font-medium leading-tight text-ink-primary md:text-4xl">
+                                เปิดบทสนทนาระดับยุทธศาสตร์ให้ชัดตั้งแต่แรก
+                            </h2>
+                            <p className="mt-5 max-w-[64ch] text-base leading-[1.85] text-ink-muted">
+                                เหมาะสำหรับการเชิญเป็นที่ปรึกษา วิทยากร คณะกรรมการ หรือออกแบบระบบประเมินและ workshop สำหรับผู้บริหาร
+                            </p>
 
-                    <div className="grid md:grid-cols-3 gap-4 mb-16">
-                        <a
-                            href="mailto:krich.intratip@gmail.com"
-                            className="flex flex-col items-center p-6 rounded-[14px] bg-deep-surface border border-subtle-border hover:border-strategic-gold/30 transition-all group"
-                        >
-                            <div className="w-11 h-11 rounded-[14px] bg-elevated-surface flex items-center justify-center mb-4 group-hover:bg-strategic-gold/10 transition-colors">
-                                <Mail size={20} className="text-strategic-gold" />
+                            <div className="mt-8 space-y-3">
+                                {contactIntents.map((intent) => (
+                                    <p key={intent} className="border-t border-subtle-border pt-3 text-sm text-ink-secondary">
+                                        {intent}
+                                    </p>
+                                ))}
                             </div>
-                            <h3 className="text-xs font-medium text-ink-muted mb-1">Email</h3>
-                            <p className="text-sm text-ink-primary">krich.intratip@gmail.com</p>
-                        </a>
 
-                        <a
-                            href="tel:0616329956"
-                            className="flex flex-col items-center p-6 rounded-[14px] bg-deep-surface border border-subtle-border hover:border-strategic-gold/30 transition-all group"
-                        >
-                            <div className="w-11 h-11 rounded-[14px] bg-elevated-surface flex items-center justify-center mb-4 group-hover:bg-strategic-gold/10 transition-colors">
-                                <Phone size={20} className="text-strategic-gold" />
+                            <div className="mt-10 grid gap-3">
+                                <a
+                                    href="mailto:krich.intratip@gmail.com"
+                                    className="flex items-center gap-3 border border-subtle-border bg-deep-surface px-4 py-3 text-sm text-ink-primary transition-colors hover:border-strategic-gold/40 hover:text-strategic-gold"
+                                >
+                                    <Mail size={18} aria-hidden="true" />
+                                    krich.intratip@gmail.com
+                                </a>
+                                <a
+                                    href="tel:0616329956"
+                                    className="flex items-center gap-3 border border-subtle-border bg-deep-surface px-4 py-3 text-sm text-ink-primary transition-colors hover:border-strategic-gold/40 hover:text-strategic-gold"
+                                >
+                                    <Phone size={18} aria-hidden="true" />
+                                    061-632-9956
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/in/krich-intratip-b1203a3a7/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-3 border border-subtle-border bg-deep-surface px-4 py-3 text-sm text-ink-primary transition-colors hover:border-strategic-gold/40 hover:text-strategic-gold"
+                                >
+                                    <Linkedin size={18} aria-hidden="true" />
+                                    LinkedIn: krich-intratip
+                                </a>
+                                <a
+                                    href="/assets/docs/krich-short-cv-2026-02.pdf"
+                                    download
+                                    className="flex items-center gap-3 border border-subtle-border bg-deep-surface px-4 py-3 text-sm text-ink-primary transition-colors hover:border-atlas-teal/45 hover:text-atlas-teal"
+                                    aria-label="ดาวน์โหลดประวัติย่อ Resume และ Short CV ของพลโท ดร.กริช อินทราทิพย์"
+                                >
+                                    <FileDown size={18} aria-hidden="true" />
+                                    ดาวน์โหลดประวัติย่อ (Resume)
+                                </a>
                             </div>
-                            <h3 className="text-xs font-medium text-ink-muted mb-1">Phone</h3>
-                            <p className="text-sm text-ink-primary">061-632-9956</p>
-                        </a>
+                        </div>
 
-                        <a
-                            href="https://www.linkedin.com/in/krich-intratip-b1203a3a7/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex flex-col items-center p-6 rounded-[14px] bg-deep-surface border border-subtle-border hover:border-strategic-gold/30 transition-all group"
-                        >
-                            <div className="w-11 h-11 rounded-[14px] bg-elevated-surface flex items-center justify-center mb-4 group-hover:bg-strategic-gold/10 transition-colors">
-                                <Linkedin size={20} className="text-strategic-gold" />
-                            </div>
-                            <h3 className="text-xs font-medium text-ink-muted mb-1">LinkedIn</h3>
-                            <p className="text-sm text-ink-primary">krich-intratip</p>
-                        </a>
-                    </div>
-
-                    {/* Contact Form */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
-                        className="max-w-2xl mx-auto"
-                    >
-                        <div className="p-8 rounded-[14px] bg-deep-surface border border-subtle-border">
-                            <h3 className="font-display text-xl font-medium text-ink-primary mb-6">Send a Message</h3>
+                        <div className="border border-subtle-border bg-deep-surface p-6 md:p-8">
+                            <h3 className="font-display text-xl font-medium text-ink-primary">ส่งรายละเอียดเบื้องต้น</h3>
 
                             {submitStatus === 'success' && (
-                                <div className="mb-6 p-4 rounded-md bg-strategic-gold/10 border border-strategic-gold/30 text-strategic-gold text-sm">
-                                    ส่งข้อความสำเร็จ เราจะติดต่อกลับโดยเร็วที่สุด
+                                <div className="mt-6 border border-strategic-gold/30 bg-strategic-gold/10 px-4 py-3 text-sm text-strategic-gold">
+                                    เปิดอีเมลสำหรับส่งถึง krich.intratip@gmail.com แล้ว
                                 </div>
                             )}
 
-                            <form onSubmit={handleSubmit} className="space-y-5">
-                                <div className="grid md:grid-cols-2 gap-5">
+                            {submitStatus === 'error' && (
+                                <div className="mt-6 border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+                                    ส่งข้อมูลไม่สำเร็จ กรุณาส่งอีเมลโดยตรงที่ krich.intratip@gmail.com
+                                </div>
+                            )}
+
+                            <form onSubmit={submitContactMessage} className="mt-6 space-y-5">
+                                <div className="grid gap-5 md:grid-cols-2">
                                     <div>
-                                        <label htmlFor="name" className="block text-sm font-medium text-ink-secondary mb-2">
+                                        <label htmlFor="name" className="mb-2 block text-sm font-medium text-ink-secondary">
                                             ชื่อ-นามสกุล *
                                         </label>
                                         <input
@@ -117,31 +140,31 @@ export default function Contact() {
                                             id="name"
                                             name="name"
                                             value={formData.name}
-                                            onChange={handleChange}
+                                            onChange={updateContactField}
                                             required
-                                            className="w-full px-4 py-3 bg-elevated-surface border border-subtle-border rounded-md text-ink-primary placeholder-ink-muted focus:outline-none focus:ring-1 focus:ring-strategic-gold focus:border-strategic-gold transition-all"
-                                            placeholder="ชื่อของคุณ"
+                                            className="w-full rounded-md border border-subtle-border bg-elevated-surface px-4 py-3 text-ink-primary placeholder-ink-muted transition-colors focus:border-strategic-gold focus:outline-none focus:ring-1 focus:ring-strategic-gold"
+                                            placeholder="ชื่อผู้ติดต่อ"
                                         />
                                     </div>
                                     <div>
-                                        <label htmlFor="email" className="block text-sm font-medium text-ink-secondary mb-2">
-                                            Email *
+                                        <label htmlFor="email" className="mb-2 block text-sm font-medium text-ink-secondary">
+                                            อีเมล *
                                         </label>
                                         <input
                                             type="email"
                                             id="email"
                                             name="email"
                                             value={formData.email}
-                                            onChange={handleChange}
+                                            onChange={updateContactField}
                                             required
-                                            className="w-full px-4 py-3 bg-elevated-surface border border-subtle-border rounded-md text-ink-primary placeholder-ink-muted focus:outline-none focus:ring-1 focus:ring-strategic-gold focus:border-strategic-gold transition-all"
-                                            placeholder="john@example.com"
+                                            className="w-full rounded-md border border-subtle-border bg-elevated-surface px-4 py-3 text-ink-primary placeholder-ink-muted transition-colors focus:border-strategic-gold focus:outline-none focus:ring-1 focus:ring-strategic-gold"
+                                            placeholder="name@example.com"
                                         />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label htmlFor="subject" className="block text-sm font-medium text-ink-secondary mb-2">
+                                    <label htmlFor="subject" className="mb-2 block text-sm font-medium text-ink-secondary">
                                         หัวข้อ *
                                     </label>
                                     <input
@@ -149,51 +172,51 @@ export default function Contact() {
                                         id="subject"
                                         name="subject"
                                         value={formData.subject}
-                                        onChange={handleChange}
+                                        onChange={updateContactField}
                                         required
-                                        className="w-full px-4 py-3 bg-elevated-surface border border-subtle-border rounded-md text-ink-primary placeholder-ink-muted focus:outline-none focus:ring-1 focus:ring-strategic-gold focus:border-strategic-gold transition-all"
-                                        placeholder="สนใจให้คำปรึกษา"
+                                        className="w-full rounded-md border border-subtle-border bg-elevated-surface px-4 py-3 text-ink-primary placeholder-ink-muted transition-colors focus:border-strategic-gold focus:outline-none focus:ring-1 focus:ring-strategic-gold"
+                                        placeholder="เชิญเป็นที่ปรึกษา / วิทยากร / workshop"
                                     />
                                 </div>
 
                                 <div>
-                                    <label htmlFor="message" className="block text-sm font-medium text-ink-secondary mb-2">
-                                        ข้อความ *
+                                    <label htmlFor="message" className="mb-2 block text-sm font-medium text-ink-secondary">
+                                        รายละเอียด *
                                     </label>
                                     <textarea
                                         id="message"
                                         name="message"
                                         value={formData.message}
-                                        onChange={handleChange}
+                                        onChange={updateContactField}
                                         required
-                                        rows={5}
-                                        className="w-full px-4 py-3 bg-elevated-surface border border-subtle-border rounded-md text-ink-primary placeholder-ink-muted focus:outline-none focus:ring-1 focus:ring-strategic-gold focus:border-strategic-gold transition-all resize-none"
-                                        placeholder="เขียนข้อความของคุณที่นี่..."
+                                        rows={6}
+                                        className="w-full resize-none rounded-md border border-subtle-border bg-elevated-surface px-4 py-3 text-ink-primary placeholder-ink-muted transition-colors focus:border-strategic-gold focus:outline-none focus:ring-1 focus:ring-strategic-gold"
+                                        placeholder="บริบทองค์กร วัตถุประสงค์ ระยะเวลา และผลลัพธ์ที่ต้องการ"
                                     />
                                 </div>
 
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full px-8 py-4 bg-strategic-gold text-void-navy font-semibold rounded-md hover:bg-gold-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                    className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-strategic-gold px-8 py-4 font-semibold text-void-navy transition-colors hover:bg-gold-light disabled:cursor-not-allowed disabled:opacity-50"
                                 >
                                     {isSubmitting ? (
                                         <>กำลังส่ง...</>
                                     ) : (
                                         <>
-                                            <Send size={18} />
+                                            <Send size={18} aria-hidden="true" />
                                             ส่งข้อความ
                                         </>
                                     )}
                                 </button>
                             </form>
                         </div>
-                    </motion.div>
+                    </div>
 
-                    <footer className="text-ink-muted text-sm mt-16 text-center">
+                    <footer className="mt-16 text-center text-sm text-ink-muted">
                         <p>© 2026 Lt.Gen. Krich Intratip, Ph.D. All rights reserved.</p>
                         <p className="mt-2 text-xs text-ink-muted/70">
-                            Version 2.1.0 · Last updated: 20 June 2026
+                            Version 2.1.2 · Last updated: 21 June 2026
                         </p>
                     </footer>
                 </motion.div>

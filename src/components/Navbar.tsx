@@ -7,14 +7,14 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
 const navItems = [
-    { name: 'Profile', href: '#profile' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Competencies', href: '#competencies' },
-    { name: 'Initiatives', href: '#initiatives' },
-    { name: 'Advisory', href: '#advisory' },
-    { name: 'Recognition', href: '#recognition' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'ภาพรวม', href: '/#home' },
+    { name: 'บทบาท', href: '/#profile' },
+    { name: 'ประสบการณ์', href: '/#experience' },
+    { name: 'สมรรถนะ', href: '/#competencies' },
+    { name: 'ผลงานระบบ', href: '/#initiatives' },
+    { name: 'ที่ปรึกษา', href: '/#advisory' },
+    { name: 'บทความ', href: '/blog' },
+    { name: 'ติดต่อ', href: '/#contact' },
 ];
 
 export default function Navbar() {
@@ -25,7 +25,7 @@ export default function Navbar() {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
         };
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -39,11 +39,11 @@ export default function Navbar() {
             )}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
-                <Link href="/" className="font-display text-lg font-medium text-ink-primary hover:text-strategic-gold transition-colors" aria-label="Homepage">
-                    Lt.Gen. Krich Intratip
+                <Link href="/" className="font-display text-base font-medium text-ink-primary transition-colors hover:text-strategic-gold md:text-lg" aria-label="หน้าแรก">
+                    พลโท ดร.กริช
                 </Link>
 
-                <div className="hidden md:flex items-center gap-7">
+                <div className="hidden items-center gap-4 lg:flex xl:gap-6">
                     {navItems.map((item) => (
                         <Link
                             key={item.name}
@@ -57,9 +57,10 @@ export default function Navbar() {
                 </div>
 
                 <button
-                    className="md:hidden text-ink-secondary hover:text-strategic-gold"
+                    type="button"
+                    className="text-ink-secondary hover:text-strategic-gold lg:hidden"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                    aria-label={mobileMenuOpen ? "ปิดเมนู" : "เปิดเมนู"}
                     aria-expanded={mobileMenuOpen}
                 >
                     {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -72,7 +73,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-void-navy border-b border-subtle-border overflow-hidden"
+                        className="overflow-hidden border-b border-subtle-border bg-void-navy lg:hidden"
                     >
                         <div className="px-6 py-8 flex flex-col gap-6">
                             {navItems.map((item) => (

@@ -1,85 +1,45 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Trophy, Medal, BadgeCheck } from 'lucide-react';
-
-const achievements = [
-    {
-        category: "Research & Publications",
-        icon: Trophy,
-        items: [
-            "2553: International Conference — KICSS 2010 (pp.176~181)",
-            "2556: JCIT Journal Vol. 8, No. 15, pp. 23~32",
-            "2549: Excellence in Research Award — ATLAS Project",
-            "2556: Special Commendation — Royal Thai Army"
-        ]
-    },
-    {
-        category: "Professional Certifications",
-        icon: BadgeCheck,
-        items: [
-            "LLM & RAG System Development (Engineer-level)",
-            "Prompt Engineering & AI Use Case Development",
-            "Advanced Research Methodology (SEM, Grounded Theory)",
-            "Professional Coach Certification Program"
-        ]
-    },
-    {
-        category: "Technical & Management Certifications",
-        icon: Medal,
-        items: [
-            "MS-Windows NT Administrator (Microsoft Thailand)",
-            "Service-Oriented Architecture (SOA)",
-            "Project Management (PMI Bangkok)",
-            "Capability Maturity Model (CMM)"
-        ]
-    }
-];
+import { BadgeCheck } from 'lucide-react';
+import { trustProofs } from '@/lib/portfolio-content';
 
 export default function Achievements() {
     return (
-        <section id="recognition" className="py-24 md:py-32 bg-deep-surface/30">
+        <section id="recognition" className="bg-deep-surface/30 py-24 md:py-32">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                    className="mx-auto max-w-6xl"
                 >
-                    <h2 className="font-display text-3xl md:text-4xl font-medium text-ink-primary mb-3">
-                        Certifications & Awards
-                    </h2>
-                    <div className="h-px w-12 bg-strategic-gold mb-4" />
-                    <p className="text-ink-muted mb-16 max-w-2xl">
-                        รางวัลและความสำเร็จที่ได้รับตลอดอาชีพการงาน
-                    </p>
+                    <div className="mb-12 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+                        <div>
+                            <p className="mb-4 text-sm font-medium text-atlas-teal">หลักฐานความน่าเชื่อถือ</p>
+                            <h2 className="font-display text-3xl font-medium leading-tight text-ink-primary md:text-4xl">
+                                ความน่าเชื่อถือที่มาจากงานจริงหลายระบบ
+                            </h2>
+                        </div>
+                        <p className="max-w-[70ch] text-base leading-[1.85] text-ink-muted">
+                            ประสบการณ์ที่นำเสนอไม่ได้แยกเป็นรางวัล ประกาศนียบัตร หรือบทบาทอย่างใดอย่างหนึ่ง แต่เป็นหลักฐานว่าทำงานได้ทั้งระดับนโยบาย ระบบ วิชาการ และการพัฒนาคน
+                        </p>
+                    </div>
 
-                    <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                        {achievements.map((achievement, index) => (
+                    <div className="grid gap-px border border-subtle-border bg-subtle-border/70 md:grid-cols-3">
+                        {trustProofs.map((proof, index) => (
                             <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
+                                key={proof.title}
+                                initial={{ opacity: 0, y: 18 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                                className="p-8 rounded-[14px] bg-deep-surface border border-subtle-border hover:border-strategic-gold/30 transition-colors"
+                                transition={{ delay: index * 0.08, duration: 0.52, ease: [0.16, 1, 0.3, 1] }}
+                                className="bg-deep-surface p-6"
                             >
-                                <div className="w-12 h-12 rounded-[14px] bg-elevated-surface flex items-center justify-center mb-6">
-                                    <achievement.icon className="w-6 h-6 text-strategic-gold" />
-                                </div>
-
-                                <h3 className="font-display text-lg font-medium text-ink-primary mb-6">
-                                    {achievement.category}
-                                </h3>
-
-                                <ul className="space-y-3">
-                                    {achievement.items.map((item, idx) => (
-                                        <li key={idx} className="flex items-start gap-3 text-sm text-ink-secondary">
-                                            <span className="w-1.5 h-1.5 rounded-full bg-strategic-gold mt-2 flex-shrink-0" />
-                                            <span className="leading-relaxed">{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                                <BadgeCheck className="mb-5 size-5 text-strategic-gold" aria-hidden="true" />
+                                <h3 className="font-display text-lg font-medium text-ink-primary">{proof.title}</h3>
+                                <p className="mt-4 text-sm leading-[1.8] text-ink-secondary">{proof.body}</p>
                             </motion.div>
                         ))}
                     </div>

@@ -1,40 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Lightbulb, GraduationCap, Brain, Cog, Users } from 'lucide-react';
+import { Brain, ClipboardCheck, Landmark, ShieldCheck } from 'lucide-react';
+import Image from 'next/image';
+import { advisoryServices } from '@/lib/portfolio-content';
 
-const services = [
-    {
-        title: "AI Governance & Strategy Advisory",
-        description: "ให้คำปรึกษาด้านการกำกับดูแล AI และการประยุกต์ใช้ในองค์กร เพื่อเพิ่มประสิทธิภาพและความสามารถในการแข่งขันอย่างมีจริยธรรม",
-        icon: Lightbulb,
-    },
-    {
-        title: "Research & Statistics Consulting",
-        description: "ให้คำปรึกษาด้านการทำวิจัยและสถิติ เพื่อให้ผลงานวิจัยมีคุณภาพและได้มาตรฐานสากล",
-        icon: GraduationCap,
-    },
-    {
-        title: "Mindset Transformation",
-        description: "จัดอบรม Mindset Transformation สำหรับผู้ปฏิบัติงานในองค์กร เพื่อสร้างวัฒนธรรมการเรียนรู้และพัฒนาอย่างต่อเนื่อง",
-        icon: Brain,
-    },
-    {
-        title: "KM & CQI Training",
-        description: "จัดอบรมการประยุกต์ใช้ AI ในการจัดทำ KM และโครงการ CQI เพื่อยกระดับการจัดการความรู้และการพัฒนาคุณภาพอย่างต่อเนื่อง",
-        icon: Cog,
-    },
-    {
-        title: "Leadership & Learning Culture",
-        description: "จัดอบรมภาวะผู้นำเพื่อการเปลี่ยนแปลงและการสร้างวัฒนธรรมการเรียนรู้ สร้างผู้นำที่พร้อมนำองค์กรสู่ความเป็นเลิศ",
-        icon: Users,
-    },
-    {
-        title: "Executive Coaching & Human Development",
-        description: "การโค้ชผู้บริหารระดับสูง การปรับ Mindset และการพัฒนาจิตวิทยาการนำ ด้วย Enneagram, MBTI, Voice Dialogue และ Satir Model",
-        icon: Users,
-    }
-];
+const icons = [Brain, ClipboardCheck, ShieldCheck, Landmark];
 
 export default function Services() {
     return (
@@ -45,36 +16,60 @@ export default function Services() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                    className="mx-auto max-w-6xl"
                 >
-                    <h2 className="font-display text-3xl md:text-4xl font-medium text-ink-primary mb-3">
-                        Consulting & Advisory
-                    </h2>
-                    <div className="h-px w-12 bg-strategic-gold mb-4" />
-                    <p className="text-ink-muted mb-16 max-w-2xl">
-                        บริการให้คำปรึกษา จัดอบรม และ Workshop ด้านการพัฒนาองค์กรและบุคลากร
-                    </p>
+                    <div className="mb-14 max-w-3xl">
+                        <p className="mb-4 text-sm font-medium text-atlas-teal">การให้คำปรึกษาเชิงยุทธศาสตร์</p>
+                        <h2 className="font-display text-3xl font-medium leading-tight text-ink-primary md:text-4xl">
+                            วางกรอบให้ผู้บริหารตัดสินใจได้ชัดขึ้น
+                        </h2>
+                        <p className="mt-5 max-w-[70ch] text-base leading-[1.85] text-ink-muted">
+                            เหมาะสำหรับหน่วยงานหรือองค์กรที่ต้องการขยับจากความคิดกว้าง ๆ ไปสู่กรอบนโยบาย ระบบประเมิน แผนสมรรถนะ หรือ workshop ที่ใช้ได้กับบริบทจริงขององค์กร
+                        </p>
+                    </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {services.map((service, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                                className="group p-7 rounded-[14px] bg-deep-surface border border-subtle-border hover:bg-elevated-surface hover:border-strategic-gold/30 transition-all"
-                            >
-                                <div className="w-12 h-12 rounded-[14px] bg-elevated-surface flex items-center justify-center mb-5 group-hover:bg-strategic-gold/10 transition-colors">
-                                    <service.icon className="w-6 h-6 text-strategic-gold" />
-                                </div>
-                                <h3 className="font-display text-lg font-medium text-ink-primary mb-3 leading-snug">
-                                    {service.title}
-                                </h3>
-                                <p className="text-sm text-ink-secondary leading-relaxed">
-                                    {service.description}
-                                </p>
-                            </motion.div>
-                        ))}
+                    <div className="grid gap-5 lg:grid-cols-2">
+                        {advisoryServices.map((service, index) => {
+                            const Icon = icons[index];
+                            return (
+                                <motion.div
+                                    key={service.title}
+                                    initial={{ opacity: 0, y: 18 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.08, duration: 0.52, ease: [0.16, 1, 0.3, 1] }}
+                                    className="group overflow-hidden border border-subtle-border bg-deep-surface transition-colors hover:border-strategic-gold/40 hover:bg-elevated-surface"
+                                >
+                                    <div className="relative aspect-[16/9] overflow-hidden border-b border-subtle-border bg-atlas-void">
+                                        <Image
+                                            src={service.image}
+                                            alt={service.imageAlt}
+                                            fill
+                                            sizes="(max-width: 1024px) 100vw, 50vw"
+                                            className="object-cover opacity-90 transition duration-700 group-hover:scale-[1.025] group-hover:opacity-100"
+                                        />
+                                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,8,13,0.03),rgba(5,8,13,0.38)_74%,rgba(5,8,13,0.66))]" />
+                                        <div className="absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,transparent,var(--atlas-teal),transparent)] opacity-70" />
+                                    </div>
+                                    <div className="p-6">
+                                        <div className="mb-5 flex items-center gap-4">
+                                            <div className="flex size-11 shrink-0 items-center justify-center rounded-md border border-subtle-border bg-atlas-void">
+                                                <Icon className="size-5 text-strategic-gold" aria-hidden="true" />
+                                            </div>
+                                            <h3 className="font-display text-xl font-medium leading-snug text-ink-primary">{service.title}</h3>
+                                        </div>
+                                        <p className="text-sm leading-[1.85] text-ink-secondary">{service.outcome}</p>
+                                        <div className="mt-6 flex flex-wrap gap-2">
+                                            {service.formats.map((format) => (
+                                                <span key={format} className="rounded-md bg-elevated-surface px-3 py-1.5 text-xs font-medium text-ink-secondary">
+                                                    {format}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            );
+                        })}
                     </div>
                 </motion.div>
             </div>

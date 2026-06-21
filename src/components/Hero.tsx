@@ -1,173 +1,204 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { ArrowRight, ChevronDown, Crosshair, Radar, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
+import AtlasBackground from '@/components/AtlasBackground';
+import StrategicDomainRail from '@/components/StrategicDomainRail';
+import { heroCopy } from '@/lib/portfolio-content';
 
 export default function Hero() {
-    return (
-        <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-20" aria-label="Hero section">
-            {/* Ambient background layers */}
-            <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                    background: 'radial-gradient(ellipse 60% 50% at 70% 50%, rgba(201, 162, 39, 0.05), transparent 65%)',
-                }}
-            />
-            {/* Subtle grid pattern */}
-            <div
-                className="absolute inset-0 pointer-events-none opacity-[0.03]"
-                style={{
-                    backgroundImage: `linear-gradient(rgba(201, 162, 39, 0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(201, 162, 39, 0.5) 1px, transparent 1px)`,
-                    backgroundSize: '60px 60px',
-                }}
-            />
+    const prefersReducedMotion = useReducedMotion();
+    const initialState = { opacity: 1, y: 0 };
+    const animateState = { opacity: 1, y: 0 };
+    const doctrinePoints = [
+        'ยุทธศาสตร์บูรณาการ',
+        'AI Governance',
+        'Systems Thinking',
+        'Technology Advantage',
+    ];
+    const atlasSignals = [
+        { label: 'Policy signal', value: 'นโยบาย-ความเสี่ยง' },
+        { label: 'AI readiness', value: 'สมรรถนะ-ธรรมาภิบาล' },
+        { label: 'Security posture', value: 'ไซเบอร์-ระบบงาน' },
+        { label: 'Mission outcomes', value: 'ผลลัพธ์ที่วัดได้' },
+    ];
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-[80vh]">
-                    {/* Left: Text content */}
-                    <div className="order-2 lg:order-1 max-w-xl">
-                        {/* Category label */}
+    return (
+        <section
+            id="home"
+            className="relative flex min-h-[100svh] overflow-hidden bg-atlas-void pt-24"
+            aria-label="Defense-Tech Atlas"
+        >
+            <AtlasBackground />
+
+            <div className="absolute inset-x-0 bottom-0 z-[5] h-px bg-atlas-teal/70" />
+            <div className="absolute bottom-0 right-0 z-[7] hidden h-[74%] w-[42%] border-l border-t border-atlas-teal/25 lg:block">
+                <div className="absolute -left-24 top-0 h-px w-24 bg-atlas-teal/45" />
+                <div className="absolute -left-36 bottom-[18%] h-px w-36 bg-strategic-gold/45" />
+            </div>
+
+            <motion.div
+                initial={{ opacity: 1, x: 0 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.28, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                className="pointer-events-none absolute bottom-[-32svh] right-[-24vw] z-[8] h-[62svh] w-[112vw] max-w-[760px] opacity-55 sm:bottom-[-10svh] sm:right-[-10vw] sm:h-[72svh] sm:w-[88vw] md:bottom-[-2svh] md:right-[-3vw] md:h-[82svh] md:opacity-90 lg:bottom-0 lg:right-[2vw] lg:h-[88svh] lg:w-[48vw] lg:opacity-100"
+            >
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_28%,rgba(56,198,217,0.12),transparent_38%)]" />
+                <Image
+                    src="/assets/krich-2026-cutout.png"
+                    alt=""
+                    fill
+                    aria-hidden="true"
+                    className="scale-[1.08] object-cover object-[center_14%] opacity-42 blur-3xl brightness-[0.72] saturate-[0.82]"
+                    sizes="(max-width: 768px) 86vw, (max-width: 1200px) 54vw, 720px"
+                />
+                <Image
+                    src="/assets/krich-2026-cutout.png"
+                    alt="พลโท ดร.กริช อินทราทิพย์"
+                    fill
+                    className="object-cover object-[center_14%] brightness-[0.9] contrast-[1.06] saturate-[0.9] drop-shadow-[0_0_34px_rgba(56,198,217,0.12)]"
+                    sizes="(max-width: 768px) 86vw, (max-width: 1200px) 54vw, 720px"
+                    priority
+                />
+                <div className="absolute inset-x-0 bottom-0 h-[40%] bg-[linear-gradient(180deg,transparent,rgba(5,8,13,0.96)_72%,#05080d_100%)]" />
+                <div className="absolute left-[14%] top-[18%] size-28 rounded-full border border-atlas-teal/20" />
+                <div className="absolute left-[17%] top-[21%] size-16 rounded-full border border-strategic-gold/20" />
+            </motion.div>
+
+            <div className="relative z-10 mx-auto flex min-h-[calc(100svh-6rem)] w-full max-w-[1500px] flex-col px-5 sm:px-8 lg:px-10">
+                <div className="grid flex-1 items-center gap-8 pb-40 pt-8 md:pb-44 lg:grid-cols-[0.96fr_1.04fr] lg:pb-36 lg:pt-12">
+                    <div className="max-w-[760px]">
                         <motion.div
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                            className="flex items-center gap-3 mb-8"
+                            initial={initialState}
+                            animate={animateState}
+                            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+                            className="mb-6 inline-flex items-center gap-3 border border-atlas-teal/40 bg-atlas-void/80 px-4 py-2 text-sm font-medium text-atlas-teal"
                         >
-                            <div className="h-px w-8 bg-strategic-gold" />
-                            <span className="text-xs font-medium text-strategic-gold tracking-widest uppercase">
-                                Strategy · Security · AI
-                            </span>
+                            <Radar size={16} aria-hidden="true" />
+                            <span>{heroCopy.label}</span>
                         </motion.div>
 
-                        {/* Name */}
                         <motion.h1
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                            className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-ink-primary mb-5 leading-tight"
+                            initial={initialState}
+                            animate={animateState}
+                            transition={{ delay: 0.12, duration: 0.78, ease: [0.16, 1, 0.3, 1] }}
+                            className="flex max-w-[660px] flex-col gap-1.5 font-body text-[clamp(1.75rem,4vw,3.65rem)] font-extrabold leading-none text-ink-primary sm:gap-2 md:gap-3"
                         >
-                            พลโท ดร.กริช<br />อินทราทิพย์
+                            <span className="block leading-[1.18]">ช่วยให้เรื่อง</span>
+                            <span className="block leading-[1.18] text-strategic-gold">ความมั่นคง</span>
+                            <span className="block text-[0.94em] leading-[1.18] text-atlas-teal">เทคโนโลยี และ AI</span>
+                            <span className="block leading-[1.18]">ตัดสินใจง่ายขึ้น</span>
                         </motion.h1>
 
-                        {/* English name */}
                         <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.3, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                            className="text-base md:text-lg text-ink-secondary font-light mb-6"
+                            initial={initialState}
+                            animate={animateState}
+                            transition={{ delay: 0.22, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                            className="mt-6 max-w-[56ch] text-base leading-[1.85] text-ink-secondary md:text-lg"
                         >
-                            Lt.Gen. Krich Intratip, Ph.D.<br />
-                            <span className="text-ink-muted">Information Technology</span>
+                            {heroCopy.description}
                         </motion.p>
 
-                        {/* Gold accent line */}
                         <motion.div
-                            initial={{ width: 0, opacity: 0 }}
-                            animate={{ width: '80px', opacity: 1 }}
-                            transition={{ delay: 0.5, duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
-                            className="h-px bg-strategic-gold mb-6"
-                        />
-
-                        {/* Description */}
-                        <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.45, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                            className="text-base text-ink-muted leading-relaxed mb-10"
-                            style={{ lineHeight: 1.8 }}
+                            initial={initialState}
+                            animate={animateState}
+                            transition={{ delay: 0.36, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                            className="mt-7 flex flex-wrap gap-x-5 gap-y-3"
                         >
-                            ผู้เชี่ยวชาญด้านยุทธศาสตร์ ความมั่นคง การพัฒนาทรัพยากรมนุษย์
-                            และการประยุกต์ใช้ปัญญาประดิษฐ์ มุ่งขับเคลื่อนองค์กรด้วยหลักฐานเชิงประจักษ์
-                            และนวัตกรรมดิจิทัล
+                            {doctrinePoints.map((point) => (
+                                <span key={point} className="inline-flex items-center gap-2 text-sm font-semibold text-atlas-teal">
+                                    <span className="h-px w-7 bg-atlas-teal/70" />
+                                    {point}
+                                </span>
+                            ))}
+                        </motion.div>
+
+                        <motion.p
+                            initial={initialState}
+                            animate={animateState}
+                            transition={{ delay: 0.48, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                            className="mt-7 max-w-[58ch] border-l border-strategic-gold/70 pl-5 text-base font-medium leading-[1.75] text-ink-primary"
+                        >
+                            {heroCopy.name} · {heroCopy.nameEn}
                         </motion.p>
 
-                        {/* CTAs */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.65, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                            className="flex flex-col sm:flex-row gap-4"
+                            initial={initialState}
+                            animate={animateState}
+                            transition={{ delay: 0.6, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                            className="mt-9 flex flex-col gap-4 sm:flex-row"
                         >
                             <a
                                 href="#experience"
-                                className="px-8 py-3.5 rounded-md bg-strategic-gold text-void-navy font-semibold text-sm hover:bg-gold-light transition-colors inline-flex items-center justify-center gap-2"
+                                className="inline-flex items-center justify-center gap-2 border border-atlas-teal bg-atlas-teal px-7 py-3.5 text-sm font-bold text-atlas-void transition-colors hover:bg-ink-primary focus:outline-none focus:ring-2 focus:ring-atlas-teal focus:ring-offset-2 focus:ring-offset-void-navy"
                             >
-                                View Experience <ArrowRight size={16} />
+                                {heroCopy.primaryCta}
+                                <ArrowRight size={16} aria-hidden="true" />
                             </a>
                             <a
                                 href="#contact"
-                                className="px-8 py-3.5 rounded-md border border-subtle-border text-ink-primary font-medium text-sm hover:bg-deep-surface hover:text-strategic-gold hover:border-strategic-gold transition-all inline-flex items-center justify-center"
+                                className="inline-flex items-center justify-center gap-2 border border-subtle-border bg-atlas-void/50 px-7 py-3.5 text-sm font-semibold text-ink-primary transition-colors hover:border-atlas-teal/50 hover:text-atlas-teal focus:outline-none focus:ring-2 focus:ring-strategic-gold focus:ring-offset-2 focus:ring-offset-void-navy"
                             >
-                                Get in Touch
+                                {heroCopy.secondaryCta}
                             </a>
                         </motion.div>
+
                     </div>
 
-                    {/* Right: Portrait blending with background */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 40 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                        className="order-1 lg:order-2 relative flex justify-center lg:justify-end"
-                    >
-                        <div className="relative w-full max-w-md lg:max-w-lg aspect-[4/5]">
-                            {/* Glow behind photo */}
-                            <div
-                                className="absolute inset-0 pointer-events-none"
-                                style={{
-                                    background: 'radial-gradient(ellipse 70% 80% at 50% 40%, rgba(201, 162, 39, 0.08), transparent 60%)',
-                                    transform: 'scale(1.15)',
-                                }}
-                            />
-                            {/* Photo with edge fade */}
-                            <div className="relative w-full h-full">
-                                <Image
-                                    src="/assets/Dr.Krich_2026.jpg"
-                                    alt="พลโท ดร.กริช อินทราทิพย์"
-                                    fill
-                                    className="object-cover rounded-[14px]"
-                                    sizes="(max-width: 1024px) 100vw, 50vw"
-                                    priority
-                                />
-                                {/* Left edge fade into bg */}
-                                <div
-                                    className="absolute inset-0 pointer-events-none rounded-[14px]"
-                                    style={{
-                                        background: 'linear-gradient(to left, transparent 70%, rgba(10, 14, 23, 0.6) 95%, rgba(10, 14, 23, 1) 100%)',
-                                    }}
-                                />
-                                {/* Bottom edge fade into bg */}
-                                <div
-                                    className="absolute inset-0 pointer-events-none rounded-[14px]"
-                                    style={{
-                                        background: 'linear-gradient(to bottom, transparent 75%, rgba(10, 14, 23, 0.5) 95%, rgba(10, 14, 23, 0.9) 100%)',
-                                    }}
-                                />
-                                {/* Top edge subtle fade */}
-                                <div
-                                    className="absolute inset-0 pointer-events-none rounded-[14px]"
-                                    style={{
-                                        background: 'linear-gradient(to top, transparent 85%, rgba(10, 14, 23, 0.3) 100%)',
-                                    }}
-                                />
+                    <div className="hidden min-h-[560px] lg:block" aria-hidden="true">
+                        <div className="absolute right-[36%] top-[20%] z-[9] w-80 border border-atlas-teal/35 bg-atlas-void/76 p-4">
+                            <div className="mb-3 flex items-center gap-2 text-xs font-semibold text-atlas-teal">
+                                <Crosshair size={14} />
+                                ATLAS SIGNALS
                             </div>
-                            {/* Gold accent line beside photo */}
-                            <div className="absolute -left-4 top-1/4 h-24 w-px bg-strategic-gold/40 hidden lg:block" />
+                            <div className="space-y-3">
+                                {atlasSignals.map((item) => (
+                                    <div key={item.label} className="grid grid-cols-[5.75rem_1fr] items-center gap-3 text-xs">
+                                        <span className="text-ink-muted">{item.label}</span>
+                                        <span className="whitespace-nowrap border-l border-atlas-teal/40 pl-3 font-medium text-ink-secondary">{item.value}</span>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="mt-4 h-px bg-[linear-gradient(90deg,var(--atlas-teal),transparent)] opacity-70" />
+                            <p className="mt-3 text-xs leading-relaxed text-ink-muted">
+                                อ่านสัญญาณสำคัญก่อนออกแบบแผนงาน นโยบาย และระบบตัดสินใจ
+                            </p>
                         </div>
-                    </motion.div>
+                        <div className="absolute bottom-[24%] right-[32%] z-[9] flex items-center gap-2 border border-strategic-gold/35 bg-atlas-void/70 px-4 py-3 text-xs font-semibold text-strategic-gold">
+                            <ShieldCheck size={15} />
+                            Responsible AI · Strategic Security
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
-            {/* Scroll indicator */}
             <motion.div
+                initial={initialState}
+                animate={animateState}
+                transition={{ delay: 0.82, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute inset-x-5 bottom-6 z-20 hidden md:block lg:inset-x-10"
+            >
+                <StrategicDomainRail />
+            </motion.div>
+
+            <motion.a
+                href="#profile"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1.2, duration: 1 }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 text-ink-muted"
+                transition={{ delay: 1.1, duration: 0.8 }}
+                className="absolute bottom-2 left-1/2 z-30 hidden -translate-x-1/2 text-ink-muted transition-colors hover:text-strategic-gold lg:block"
+                aria-label="เลื่อนลงไปยังบทบาท"
             >
-                <ChevronDown size={20} className="animate-bounce" />
-            </motion.div>
+                <motion.span
+                    className="flex"
+                    animate={prefersReducedMotion ? undefined : { y: [0, 5, 0], opacity: [0.7, 1, 0.7] }}
+                    transition={{ duration: 2.4, repeat: Infinity, ease: [0.16, 1, 0.3, 1] }}
+                >
+                    <ChevronDown size={20} aria-hidden="true" />
+                </motion.span>
+            </motion.a>
         </section>
     );
 }
