@@ -45,13 +45,13 @@ export default function Navbar() {
                     className="group flex min-w-0 items-center gap-3 text-ink-primary transition-colors"
                     aria-label="หน้าแรก พลโท ดร.กริช อินทราทิพย์"
                 >
-                    <span className="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-md border border-strategic-gold/35 bg-elevated-surface/70 ring-1 ring-white/5 md:h-11 md:w-11">
+                    <span className="relative flex h-10 w-10 shrink-0 md:h-11 md:w-11">
                         <Image
-                            src="/assets/peakmaker-logo.png"
+                            src="/assets/peakmaker-logo-mark.png"
                             alt=""
                             fill
-                            sizes="44px"
-                            className="object-cover"
+                            sizes="48px"
+                            className="object-contain"
                             priority
                         />
                     </span>
