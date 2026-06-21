@@ -1,6 +1,3 @@
-'use client';
-
-import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, ChevronDown, Crosshair, Radar, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import AtlasBackground from '@/components/AtlasBackground';
@@ -8,9 +5,6 @@ import StrategicDomainRail from '@/components/StrategicDomainRail';
 import { heroCopy } from '@/lib/portfolio-content';
 
 export default function Hero() {
-    const prefersReducedMotion = useReducedMotion();
-    const initialState = { opacity: 1, y: 0 };
-    const animateState = { opacity: 1, y: 0 };
     const doctrinePoints = [
         'ยุทธศาสตร์บูรณาการ',
         'AI Governance',
@@ -38,10 +32,7 @@ export default function Hero() {
                 <div className="absolute -left-36 bottom-[18%] h-px w-36 bg-strategic-gold/45" />
             </div>
 
-            <motion.div
-                initial={{ opacity: 1, x: 0 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.28, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            <div
                 className="pointer-events-none absolute z-[8] hidden max-w-[760px] md:bottom-[-2svh] md:right-[-3vw] md:block md:h-[82svh] md:w-[88vw] md:opacity-90 lg:bottom-0 lg:right-[2vw] lg:h-[88svh] lg:w-[48vw] lg:opacity-100"
             >
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_28%,rgba(56,198,217,0.12),transparent_38%)]" />
@@ -64,46 +55,34 @@ export default function Hero() {
                 <div className="absolute inset-x-0 bottom-0 h-[40%] bg-[linear-gradient(180deg,transparent,rgba(5,8,13,0.96)_72%,#05080d_100%)]" />
                 <div className="absolute left-[14%] top-[18%] size-28 rounded-full border border-atlas-teal/20" />
                 <div className="absolute left-[17%] top-[21%] size-16 rounded-full border border-strategic-gold/20" />
-            </motion.div>
+            </div>
 
             <div className="relative z-10 mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-[1500px] flex-col px-5 sm:min-h-[calc(100svh-6rem)] sm:px-8 lg:px-10">
                 <div className="grid flex-1 items-center gap-6 pb-10 pt-3 sm:gap-8 sm:pb-14 sm:pt-8 md:pb-44 lg:grid-cols-[0.96fr_1.04fr] lg:pb-36 lg:pt-12">
                     <div className="max-w-[760px]">
-                        <motion.div
-                            initial={initialState}
-                            animate={animateState}
-                            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+                        <div
                             className="mb-6 inline-flex items-center gap-3 border border-atlas-teal/40 bg-atlas-void/80 px-4 py-2 text-sm font-medium text-atlas-teal"
                         >
                             <Radar size={16} aria-hidden="true" />
                             <span>{heroCopy.label}</span>
-                        </motion.div>
+                        </div>
 
-                        <motion.h1
-                            initial={initialState}
-                            animate={animateState}
-                            transition={{ delay: 0.12, duration: 0.78, ease: [0.16, 1, 0.3, 1] }}
+                        <h1
                             className="flex max-w-[660px] flex-col gap-1 font-body text-[clamp(2rem,9vw,3rem)] font-extrabold leading-none text-ink-primary sm:gap-2 md:gap-3 md:text-[clamp(2.15rem,4vw,3.65rem)]"
                         >
                             <span className="block leading-[1.2]">ช่วยให้เรื่อง</span>
                             <span className="block leading-[1.2] text-strategic-gold">ความมั่นคง</span>
                             <span className="block text-[0.86em] leading-[1.2] text-atlas-teal sm:text-[0.94em]">เทคโนโลยี และ AI</span>
                             <span className="block leading-[1.2]">ตัดสินใจง่ายขึ้น</span>
-                        </motion.h1>
+                        </h1>
 
-                        <motion.p
-                            initial={initialState}
-                            animate={animateState}
-                            transition={{ delay: 0.22, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                        <p
                             className="mt-5 max-w-[56ch] text-sm leading-[1.85] text-ink-secondary sm:text-base md:mt-6 md:text-lg"
                         >
                             {heroCopy.description}
-                        </motion.p>
+                        </p>
 
-                        <motion.div
-                            initial={initialState}
-                            animate={animateState}
-                            transition={{ delay: 0.36, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                        <div
                             className="mt-6 grid gap-2 sm:flex sm:flex-wrap sm:gap-x-5 sm:gap-y-3 md:mt-7"
                         >
                             {doctrinePoints.map((point) => (
@@ -112,21 +91,15 @@ export default function Hero() {
                                     {point}
                                 </span>
                             ))}
-                        </motion.div>
+                        </div>
 
-                        <motion.p
-                            initial={initialState}
-                            animate={animateState}
-                            transition={{ delay: 0.48, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                        <p
                             className="mt-6 max-w-[58ch] border-l border-strategic-gold/70 pl-4 text-sm font-medium leading-[1.75] text-ink-primary sm:text-base md:mt-7 md:pl-5"
                         >
                             {heroCopy.name} · {heroCopy.nameEn}
-                        </motion.p>
+                        </p>
 
-                        <motion.div
-                            initial={initialState}
-                            animate={animateState}
-                            transition={{ delay: 0.6, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                        <div
                             className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:gap-4"
                         >
                             <a
@@ -142,12 +115,9 @@ export default function Hero() {
                             >
                                 {heroCopy.secondaryCta}
                             </a>
-                        </motion.div>
+                        </div>
 
-                        <motion.div
-                            initial={initialState}
-                            animate={animateState}
-                            transition={{ delay: 0.72, duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
+                        <div
                             className="pointer-events-none relative mt-8 h-[260px] overflow-hidden border-y border-atlas-teal/15 md:hidden"
                             aria-hidden="true"
                         >
@@ -163,7 +133,7 @@ export default function Hero() {
                             </div>
                             <div className="absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,transparent,rgba(5,8,13,0.96)_76%,#05080d_100%)]" />
                             <div className="absolute inset-y-0 left-0 w-16 bg-[linear-gradient(90deg,#05080d,transparent)]" />
-                        </motion.div>
+                        </div>
 
                     </div>
 
@@ -195,31 +165,21 @@ export default function Hero() {
 
             </div>
 
-            <motion.div
-                initial={initialState}
-                animate={animateState}
-                transition={{ delay: 0.82, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            <div
                 className="absolute inset-x-5 bottom-6 z-20 hidden md:block lg:inset-x-10"
             >
                 <StrategicDomainRail />
-            </motion.div>
+            </div>
 
-            <motion.a
+            <a
                 href="#profile"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.1, duration: 0.8 }}
                 className="absolute bottom-2 left-1/2 z-30 hidden -translate-x-1/2 text-ink-muted transition-colors hover:text-strategic-gold lg:block"
                 aria-label="เลื่อนลงไปยังบทบาท"
             >
-                <motion.span
-                    className="flex"
-                    animate={prefersReducedMotion ? undefined : { y: [0, 5, 0], opacity: [0.7, 1, 0.7] }}
-                    transition={{ duration: 2.4, repeat: Infinity, ease: [0.16, 1, 0.3, 1] }}
-                >
+                <span className="flex">
                     <ChevronDown size={20} aria-hidden="true" />
-                </motion.span>
-            </motion.a>
+                </span>
+            </a>
         </section>
     );
 }
