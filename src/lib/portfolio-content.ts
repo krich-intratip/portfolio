@@ -74,7 +74,7 @@ export const competencyDomains = [
     capabilities: ["Strategic Security", "Cyber Policy", "Defense Technology", "Public Policy"],
     proof: "ประสบการณ์ในวุฒิสภา อนุกรรมาธิการด้านกิจการทางทหาร และงานที่ปรึกษากองทัพบก",
     visual: {
-      image: "/assets/competencies/strategic-policy.png",
+      image: "/assets/competencies/strategic-policy.webp",
       alt: "อินโฟกราฟิกแผนที่ยุทธศาสตร์ที่เชื่อมโยงนโยบาย ภารกิจ เทคโนโลยี และผลลัพธ์",
       headline: "แปลงโจทย์ความมั่นคงเป็นกรอบตัดสินใจ",
       metrics: [
@@ -92,7 +92,7 @@ export const competencyDomains = [
     capabilities: ["TH-AICF", "AI Literacy", "Risk Controls", "Digital Workflow"],
     proof: "ร่วมพิจารณากรอบสมรรถนะ AI แห่งชาติ และพัฒนาระบบประเมินที่ใช้ AI เป็นเครื่องมือ",
     visual: {
-      image: "/assets/competencies/ai-governance-digital.png",
+      image: "/assets/competencies/ai-governance-digital.webp",
       alt: "อินโฟกราฟิกกรอบกำกับดูแล AI ที่เชื่อมคุณค่า ความเสี่ยง สมรรถนะ และ workflow",
       headline: "ใช้ AI ได้จริง โดยมีกรอบกำกับและจุดคุม",
       metrics: [
@@ -110,7 +110,7 @@ export const competencyDomains = [
     capabilities: ["PMQA", "CQI", "Knowledge Management", "Research Assessment"],
     proof: "สร้าง SAR, CQI, PMQA และระบบประเมินโครงการวิจัยหลายรูปแบบ",
     visual: {
-      image: "/assets/competencies/assessment-knowledge-data.png",
+      image: "/assets/competencies/assessment-knowledge-data.webp",
       alt: "อินโฟกราฟิกระบบประเมินที่เชื่อมหลักฐาน ข้อมูล องค์ความรู้ และวงจรปรับปรุง",
       headline: "จากหลักฐานและข้อมูล สู่การปรับปรุงต่อเนื่อง",
       metrics: [
@@ -128,7 +128,7 @@ export const competencyDomains = [
     capabilities: ["Executive Coaching", "Mindset", "Curriculum Design", "Learning Culture"],
     proof: "วิทยากรและที่ปรึกษาด้าน leadership, coaching, mindset และหลักสูตรภาครัฐกับการทหาร",
     visual: {
-      image: "/assets/competencies/leadership-learning-culture.png",
+      image: "/assets/competencies/leadership-learning-culture.webp",
       alt: "อินโฟกราฟิกระบบพัฒนาผู้นำที่เชื่อม coaching mindset หลักสูตร และวัฒนธรรมการเรียนรู้",
       headline: "พัฒนาผู้นำให้ขับเคลื่อนระบบได้จริง",
       metrics: [
@@ -148,7 +148,7 @@ export const strategicArc = [
     period: "2567 ถึงปัจจุบัน",
     title: "งานนโยบายเทคโนโลยี ความมั่นคงไซเบอร์ และกิจการทางทหาร",
     body: "สนับสนุนการพิจารณาเชิงนโยบายในคณะกรรมาธิการด้านเทคโนโลยีสารสนเทศ การสื่อสาร โทรคมนาคม และอนุกรรมาธิการด้านกิจการทางทหาร ไซเบอร์เทคโนโลยี และอุตสาหกรรมป้องกันประเทศ",
-    image: "/assets/experience/policy-command.png",
+    image: "/assets/experience/policy-command.webp",
     imageAlt: "ภาพจำลองบทบาทที่ปรึกษานโยบายเทคโนโลยีและความมั่นคงไซเบอร์ในห้อง brief ผู้บริหาร",
   },
   {
@@ -156,7 +156,7 @@ export const strategicArc = [
     period: "2566 ถึง 2567",
     title: "ผู้ทรงคุณวุฒิและที่ปรึกษากองทัพบก",
     body: "ให้คำปรึกษาด้านกำลังพล เทคโนโลยีสารสนเทศ การบริหารเชิงยุทธศาสตร์ และระบบพัฒนาสมรรถนะที่เชื่อมต่อภารกิจของหน่วยงาน",
-    image: "/assets/experience/defense-systems.png",
+    image: "/assets/experience/defense-systems.webp",
     imageAlt: "ภาพจำลองบทบาทที่ปรึกษาระบบกำลังพล เทคโนโลยี และขีดความสามารถของหน่วยงาน",
   },
   {
@@ -164,7 +164,7 @@ export const strategicArc = [
     period: "2556 ถึง 2560",
     title: "อาจารย์และหัวหน้าวิชาระเบียบวิธีวิจัย",
     body: "บรรยายและออกแบบการเรียนรู้ด้านระเบียบวิธีวิจัย คุณภาพการศึกษา เทคโนโลยีสารสนเทศ และหลักสูตรระดับบัณฑิตศึกษาในบริบททหาร",
-    image: "/assets/experience/education-research.png",
+    image: "/assets/experience/education-research.webp",
     imageAlt: "ภาพจำลองบทบาทอาจารย์และผู้นำการเรียนรู้ด้านระเบียบวิธีวิจัยในห้องสัมมนา",
   },
   {
@@ -172,7 +172,7 @@ export const strategicArc = [
     period: "2560 ถึงปัจจุบัน",
     title: "การจัดการความรู้ CQI ระบบประเมิน และ AI Implementation",
     body: "พัฒนาแนวทางและระบบที่ช่วยให้องค์กรประเมินตนเอง เก็บความรู้ ใช้ข้อมูล และนำ AI เข้ามาเสริมการตัดสินใจอย่างเป็นระบบ",
-    image: "/assets/experience/knowledge-infrastructure.png",
+    image: "/assets/experience/knowledge-infrastructure.webp",
     imageAlt: "ภาพจำลองบทบาทออกแบบระบบจัดการความรู้ CQI ระบบประเมิน และ AI implementation",
   },
 ] as const;
@@ -193,7 +193,7 @@ export const initiatives = [
     impact: "สร้างโครงสร้างพื้นฐานที่ช่วยให้ชุมชนตลาดเฉพาะทางจัดการสินค้า ความรู้ ผู้ขาย ผู้ซื้อ และข้อมูลเชิงลึกได้อย่างเป็นระบบ",
     tags: ["Niche Market", "AI Matching", "Digital Infrastructure", "Community Commerce"],
     link: "https://www.marketsverse.app",
-    image: "/assets/initiatives/marketsverse-about02-card.png",
+    image: "/assets/initiatives/marketsverse-about02-card.webp",
     imageAlt: "ภาพวิสัยทัศน์ Marketsverse ที่เชื่อมตลาดเฉพาะทาง ชุมชน เทคโนโลยี AI และเศรษฐกิจชุมชน",
     featured: true,
   },
@@ -205,7 +205,7 @@ export const initiatives = [
     impact: "ช่วยจัดโครงสร้างหลักฐาน วิเคราะห์ผล และแปลงเกณฑ์คุณภาพเป็น roadmap เพื่อการปรับปรุง",
     tags: ["PMQA", "AI Analytics", "Assessment"],
     link: "https://pmqa-isoc.vercel.app",
-    image: "/assets/initiatives/pmqa-isoc.png",
+    image: "/assets/initiatives/pmqa-isoc.webp",
     imageAlt: "แดชบอร์ดประเมิน PMQA พร้อมเอกสารหลักฐานและกราฟวิเคราะห์ผล",
   },
   {
@@ -216,7 +216,7 @@ export const initiatives = [
     impact: "ช่วยให้ผู้วิจัยมองเห็นจุดแข็ง จุดเสี่ยง และแนวทางปรับปรุงก่อนส่งงานจริง",
     tags: ["Research", "Multi-Agent Review", "Academic Quality"],
     link: "https://academic-sar.pk-research.work/",
-    image: "/assets/initiatives/academic-sar.png",
+    image: "/assets/initiatives/academic-sar.webp",
     imageAlt: "เอกสารวิทยานิพนธ์และหน้าจอรีวิวงานวิชาการด้วยผู้เชี่ยวชาญ AI หลายบทบาท",
   },
   {
@@ -227,7 +227,7 @@ export const initiatives = [
     impact: "ทำให้การกลั่นกรองมีกรอบชัดเจน ตรวจซ้ำได้ และช่วยผู้เสนอปรับโจทย์ให้แข็งแรงขึ้น",
     tags: ["Proposal", "Research Governance", "AI Review"],
     link: "https://proposal-sar.pk-research.work/",
-    image: "/assets/initiatives/proposal-sar.png",
+    image: "/assets/initiatives/proposal-sar.webp",
     imageAlt: "ระบบคัดกรองข้อเสนอโครงการวิจัยพร้อม pipeline และ scorecard หลายมิติ",
   },
   {
@@ -238,7 +238,7 @@ export const initiatives = [
     impact: "ช่วยให้ทีมเห็นวงจร improvement, evidence และสิ่งที่ต้องยกระดับในรอบถัดไป",
     tags: ["CQI", "KM", "Self-Assessment"],
     link: "https://cqi-sar.vercel.app",
-    image: "/assets/initiatives/cqi-sar.png",
+    image: "/assets/initiatives/cqi-sar.webp",
     imageAlt: "กระดาน CQI และ knowledge management พร้อมหลักฐานการปรับปรุงและวงจรพัฒนา",
   },
 ] as const;
@@ -248,28 +248,28 @@ export const advisoryServices = [
     title: "AI Governance สำหรับผู้บริหาร",
     outcome: "กำหนดหลักคิด นโยบาย ความเสี่ยง และสมรรถนะที่องค์กรต้องมี ก่อนนำ AI ไปใช้ในงานจริง",
     formats: ["Executive briefing", "Policy workshop", "AI competency roadmap"],
-    image: "/assets/advisory/ai-governance-executive.png",
+    image: "/assets/advisory/ai-governance-executive.webp",
     imageAlt: "ห้องประชุมผู้บริหารพร้อมหน้าจอวิเคราะห์ AI governance และแผนความเสี่ยง",
   },
   {
     title: "ระบบประเมินและการตัดสินใจเชิงข้อมูล",
     outcome: "ออกแบบเกณฑ์ ระบบ SAR, PMQA, CQI หรือ research assessment ที่ใช้ข้อมูลและหลักฐานเป็นฐาน",
     formats: ["Assessment design", "SAR platform", "Evaluation framework"],
-    image: "/assets/advisory/data-decision-system.png",
+    image: "/assets/advisory/data-decision-system.webp",
     imageAlt: "ห้องประชุมพร้อมแดชบอร์ดข้อมูลและเอกสารประเมินสำหรับการตัดสินใจ",
   },
   {
     title: "Defense-Tech และความมั่นคงไซเบอร์",
     outcome: "เชื่อมมุมมองนโยบาย ภารกิจ และเทคโนโลยีให้เป็นกรอบตัดสินใจสำหรับหน่วยงานด้านความมั่นคง",
     formats: ["Strategic advisory", "Scenario workshop", "Capability mapping"],
-    image: "/assets/advisory/defense-tech-cyber.png",
+    image: "/assets/advisory/defense-tech-cyber.webp",
     imageAlt: "ศูนย์ปฏิบัติการความมั่นคงไซเบอร์พร้อมแผนที่ประเทศไทยและระบบวิเคราะห์",
   },
   {
     title: "Executive Coaching และ Leadership Development",
     outcome: "พัฒนาผู้นำให้เข้าใจตนเอง ทีม และแรงต้านขององค์กร เพื่อขับเคลื่อนการเปลี่ยนแปลงอย่างมีวุฒิภาวะ",
     formats: ["Executive coaching", "Mindset workshop", "Learning culture program"],
-    image: "/assets/advisory/executive-coaching-leadership.png",
+    image: "/assets/advisory/executive-coaching-leadership.webp",
     imageAlt: "ห้องสนทนาผู้บริหารสำหรับ coaching พร้อมบรรยากาศสงบและแผนผังการพัฒนา",
   },
 ] as const;

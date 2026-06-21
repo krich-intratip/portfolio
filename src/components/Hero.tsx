@@ -46,7 +46,7 @@ export default function Hero() {
             >
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_28%,rgba(56,198,217,0.12),transparent_38%)]" />
                 <Image
-                    src="/assets/krich-2026-cutout.png"
+                    src="/assets/krich-2026-cutout.webp"
                     alt=""
                     fill
                     aria-hidden="true"
@@ -54,7 +54,7 @@ export default function Hero() {
                     sizes="(max-width: 768px) 86vw, (max-width: 1200px) 54vw, 720px"
                 />
                 <Image
-                    src="/assets/krich-2026-cutout.png"
+                    src="/assets/krich-2026-cutout.webp"
                     alt="พลโท ดร.กริช อินทราทิพย์"
                     fill
                     className="object-cover object-[center_14%] brightness-[0.9] contrast-[1.06] saturate-[0.9] drop-shadow-[0_0_34px_rgba(56,198,217,0.12)]"
@@ -154,7 +154,7 @@ export default function Hero() {
                             <div className="absolute inset-0 bg-[radial-gradient(circle_at_62%_22%,rgba(56,198,217,0.16),transparent_44%)]" />
                             <div className="absolute inset-x-0 bottom-[-18%] h-[118%]">
                                 <Image
-                                    src="/assets/krich-2026-cutout.png"
+                                    src="/assets/krich-2026-cutout.webp"
                                     alt=""
                                     fill
                                     className="object-contain object-bottom brightness-[0.92] contrast-[1.05] saturate-[0.9]"

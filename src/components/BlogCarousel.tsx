@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -12,24 +12,28 @@ const AUTO_ROTATE_MS = 5000;
 export default function BlogCarousel() {
     const posts = getLatestPosts(5);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const sectionRef = useRef<HTMLElement | null>(null);
     const isPausedRef = useRef(false);
+    const isInView = useInView(sectionRef, { amount: 0.15 });
 
     const goTo = (index: number) => {
         setCurrentIndex(index);
     };
 
     useEffect(() => {
+        if (!isInView) return;
+
         const timer = setInterval(() => {
             if (isPausedRef.current) return;
             setCurrentIndex((prev) => (prev + 1) % posts.length);
         }, AUTO_ROTATE_MS);
         return () => clearInterval(timer);
-    }, [posts.length]);
+    }, [isInView, posts.length]);
 
     const currentPost = posts[currentIndex];
 
     return (
-        <section id="blog" className="py-16 md:py-32 bg-deep-surface/30">
+        <section ref={sectionRef} id="blog" className="py-16 md:py-32 bg-deep-surface/30">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -82,7 +86,6 @@ export default function BlogCarousel() {
                                         fill
                                         className="object-cover"
                                         sizes="(max-width: 768px) 100vw, 50vw"
-                                        priority
                                     />
                                     <div
                                         className="absolute inset-0 pointer-events-none"
