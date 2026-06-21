@@ -1,10 +1,11 @@
 import { getAllPosts } from '@/lib/blog-data';
+import { SITE_CONFIG } from '@/lib/constants';
 import { MetadataRoute } from 'next';
 
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://krich-intratip-portfolio.vercel.app';
+  const baseUrl = SITE_CONFIG.url;
   const now = new Date();
   const posts = getAllPosts();
 
@@ -30,35 +31,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
       images: [`${baseUrl}${post.image}`],
     })),
-    {
-      url: `${baseUrl}/#profile`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#experience`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#initiatives`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#advisory`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#contact`,
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.6,
-    },
   ];
 }

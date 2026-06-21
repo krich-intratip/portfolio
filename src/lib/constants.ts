@@ -27,5 +27,5 @@ export const SITE_CONFIG = {
   title: 'ยุทธศาสตร์ ความมั่นคง การพัฒนาทรัพยากรมนุษย์ และการประยุกต์ใช้ AI',
   titleEn: 'Strategic Security, Human Development & AI Governance',
   description: 'ผู้เชี่ยวชาญด้านยุทธศาสตร์ ความมั่นคง การพัฒนาทรัพยากรมนุษย์ และการประยุกต์ใช้ AI',
-  url: 'https://krich-intratip-portfolio.vercel.app',
+  url: 'https://portfolio.pk-research.work',
 } as const;

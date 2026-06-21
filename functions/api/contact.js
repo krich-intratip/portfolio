@@ -3,10 +3,20 @@ const CONTACT_EMAIL = 'krich.intratip@gmail.com';
 const sanitizeField = (value, maxLength = 2000) =>
   String(value ?? '').trim().slice(0, maxLength);
 
+const SECURITY_HEADERS = {
+  'content-security-policy': "default-src 'none'; base-uri 'none'; frame-ancestors 'none'",
+  'permissions-policy': 'accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()',
+  'referrer-policy': 'strict-origin-when-cross-origin',
+  'strict-transport-security': 'max-age=31536000; includeSubDomains; preload',
+  'x-content-type-options': 'nosniff',
+  'x-frame-options': 'DENY',
+};
+
 const jsonResponse = (body, init = {}) =>
   new Response(JSON.stringify(body), {
     ...init,
     headers: {
+      ...SECURITY_HEADERS,
       'content-type': 'application/json; charset=utf-8',
       ...(init.headers ?? {}),
     },
@@ -45,5 +55,5 @@ export async function onRequestPost({ request }) {
 }
 
 export async function onRequestOptions() {
-  return new Response(null, { status: 204 });
+  return new Response(null, { status: 204, headers: SECURITY_HEADERS });
 }

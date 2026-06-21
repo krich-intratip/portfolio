@@ -3,6 +3,7 @@ import { Trirong, Sarabun } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SITE_CONFIG } from "@/lib/constants";
 import "./globals.css";
 
 const trirong = Trirong({
@@ -26,14 +27,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Lt.Gen. Krich Intratip, Ph.D." }],
   creator: "Lt.Gen. Krich Intratip, Ph.D.",
   publisher: "Lt.Gen. Krich Intratip, Ph.D.",
-  metadataBase: new URL('https://krich-intratip-portfolio.vercel.app'),
+  metadataBase: new URL(SITE_CONFIG.url),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'th_TH',
-    url: 'https://krich-intratip-portfolio.vercel.app',
+    url: SITE_CONFIG.url,
     title: 'พลโท ดร.กริช อินทราทิพย์ | Lt.Gen. Krich Intratip, Ph.D.',
     description: 'ผู้บริหารยุทธศาสตร์ด้านความมั่นคง Defense-Tech, AI Governance, ระบบประเมิน และการพัฒนาผู้นำ',
     siteName: 'Lt.Gen. Krich Intratip — Executive Portfolio',

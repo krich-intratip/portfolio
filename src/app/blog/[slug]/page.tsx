@@ -5,8 +5,9 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight, Calendar, CheckCircle2, Clock } from 'lucide-react';
+import { SITE_CONFIG } from '@/lib/constants';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://krich-intratip-portfolio.vercel.app';
+const siteUrl = SITE_CONFIG.url;
 
 export async function generateStaticParams() {
     return getAllPosts().map((post) => ({ slug: post.slug }));
