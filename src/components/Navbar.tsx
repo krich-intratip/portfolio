@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const navItems = [
@@ -39,8 +40,29 @@ export default function Navbar() {
             )}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
-                <Link href="/" className="font-display text-base font-medium text-ink-primary transition-colors hover:text-strategic-gold md:text-lg" aria-label="หน้าแรก">
-                    พลโท ดร.กริช
+                <Link
+                    href="/"
+                    className="group flex min-w-0 items-center gap-3 text-ink-primary transition-colors"
+                    aria-label="หน้าแรก พลโท ดร.กริช อินทราทิพย์"
+                >
+                    <span className="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-md border border-strategic-gold/35 bg-elevated-surface/70 ring-1 ring-white/5 md:h-11 md:w-11">
+                        <Image
+                            src="/assets/peakmaker-logo.png"
+                            alt=""
+                            fill
+                            sizes="44px"
+                            className="object-cover"
+                            priority
+                        />
+                    </span>
+                    <span className="flex min-w-0 flex-col leading-tight">
+                        <span className="font-display text-sm font-medium text-ink-primary transition-colors group-hover:text-strategic-gold md:text-base">
+                            พลโท ดร.กริช
+                        </span>
+                        <span className="hidden text-[0.68rem] font-medium text-ink-muted sm:block">
+                            Defense-Tech Atlas
+                        </span>
+                    </span>
                 </Link>
 
                 <div className="hidden items-center gap-4 lg:flex xl:gap-6">
