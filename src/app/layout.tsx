@@ -11,13 +11,15 @@ const trirong = Trirong({
   weight: ["400", "500", "600", "700"],
   variable: "--font-trirong",
   display: "swap",
+  preload: false,
 });
 
 const sarabun = Sarabun({
   subsets: ["latin", "thai"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-sarabun",
   display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
