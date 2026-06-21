@@ -29,7 +29,7 @@ export default function BlogCarousel() {
     const currentPost = posts[currentIndex];
 
     return (
-        <section id="blog" className="py-24 md:py-32 bg-deep-surface/30">
+        <section id="blog" className="py-16 md:py-32 bg-deep-surface/30">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ export default function BlogCarousel() {
                         </div>
                         <Link
                             href="/blog"
-                            className="hidden md:inline-flex items-center gap-2 text-sm font-medium text-strategic-gold hover:text-gold-light transition-colors"
+                            className="hidden min-h-11 items-center gap-2 text-sm font-medium text-strategic-gold hover:text-gold-light transition-colors md:inline-flex"
                         >
                             บทความทั้งหมด <ArrowRight size={16} />
                         </Link>
@@ -93,8 +93,8 @@ export default function BlogCarousel() {
                                 </div>
 
                                 {/* Content side */}
-                                <div className="p-8 md:p-10 flex flex-col justify-center">
-                                    <div className="flex items-center gap-3 mb-5">
+                                <div className="flex flex-col justify-center p-5 sm:p-8 md:p-10">
+                                    <div className="mb-5 flex flex-wrap items-center gap-3">
                                         <span className="px-3 py-1.5 rounded-md bg-elevated-surface text-strategic-gold text-xs font-medium">
                                             {currentPost.category}
                                         </span>
@@ -118,7 +118,7 @@ export default function BlogCarousel() {
 
                                     <Link
                                         href={`/blog/${currentPost.slug}`}
-                                        className="inline-flex items-center gap-2 text-sm font-medium text-strategic-gold hover:text-gold-light transition-colors w-fit"
+                                        className="inline-flex min-h-11 w-fit items-center gap-2 text-sm font-medium text-strategic-gold hover:text-gold-light transition-colors"
                                     >
                                         อ่านบทความ <ArrowRight size={16} />
                                     </Link>
@@ -128,25 +128,29 @@ export default function BlogCarousel() {
                     </div>
 
                     {/* Dots + mobile View All */}
-                    <div className="flex items-center justify-between mt-8">
-                        <div className="flex items-center gap-2.5">
+                    <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+                        <div className="flex items-center gap-1">
                             {posts.map((post, index) => (
                                 <button
                                     key={post.slug}
                                     type="button"
                                     onClick={() => goTo(index)}
                                     aria-label={`ไปยังบทความที่ ${index + 1}`}
-                                    className={`h-2 rounded-full transition-all ${
-                                        index === currentIndex
-                                            ? 'w-8 bg-strategic-gold'
-                                            : 'w-2 bg-subtle-border hover:bg-ink-muted'
-                                    }`}
-                                />
+                                    className="inline-flex size-11 items-center justify-center rounded-md transition-colors hover:bg-elevated-surface/70"
+                                >
+                                    <span
+                                        className={`h-2 rounded-full transition-all ${
+                                            index === currentIndex
+                                                ? 'w-8 bg-strategic-gold'
+                                                : 'w-2 bg-subtle-border'
+                                        }`}
+                                    />
+                                </button>
                             ))}
                         </div>
                         <Link
                             href="/blog"
-                            className="md:hidden inline-flex items-center gap-2 text-sm font-medium text-strategic-gold hover:text-gold-light transition-colors"
+                            className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-strategic-gold hover:text-gold-light transition-colors md:hidden"
                         >
                             บทความทั้งหมด <ArrowRight size={16} />
                         </Link>

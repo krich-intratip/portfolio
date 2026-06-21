@@ -72,12 +72,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         .slice(0, 3);
 
     return (
-        <main className="min-h-screen bg-void-navy pb-24 pt-32">
+        <main className="min-h-screen bg-void-navy pb-20 pt-28 md:pb-24 md:pt-32">
             <ArticleJsonLd post={post} siteUrl={siteUrl} />
             <div className="container mx-auto px-6">
                 <Link
                     href="/blog"
-                    className="mb-10 inline-flex items-center gap-2 text-sm font-medium text-ink-muted transition-colors hover:text-strategic-gold"
+                    className="-ml-2 mb-10 inline-flex min-h-11 items-center gap-2 px-2 text-sm font-medium text-ink-muted transition-colors hover:text-strategic-gold"
                 >
                     <ArrowLeft size={16} aria-hidden="true" /> บทความทั้งหมด
                 </Link>
@@ -97,10 +97,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                         </span>
                     </div>
 
-                    <h1 className="font-display text-3xl font-medium leading-tight text-ink-primary md:text-4xl lg:text-5xl">
+                    <h1 className="font-display text-[1.8rem] font-medium leading-tight text-ink-primary sm:text-3xl md:text-4xl lg:text-5xl">
                         {post.title}
                     </h1>
-                    <p className="mt-6 text-lg leading-[1.85] text-ink-secondary">{post.excerpt}</p>
+                    <p className="mt-6 text-base leading-[1.85] text-ink-secondary md:text-lg">{post.excerpt}</p>
                     <div className="my-10 h-px w-16 bg-strategic-gold" />
 
                     <figure className="mb-10">
@@ -231,7 +231,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <div className="mt-16 border-t border-subtle-border pt-8">
                         <Link
                             href="/blog"
-                            className="inline-flex items-center gap-2 text-sm font-medium text-strategic-gold transition-colors hover:text-gold-light"
+                            className="-ml-2 inline-flex min-h-11 items-center gap-2 px-2 text-sm font-medium text-strategic-gold transition-colors hover:text-gold-light"
                         >
                             <ArrowLeft size={16} aria-hidden="true" /> บทความทั้งหมด
                         </Link>

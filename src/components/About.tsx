@@ -19,7 +19,7 @@ const educationTitleClasses = [
 
 export default function About() {
     return (
-        <section id="profile" className="relative py-24 md:py-32">
+        <section id="profile" className="relative py-16 md:py-32">
             <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
@@ -64,7 +64,7 @@ export default function About() {
                         })}
                     </div>
 
-                    <div className="mt-14 border border-subtle-border bg-deep-surface p-7 md:p-8">
+                    <div className="mt-14 border border-subtle-border bg-deep-surface p-5 md:p-8">
                         <div className="mb-6 flex items-center gap-3">
                             <GraduationCap size={22} className="text-strategic-gold" aria-hidden="true" />
                             <h3 className="font-display text-xl font-medium text-ink-primary">การศึกษาและฐานความรู้</h3>

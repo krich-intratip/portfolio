@@ -42,10 +42,10 @@ export default function Navbar() {
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <Link
                     href="/"
-                    className="group flex min-w-0 items-center gap-3 text-ink-primary transition-colors"
+                    className="group flex min-h-11 min-w-0 items-center gap-3 text-ink-primary transition-colors"
                     aria-label="หน้าแรก พลโท ดร.กริช อินทราทิพย์"
                 >
-                    <span className="relative flex h-10 w-10 shrink-0 md:h-11 md:w-11">
+                    <span className="relative flex h-11 w-11 shrink-0">
                         <Image
                             src="/assets/peakmaker-logo-mark.png"
                             alt=""
@@ -80,7 +80,7 @@ export default function Navbar() {
 
                 <button
                     type="button"
-                    className="text-ink-secondary hover:text-strategic-gold lg:hidden"
+                    className="-mr-2 inline-flex min-h-11 min-w-11 items-center justify-center text-ink-secondary hover:text-strategic-gold lg:hidden"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     aria-label={mobileMenuOpen ? "ปิดเมนู" : "เปิดเมนู"}
                     aria-expanded={mobileMenuOpen}
@@ -103,7 +103,7 @@ export default function Navbar() {
                                     key={item.name}
                                     href={item.href}
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="font-display text-lg font-medium text-ink-secondary hover:text-strategic-gold transition-colors"
+                                    className="flex min-h-11 items-center font-display text-lg font-medium text-ink-secondary hover:text-strategic-gold transition-colors"
                                 >
                                     {item.name}
                                 </Link>

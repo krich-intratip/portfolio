@@ -152,7 +152,7 @@ export default function Hero() {
                             aria-hidden="true"
                         >
                             <div className="absolute inset-0 bg-[radial-gradient(circle_at_62%_22%,rgba(56,198,217,0.16),transparent_44%)]" />
-                            <div className="absolute inset-x-[-18%] bottom-[-18%] h-[118%]">
+                            <div className="absolute inset-x-0 bottom-[-18%] h-[118%]">
                                 <Image
                                     src="/assets/krich-2026-cutout.png"
                                     alt=""

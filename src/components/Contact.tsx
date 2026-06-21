@@ -51,7 +51,7 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="py-24 md:py-32">
+        <section id="contact" className="py-16 md:py-32">
             <div className="container relative z-10 mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -81,14 +81,14 @@ export default function Contact() {
                             <div className="mt-10 grid gap-3">
                                 <a
                                     href="mailto:krich.intratip@gmail.com"
-                                    className="flex items-center gap-3 border border-subtle-border bg-deep-surface px-4 py-3 text-sm text-ink-primary transition-colors hover:border-strategic-gold/40 hover:text-strategic-gold"
+                                    className="flex min-h-12 items-center gap-3 border border-subtle-border bg-deep-surface px-4 py-3 text-sm text-ink-primary transition-colors hover:border-strategic-gold/40 hover:text-strategic-gold"
                                 >
                                     <Mail size={18} aria-hidden="true" />
                                     krich.intratip@gmail.com
                                 </a>
                                 <a
                                     href="tel:0616329956"
-                                    className="flex items-center gap-3 border border-subtle-border bg-deep-surface px-4 py-3 text-sm text-ink-primary transition-colors hover:border-strategic-gold/40 hover:text-strategic-gold"
+                                    className="flex min-h-12 items-center gap-3 border border-subtle-border bg-deep-surface px-4 py-3 text-sm text-ink-primary transition-colors hover:border-strategic-gold/40 hover:text-strategic-gold"
                                 >
                                     <Phone size={18} aria-hidden="true" />
                                     061-632-9956
@@ -97,7 +97,7 @@ export default function Contact() {
                                     href="https://www.linkedin.com/in/krich-intratip-b1203a3a7/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-3 border border-subtle-border bg-deep-surface px-4 py-3 text-sm text-ink-primary transition-colors hover:border-strategic-gold/40 hover:text-strategic-gold"
+                                    className="flex min-h-12 items-center gap-3 border border-subtle-border bg-deep-surface px-4 py-3 text-sm text-ink-primary transition-colors hover:border-strategic-gold/40 hover:text-strategic-gold"
                                 >
                                     <Linkedin size={18} aria-hidden="true" />
                                     LinkedIn: krich-intratip
@@ -105,7 +105,7 @@ export default function Contact() {
                                 <a
                                     href="/assets/docs/krich-short-cv-2026-02.pdf"
                                     download
-                                    className="flex items-center gap-3 border border-subtle-border bg-deep-surface px-4 py-3 text-sm text-ink-primary transition-colors hover:border-atlas-teal/45 hover:text-atlas-teal"
+                                    className="flex min-h-12 items-center gap-3 border border-subtle-border bg-deep-surface px-4 py-3 text-sm text-ink-primary transition-colors hover:border-atlas-teal/45 hover:text-atlas-teal"
                                     aria-label="ดาวน์โหลดประวัติย่อ Resume และ Short CV ของพลโท ดร.กริช อินทราทิพย์"
                                 >
                                     <FileDown size={18} aria-hidden="true" />

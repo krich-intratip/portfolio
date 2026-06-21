@@ -21,7 +21,7 @@ const publicationToneClasses = [
 
 export default function Timeline() {
     return (
-        <section id="experience" className="py-24 md:py-32">
+        <section id="experience" className="py-16 md:py-32">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -76,7 +76,7 @@ export default function Timeline() {
                         ))}
                     </div>
 
-                    <div className="mt-16 border border-subtle-border bg-deep-surface p-7 md:p-8">
+                    <div className="mt-16 border border-subtle-border bg-deep-surface p-5 md:p-8">
                         <div className="mb-7 flex items-center gap-3">
                             <BookOpen size={20} className="text-strategic-gold" aria-hidden="true" />
                             <h3 className="font-display text-xl font-medium text-ink-primary">ฐานวิชาการและงานเขียน</h3>

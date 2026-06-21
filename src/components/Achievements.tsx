@@ -6,7 +6,7 @@ import { trustProofs } from '@/lib/portfolio-content';
 
 export default function Achievements() {
     return (
-        <section id="recognition" className="bg-deep-surface/30 py-24 md:py-32">
+        <section id="recognition" className="bg-deep-surface/30 py-16 md:py-32">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

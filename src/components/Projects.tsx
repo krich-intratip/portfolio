@@ -10,7 +10,7 @@ export default function Projects() {
     const rest = initiatives.filter((item) => !('featured' in item && item.featured));
 
     return (
-        <section id="initiatives" className="bg-deep-surface/30 py-24 md:py-32">
+        <section id="initiatives" className="bg-deep-surface/30 py-16 md:py-32">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -38,12 +38,12 @@ export default function Projects() {
                             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                             className="group grid overflow-hidden border border-atlas-teal/30 bg-atlas-teal/20 transition-colors hover:border-strategic-gold/50 md:grid-cols-[0.82fr_1.18fr]"
                         >
-                            <div className="bg-atlas-void p-7 md:p-9">
+                            <div className="bg-atlas-void p-5 sm:p-7 md:p-9">
                                 <div className="mb-8 flex items-center justify-between gap-4">
                                     <span className="text-sm font-medium text-atlas-teal">{featured.label}</span>
                                     <ExternalLink size={18} className="text-strategic-gold" aria-hidden="true" />
                                 </div>
-                                <h3 className="font-display text-3xl font-medium leading-tight text-ink-primary">
+                                <h3 className="font-display text-2xl font-medium leading-tight text-ink-primary md:text-3xl">
                                     {featured.title}
                                 </h3>
                                 <p className="mt-5 max-w-[60ch] text-base leading-[1.85] text-ink-secondary">
@@ -68,7 +68,7 @@ export default function Projects() {
                                     />
                                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,8,13,0.02),rgba(5,8,13,0.22)_70%,rgba(5,8,13,0.46))]" />
                                 </div>
-                                <div className="grid gap-6 p-7 md:grid-cols-2 md:p-9">
+                                <div className="grid gap-6 p-5 sm:p-7 md:grid-cols-2 md:p-9">
                                     <div>
                                         <p className="text-sm font-semibold text-strategic-gold">โจทย์</p>
                                         <p className="mt-3 text-sm leading-[1.8] text-ink-secondary">{featured.problem}</p>

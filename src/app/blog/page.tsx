@@ -32,17 +32,17 @@ export default function BlogPage() {
     const rest = posts.slice(1);
 
     return (
-        <main className="min-h-screen bg-void-navy pb-24 pt-32">
+        <main className="min-h-screen bg-void-navy pb-20 pt-28 md:pb-24 md:pt-32">
             <div className="container mx-auto px-6">
                 <div className="mb-14 max-w-4xl">
                     <Link
                         href="/"
-                        className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-ink-muted transition-colors hover:text-strategic-gold"
+                        className="-ml-2 mb-8 inline-flex min-h-11 items-center gap-2 px-2 text-sm font-medium text-ink-muted transition-colors hover:text-strategic-gold"
                     >
                         <ArrowLeft size={16} aria-hidden="true" /> กลับหน้าแรก
                     </Link>
                     <p className="mb-4 text-sm font-medium text-atlas-teal">บทความและมุมมองเชิงยุทธศาสตร์</p>
-                    <h1 className="font-display text-4xl font-medium leading-tight text-ink-primary md:text-5xl">
+                    <h1 className="font-display text-3xl font-medium leading-tight text-ink-primary md:text-5xl">
                         Defense-Tech, AI Governance และระบบพัฒนาองค์กร
                     </h1>
                     <div className="mt-6 h-px w-16 bg-strategic-gold" />
@@ -66,7 +66,7 @@ export default function BlogPage() {
                                 priority
                             />
                         </div>
-                        <div className="flex flex-col justify-center p-7 md:p-10">
+                        <div className="flex flex-col justify-center p-5 sm:p-7 md:p-10">
                             <div className="mb-5 flex flex-wrap items-center gap-3">
                                 <span className="rounded-md bg-elevated-surface px-3 py-1.5 text-xs font-medium text-strategic-gold">
                                     {featured.category}
