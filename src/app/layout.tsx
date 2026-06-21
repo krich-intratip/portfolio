@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Trirong, Sarabun } from "next/font/google";
+import { Trirong } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -7,17 +7,9 @@ import { SITE_CONFIG } from "@/lib/constants";
 import "./globals.css";
 
 const trirong = Trirong({
-  subsets: ["latin", "thai"],
-  weight: ["400", "500", "600", "700"],
+  subsets: ["thai"],
+  weight: ["400", "500", "600"],
   variable: "--font-trirong",
-  display: "swap",
-  preload: false,
-});
-
-const sarabun = Sarabun({
-  subsets: ["latin", "thai"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-sarabun",
   display: "swap",
   preload: false,
 });
@@ -82,7 +74,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="th" className={`scroll-smooth ${trirong.variable} ${sarabun.variable}`}>
+    <html lang="th" className={`scroll-smooth ${trirong.variable}`}>
       <body className="font-body antialiased text-ink-primary bg-void-navy">
         <Navbar />
         {children}
