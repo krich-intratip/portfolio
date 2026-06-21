@@ -27,7 +27,7 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="relative flex min-h-[100svh] overflow-hidden bg-atlas-void pt-24"
+            className="relative flex min-h-[100svh] overflow-hidden bg-atlas-void pt-20 sm:pt-24"
             aria-label="Defense-Tech Atlas"
         >
             <AtlasBackground />
@@ -42,7 +42,7 @@ export default function Hero() {
                 initial={{ opacity: 1, x: 0 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.28, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                className="pointer-events-none absolute bottom-[-32svh] right-[-24vw] z-[8] h-[62svh] w-[112vw] max-w-[760px] opacity-55 sm:bottom-[-10svh] sm:right-[-10vw] sm:h-[72svh] sm:w-[88vw] md:bottom-[-2svh] md:right-[-3vw] md:h-[82svh] md:opacity-90 lg:bottom-0 lg:right-[2vw] lg:h-[88svh] lg:w-[48vw] lg:opacity-100"
+                className="pointer-events-none absolute z-[8] hidden max-w-[760px] md:bottom-[-2svh] md:right-[-3vw] md:block md:h-[82svh] md:w-[88vw] md:opacity-90 lg:bottom-0 lg:right-[2vw] lg:h-[88svh] lg:w-[48vw] lg:opacity-100"
             >
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_28%,rgba(56,198,217,0.12),transparent_38%)]" />
                 <Image
@@ -66,8 +66,8 @@ export default function Hero() {
                 <div className="absolute left-[17%] top-[21%] size-16 rounded-full border border-strategic-gold/20" />
             </motion.div>
 
-            <div className="relative z-10 mx-auto flex min-h-[calc(100svh-6rem)] w-full max-w-[1500px] flex-col px-5 sm:px-8 lg:px-10">
-                <div className="grid flex-1 items-center gap-8 pb-40 pt-8 md:pb-44 lg:grid-cols-[0.96fr_1.04fr] lg:pb-36 lg:pt-12">
+            <div className="relative z-10 mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-[1500px] flex-col px-5 sm:min-h-[calc(100svh-6rem)] sm:px-8 lg:px-10">
+                <div className="grid flex-1 items-center gap-6 pb-10 pt-3 sm:gap-8 sm:pb-14 sm:pt-8 md:pb-44 lg:grid-cols-[0.96fr_1.04fr] lg:pb-36 lg:pt-12">
                     <div className="max-w-[760px]">
                         <motion.div
                             initial={initialState}
@@ -83,19 +83,19 @@ export default function Hero() {
                             initial={initialState}
                             animate={animateState}
                             transition={{ delay: 0.12, duration: 0.78, ease: [0.16, 1, 0.3, 1] }}
-                            className="flex max-w-[660px] flex-col gap-1.5 font-body text-[clamp(1.75rem,4vw,3.65rem)] font-extrabold leading-none text-ink-primary sm:gap-2 md:gap-3"
+                            className="flex max-w-[660px] flex-col gap-1 font-body text-[clamp(2rem,9vw,3rem)] font-extrabold leading-none text-ink-primary sm:gap-2 md:gap-3 md:text-[clamp(2.15rem,4vw,3.65rem)]"
                         >
-                            <span className="block leading-[1.18]">ช่วยให้เรื่อง</span>
-                            <span className="block leading-[1.18] text-strategic-gold">ความมั่นคง</span>
-                            <span className="block text-[0.94em] leading-[1.18] text-atlas-teal">เทคโนโลยี และ AI</span>
-                            <span className="block leading-[1.18]">ตัดสินใจง่ายขึ้น</span>
+                            <span className="block leading-[1.2]">ช่วยให้เรื่อง</span>
+                            <span className="block leading-[1.2] text-strategic-gold">ความมั่นคง</span>
+                            <span className="block text-[0.86em] leading-[1.2] text-atlas-teal sm:text-[0.94em]">เทคโนโลยี และ AI</span>
+                            <span className="block leading-[1.2]">ตัดสินใจง่ายขึ้น</span>
                         </motion.h1>
 
                         <motion.p
                             initial={initialState}
                             animate={animateState}
                             transition={{ delay: 0.22, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                            className="mt-6 max-w-[56ch] text-base leading-[1.85] text-ink-secondary md:text-lg"
+                            className="mt-5 max-w-[56ch] text-sm leading-[1.85] text-ink-secondary sm:text-base md:mt-6 md:text-lg"
                         >
                             {heroCopy.description}
                         </motion.p>
@@ -104,11 +104,11 @@ export default function Hero() {
                             initial={initialState}
                             animate={animateState}
                             transition={{ delay: 0.36, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                            className="mt-7 flex flex-wrap gap-x-5 gap-y-3"
+                            className="mt-6 grid gap-2 sm:flex sm:flex-wrap sm:gap-x-5 sm:gap-y-3 md:mt-7"
                         >
                             {doctrinePoints.map((point) => (
-                                <span key={point} className="inline-flex items-center gap-2 text-sm font-semibold text-atlas-teal">
-                                    <span className="h-px w-7 bg-atlas-teal/70" />
+                                <span key={point} className="inline-flex items-center gap-2 text-xs font-semibold text-atlas-teal sm:text-sm">
+                                    <span className="h-px w-5 bg-atlas-teal/70 sm:w-7" />
                                     {point}
                                 </span>
                             ))}
@@ -118,7 +118,7 @@ export default function Hero() {
                             initial={initialState}
                             animate={animateState}
                             transition={{ delay: 0.48, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                            className="mt-7 max-w-[58ch] border-l border-strategic-gold/70 pl-5 text-base font-medium leading-[1.75] text-ink-primary"
+                            className="mt-6 max-w-[58ch] border-l border-strategic-gold/70 pl-4 text-sm font-medium leading-[1.75] text-ink-primary sm:text-base md:mt-7 md:pl-5"
                         >
                             {heroCopy.name} · {heroCopy.nameEn}
                         </motion.p>
@@ -127,21 +127,42 @@ export default function Hero() {
                             initial={initialState}
                             animate={animateState}
                             transition={{ delay: 0.6, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                            className="mt-9 flex flex-col gap-4 sm:flex-row"
+                            className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:gap-4"
                         >
                             <a
                                 href="#experience"
-                                className="inline-flex items-center justify-center gap-2 border border-atlas-teal bg-atlas-teal px-7 py-3.5 text-sm font-bold text-atlas-void transition-colors hover:bg-ink-primary focus:outline-none focus:ring-2 focus:ring-atlas-teal focus:ring-offset-2 focus:ring-offset-void-navy"
+                                className="inline-flex min-h-12 items-center justify-center gap-2 border border-atlas-teal bg-atlas-teal px-5 py-3.5 text-sm font-bold text-atlas-void transition-colors hover:bg-ink-primary focus:outline-none focus:ring-2 focus:ring-atlas-teal focus:ring-offset-2 focus:ring-offset-void-navy sm:px-7"
                             >
                                 {heroCopy.primaryCta}
                                 <ArrowRight size={16} aria-hidden="true" />
                             </a>
                             <a
                                 href="#contact"
-                                className="inline-flex items-center justify-center gap-2 border border-subtle-border bg-atlas-void/50 px-7 py-3.5 text-sm font-semibold text-ink-primary transition-colors hover:border-atlas-teal/50 hover:text-atlas-teal focus:outline-none focus:ring-2 focus:ring-strategic-gold focus:ring-offset-2 focus:ring-offset-void-navy"
+                                className="inline-flex min-h-12 items-center justify-center gap-2 border border-subtle-border bg-atlas-void/50 px-5 py-3.5 text-sm font-semibold text-ink-primary transition-colors hover:border-atlas-teal/50 hover:text-atlas-teal focus:outline-none focus:ring-2 focus:ring-strategic-gold focus:ring-offset-2 focus:ring-offset-void-navy sm:px-7"
                             >
                                 {heroCopy.secondaryCta}
                             </a>
+                        </motion.div>
+
+                        <motion.div
+                            initial={initialState}
+                            animate={animateState}
+                            transition={{ delay: 0.72, duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
+                            className="pointer-events-none relative mt-8 h-[260px] overflow-hidden border-y border-atlas-teal/15 md:hidden"
+                            aria-hidden="true"
+                        >
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_62%_22%,rgba(56,198,217,0.16),transparent_44%)]" />
+                            <div className="absolute inset-x-[-18%] bottom-[-18%] h-[118%]">
+                                <Image
+                                    src="/assets/krich-2026-cutout.png"
+                                    alt=""
+                                    fill
+                                    className="object-contain object-bottom brightness-[0.92] contrast-[1.05] saturate-[0.9]"
+                                    sizes="100vw"
+                                />
+                            </div>
+                            <div className="absolute inset-x-0 bottom-0 h-28 bg-[linear-gradient(180deg,transparent,rgba(5,8,13,0.96)_76%,#05080d_100%)]" />
+                            <div className="absolute inset-y-0 left-0 w-16 bg-[linear-gradient(90deg,#05080d,transparent)]" />
                         </motion.div>
 
                     </div>
