@@ -33,7 +33,7 @@ export default function Hero() {
             </div>
 
             <div
-                className="pointer-events-none absolute z-[8] hidden max-w-[760px] md:bottom-[-2svh] md:right-[-3vw] md:block md:h-[82svh] md:w-[88vw] md:opacity-90 lg:bottom-0 lg:right-[2vw] lg:h-[88svh] lg:w-[48vw] lg:opacity-100"
+                className="pointer-events-none absolute z-[8] hidden max-w-[760px] md:bottom-0 md:right-[-7vw] md:block md:h-[80svh] md:w-[60vw] md:opacity-[0.68] lg:right-[2vw] lg:h-[88svh] lg:w-[48vw] lg:opacity-100"
             >
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_45%_28%,rgba(56,198,217,0.12),transparent_38%)]" />
                 <Image
@@ -41,14 +41,14 @@ export default function Hero() {
                     alt=""
                     fill
                     aria-hidden="true"
-                    className="scale-[1.08] object-cover object-[center_14%] opacity-42 blur-3xl brightness-[0.72] saturate-[0.82]"
+                    className="scale-[1.06] object-contain object-[right_bottom] opacity-42 blur-3xl brightness-[0.72] saturate-[0.82] lg:object-bottom"
                     sizes="(max-width: 768px) 86vw, (max-width: 1200px) 54vw, 720px"
                 />
                 <Image
                     src="/assets/krich-2026-cutout.webp"
                     alt="พลโท ดร.กริช อินทราทิพย์"
                     fill
-                    className="object-cover object-[center_14%] brightness-[0.9] contrast-[1.06] saturate-[0.9] drop-shadow-[0_0_34px_rgba(56,198,217,0.12)]"
+                    className="object-contain object-[right_bottom] brightness-[0.9] contrast-[1.06] saturate-[0.9] drop-shadow-[0_0_34px_rgba(56,198,217,0.12)] lg:object-bottom"
                     sizes="(max-width: 768px) 86vw, (max-width: 1200px) 54vw, 720px"
                     priority
                 />
