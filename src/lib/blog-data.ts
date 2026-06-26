@@ -248,7 +248,7 @@ export const blogPosts: BlogPost[] = [
         updatedAt: '2026-06-21',
         dateLabel: '22 มีนาคม 2569',
         category: 'Knowledge Management',
-        image: '/assets/blog/knowledge-management-cqi-military.webp',
+        image: '/assets/blog/knowledge-management-cqi-military-2.webp',
         imageAlt: 'ทีมงานไทยในห้องฝึกอบรมกำลังวิเคราะห์แผนผังกระบวนการ CQI และการจัดการความรู้',
         imageCaption: 'ภาพจำลองการทำ KM และ CQI ที่เชื่อมบทเรียนหน้างานเข้ากับการปรับปรุงระบบ',
         readTime: '10 นาที',
