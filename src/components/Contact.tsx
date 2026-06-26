@@ -105,7 +105,7 @@ export default function Contact() {
                                 <a
                                     href="/assets/docs/krich-short-cv-2026-02.pdf"
                                     download
-                                    className="flex min-h-12 items-center gap-3 border border-subtle-border bg-deep-surface px-4 py-3 text-sm text-ink-primary transition-colors hover:border-atlas-teal/45 hover:text-atlas-teal"
+                                    className="resume-neon flex min-h-12 items-center gap-3 border bg-atlas-teal/10 px-4 py-3 text-sm font-semibold text-atlas-teal transition-transform duration-300 ease-out hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-atlas-teal focus-visible:ring-offset-2 focus-visible:ring-offset-void-navy"
                                     aria-label="ดาวน์โหลดประวัติย่อ Resume และ Short CV ของพลโท ดร.กริช อินทราทิพย์"
                                 >
                                     <FileDown size={18} aria-hidden="true" />
