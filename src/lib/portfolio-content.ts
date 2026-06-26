@@ -177,12 +177,46 @@ export const strategicArc = [
   },
 ] as const;
 
-export const publications = [
-  "การประยุกต์ใช้กระบวนการ NGT++ ในการสัมมนาเชิงปฏิบัติการ, วารสารเสนาธิปัตย์",
-  "แนวคิดการจัดตั้งศูนย์ความเป็นเลิศด้านการวิเคราะห์ข้อมูลและการวิจัยการปฏิบัติการทางทหาร",
-  "Stepwise Approach for Applying Coding Method of Grounded Theory to Ontology Design",
-  "Stepwise Approach for Improving Ontology using Optimizing Rules",
-] as const;
+export type Publication = {
+  year: string;
+  type: string;
+  title: string;
+  titleEn?: string;
+  venue: string;
+  detail: string;
+};
+
+export const publications: Publication[] = [
+  {
+    year: "2553",
+    type: "ประชุมวิชาการนานาชาติ",
+    title: "Stepwise Approach for Improving Ontology using Optimizing Rules",
+    venue: "5th International Conference on Knowledge, Information and Creativity Support Systems (KICSS 2010)",
+    detail: "25–27 Nov 2010 · pp. 176–181",
+  },
+  {
+    year: "2556",
+    type: "วารสารวิชาการนานาชาติ",
+    title: "Stepwise Approach for Applying Coding Method of Grounded Theory to Ontology Design",
+    venue: "Journal of Convergence Information Technology (JCIT)",
+    detail: "Vol. 8, No. 15 · pp. 23–32 · 2013",
+  },
+  {
+    year: "2558",
+    type: "บทความวิชาการ",
+    title: "แนวคิดการจัดตั้งศูนย์ความเป็นเลิศด้านการวิเคราะห์ข้อมูล/การวิจัยการปฏิบัติการทางทหาร กองทัพบก",
+    titleEn: "Center of Excellence in Army Operational Analytics/Research (CoE AOA/R)",
+    venue: "วารสารเสนาธิปัตย์",
+    detail: "ปีที่ 64 ฉบับที่ 1 (ม.ค.–เม.ย. 2558)",
+  },
+  {
+    year: "2558",
+    type: "บทความวิชาการ",
+    title: "การประยุกต์ใช้กระบวนการ NGT++ ในการสัมมนาเชิงปฏิบัติการเพื่อการจัดทำแผนยุทธศาสตร์ขององค์กร",
+    venue: "วารสารเสนาธิปัตย์",
+    detail: "ปีที่ 64 ฉบับที่ 2 (พ.ค.–ส.ค. 2558)",
+  },
+];
 
 export const initiatives = [
   {

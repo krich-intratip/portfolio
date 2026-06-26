@@ -1,18 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { BookOpen, FileText } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 import Image from 'next/image';
 import { publications, strategicArc } from '@/lib/portfolio-content';
 
 const arcTitleClasses = [
-    'text-strategic-gold',
-    'text-atlas-teal',
-    'text-[#b9c7ff]',
-    'text-[#e06b6b]',
-] as const;
-
-const publicationToneClasses = [
     'text-strategic-gold',
     'text-atlas-teal',
     'text-[#b9c7ff]',
@@ -77,29 +70,38 @@ export default function Timeline() {
                     </div>
 
                     <div className="mt-16 border border-subtle-border bg-deep-surface p-5 md:p-8">
-                        <div className="mb-7 flex items-center gap-3">
-                            <BookOpen size={20} className="text-strategic-gold" aria-hidden="true" />
-                            <h3 className="font-display text-xl font-medium text-ink-primary">ฐานวิชาการและงานเขียน</h3>
+                        <div className="mb-8 flex items-center justify-between gap-4">
+                            <div className="flex items-center gap-3">
+                                <BookOpen size={20} className="text-strategic-gold" aria-hidden="true" />
+                                <h3 className="font-display text-xl font-medium text-ink-primary">ฐานวิชาการและงานเขียน</h3>
+                            </div>
+                            <span className="hidden text-xs font-medium text-ink-muted sm:inline">
+                                {publications.length} ผลงานตีพิมพ์
+                            </span>
                         </div>
-                        <div className="grid gap-4 md:grid-cols-2">
-                            {publications.map((publication, index) => {
-                                const tone = publicationToneClasses[index % publicationToneClasses.length];
-
-                                return (
-                                <div
-                                    key={publication}
-                                    className="flex gap-3 border-t border-subtle-border pt-4 text-sm leading-relaxed text-ink-secondary"
+                        <ol className="grid gap-x-12 sm:grid-cols-2">
+                            {publications.map((publication) => (
+                                <li
+                                    key={publication.title}
+                                    className="grid grid-cols-[3rem_1fr] gap-4 border-t border-subtle-border py-5 first:border-t-0 sm:[&:nth-child(2)]:border-t-0"
                                 >
-                                    <FileText
-                                        size={17}
-                                        className={`mt-0.5 shrink-0 ${tone}`}
-                                        aria-hidden="true"
-                                    />
-                                    <p className={tone}>{publication}</p>
-                                </div>
-                                );
-                            })}
-                        </div>
+                                    <span className="font-display text-lg font-semibold tabular-nums text-strategic-gold">
+                                        {publication.year}
+                                    </span>
+                                    <div>
+                                        <span className="text-[11px] font-semibold text-atlas-teal">{publication.type}</span>
+                                        <h4 className="mt-1.5 text-pretty text-sm font-medium leading-snug text-ink-primary">
+                                            {publication.title}
+                                        </h4>
+                                        {publication.titleEn ? (
+                                            <p className="mt-1 text-xs leading-relaxed text-ink-secondary">{publication.titleEn}</p>
+                                        ) : null}
+                                        <p className="mt-2.5 text-xs font-medium leading-relaxed text-ink-secondary">{publication.venue}</p>
+                                        <p className="mt-0.5 text-xs leading-relaxed text-ink-secondary/80">{publication.detail}</p>
+                                    </div>
+                                </li>
+                            ))}
+                        </ol>
                     </div>
                 </motion.div>
             </div>

@@ -67,9 +67,9 @@ export default function Skills() {
                 >
                     <div className="mb-14 grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
                         <div>
-                            <p className="mb-4 text-sm font-medium text-atlas-teal">สมรรถนะเชิงยุทธศาสตร์</p>
+                            <p className="mb-4 text-sm font-medium text-atlas-teal">สมรรถนะหลัก</p>
                             <h2 className="font-display text-3xl font-medium leading-tight text-ink-primary md:text-4xl">
-                                สี่โดเมนที่เชื่อมคน ระบบ เทคโนโลยี และความมั่นคง
+                                สี่มิติที่เสริมกันเป็นระบบเดียว
                             </h2>
                         </div>
                         <p className="max-w-[72ch] text-base leading-[1.85] text-ink-muted">
@@ -88,7 +88,7 @@ export default function Skills() {
                                 className="grid gap-6 border border-subtle-border bg-deep-surface p-5 transition-colors hover:border-atlas-teal/30 md:p-6 lg:grid-cols-[0.54fr_1.46fr]"
                             >
                                 <div>
-                                    <p className="text-xs font-semibold text-strategic-gold">โดเมนเชิงยุทธศาสตร์</p>
+                                    <p className="text-xs font-semibold text-strategic-gold">มิติความเชี่ยวชาญ</p>
                                     <h3 className="mt-2 font-display text-xl font-medium leading-snug text-ink-primary">
                                         {domain.domain}
                                     </h3>
