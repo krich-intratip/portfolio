@@ -28,10 +28,19 @@ export default function Contact() {
             });
 
             if (!response.ok) {
-                throw new Error('Contact request failed');
+                setIsSubmitting(false);
+                setSubmitStatus('error');
+                return;
             }
 
-            const result = await response.json() as { mailtoUrl: string };
+            const result = await response.json() as { mailtoUrl?: string };
+
+            if (!result.mailtoUrl) {
+                setIsSubmitting(false);
+                setSubmitStatus('error');
+                return;
+            }
+
             window.location.href = result.mailtoUrl;
             setIsSubmitting(false);
             setSubmitStatus('success');
@@ -216,7 +225,7 @@ export default function Contact() {
                     <footer className="mt-16 text-center text-sm text-ink-muted">
                         <p>© 2026 Lt.Gen. Krich Intratip, Ph.D. All rights reserved.</p>
                         <p className="mt-2 text-xs text-ink-muted/70">
-                            Version 2.1.2 · Last updated: 21 June 2026
+                            Version 2.1.3 · Last updated: 31 July 2026
                         </p>
                     </footer>
                 </motion.div>

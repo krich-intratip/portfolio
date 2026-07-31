@@ -45,7 +45,7 @@ export default function Navbar() {
                     className="group flex min-h-11 min-w-0 items-center gap-3 text-ink-primary transition-colors"
                     aria-label="หน้าแรก พลโท ดร.กริช อินทราทิพย์"
                 >
-                    <span className="relative flex h-11 w-11 shrink-0">
+                    <span className="relative flex size-11 shrink-0">
                         <Image
                             src="/assets/peakmaker-logo-mark.png"
                             alt=""
