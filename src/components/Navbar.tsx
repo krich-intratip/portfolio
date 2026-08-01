@@ -5,7 +5,7 @@ import { m, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import Link from 'next/link';
+import DocumentLink from '@/components/DocumentLink';
 
 const navItems = [
     { name: 'ภาพรวม', href: '/#home' },
@@ -40,7 +40,7 @@ export default function Navbar() {
             )}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
-                <Link
+                <DocumentLink
                     href="/"
                     className="group flex min-h-11 min-w-0 items-center gap-3 text-ink-primary transition-colors"
                     aria-label="หน้าแรก พลโท ดร.กริช อินทราทิพย์"
@@ -63,18 +63,18 @@ export default function Navbar() {
                             Defense-Tech Atlas
                         </span>
                     </span>
-                </Link>
+                </DocumentLink>
 
                 <div className="hidden items-center gap-4 lg:flex xl:gap-6">
                     {navItems.map((item) => (
-                        <Link
+                        <DocumentLink
                             key={item.name}
                             href={item.href}
                             className="text-sm font-medium text-ink-secondary hover:text-strategic-gold transition-colors relative group"
                         >
                             {item.name}
                             <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-[0.01] bg-strategic-gold transition-transform duration-300 group-hover:scale-x-100" />
-                        </Link>
+                        </DocumentLink>
                     ))}
                 </div>
 
@@ -100,14 +100,14 @@ export default function Navbar() {
                     >
                         <div className="px-6 py-8 flex flex-col gap-6">
                             {navItems.map((item) => (
-                                <Link
+                                <DocumentLink
                                     key={item.name}
                                     href={item.href}
                                     onClick={() => setMobileMenuOpen(false)}
                                     className="flex min-h-11 items-center font-display text-lg font-medium text-ink-secondary hover:text-strategic-gold transition-colors"
                                 >
                                     {item.name}
-                                </Link>
+                                </DocumentLink>
                             ))}
                         </div>
                     </m.div>

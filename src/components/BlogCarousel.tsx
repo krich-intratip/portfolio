@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { m, AnimatePresence, useInView } from 'framer-motion';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
-import Link from 'next/link';
 import Image from 'next/image';
+import DocumentLink from '@/components/DocumentLink';
 import type { BlogPostPreview } from '@/lib/blog-data';
 
 const AUTO_ROTATE_MS = 5000;
@@ -50,12 +50,12 @@ export default function BlogCarousel({ posts }: { posts: BlogPostPreview[] }) {
                                 มุมมองด้านความมั่นคง AI Governance ระบบประเมิน และการพัฒนาผู้นำในบริบทไทย
                             </p>
                         </div>
-                        <Link
+                        <DocumentLink
                             href="/blog"
                             className="hidden min-h-11 items-center gap-2 text-sm font-medium text-strategic-gold hover:text-gold-light transition-colors md:inline-flex"
                         >
                             บทความทั้งหมด <ArrowRight size={16} />
-                        </Link>
+                        </DocumentLink>
                     </div>
 
                     {/* Carousel */}
@@ -118,12 +118,12 @@ export default function BlogCarousel({ posts }: { posts: BlogPostPreview[] }) {
                                         {currentPost.excerpt}
                                     </p>
 
-                                    <Link
+                                    <DocumentLink
                                         href={`/blog/${currentPost.slug}`}
                                         className="inline-flex min-h-11 w-fit items-center gap-2 text-sm font-medium text-strategic-gold hover:text-gold-light transition-colors"
                                     >
                                         อ่านบทความ <ArrowRight size={16} />
-                                    </Link>
+                                    </DocumentLink>
                                 </div>
                             </m.div>
                         </AnimatePresence>
@@ -150,12 +150,12 @@ export default function BlogCarousel({ posts }: { posts: BlogPostPreview[] }) {
                                 </button>
                             ))}
                         </div>
-                        <Link
+                        <DocumentLink
                             href="/blog"
                             className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-strategic-gold hover:text-gold-light transition-colors md:hidden"
                         >
                             บทความทั้งหมด <ArrowRight size={16} />
-                        </Link>
+                        </DocumentLink>
                     </div>
                 </m.div>
             </div>

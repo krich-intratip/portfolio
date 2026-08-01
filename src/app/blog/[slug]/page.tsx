@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 import { getAllPosts, getPostBySlug } from '@/lib/blog-data';
 import ArticleJsonLd from '@/components/ArticleJsonLd';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight, Calendar, CheckCircle2, Clock } from 'lucide-react';
 import { SITE_CONFIG } from '@/lib/constants';
+import DocumentLink from '@/components/DocumentLink';
 
 const siteUrl = SITE_CONFIG.url;
 
@@ -76,12 +76,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <main className="min-h-screen bg-void-navy pb-20 pt-28 md:pb-24 md:pt-32">
             <ArticleJsonLd post={post} siteUrl={siteUrl} />
             <div className="container mx-auto px-6">
-                <Link
+                <DocumentLink
                     href="/blog"
                     className="-ml-2 mb-10 inline-flex min-h-11 items-center gap-2 px-2 text-sm font-medium text-ink-muted transition-colors hover:text-strategic-gold"
                 >
                     <ArrowLeft size={16} aria-hidden="true" /> บทความทั้งหมด
-                </Link>
+                </DocumentLink>
 
                 <article className="mx-auto max-w-3xl">
                     <div className="mb-6 flex flex-wrap items-center gap-3">
@@ -230,12 +230,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     </section>
 
                     <div className="mt-16 border-t border-subtle-border pt-8">
-                        <Link
+                        <DocumentLink
                             href="/blog"
                             className="-ml-2 inline-flex min-h-11 items-center gap-2 px-2 text-sm font-medium text-strategic-gold transition-colors hover:text-gold-light"
                         >
                             <ArrowLeft size={16} aria-hidden="true" /> บทความทั้งหมด
-                        </Link>
+                        </DocumentLink>
                     </div>
                 </article>
 
@@ -248,7 +248,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
                         <div className="mt-10 grid gap-6 md:grid-cols-3">
                             {relatedPosts.map((related) => (
-                                <Link
+                                <DocumentLink
                                     key={related.slug}
                                     href={`/blog/${related.slug}`}
                                     className="group overflow-hidden border border-subtle-border bg-deep-surface transition-colors hover:border-strategic-gold/40"
@@ -273,7 +273,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                                             อ่านบทความ <ArrowRight size={14} aria-hidden="true" />
                                         </span>
                                     </div>
-                                </Link>
+                                </DocumentLink>
                             ))}
                         </div>
                     </section>

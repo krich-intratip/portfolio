@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { getAllPosts } from '@/lib/blog-data';
-import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import DocumentLink from '@/components/DocumentLink';
 
 export const metadata: Metadata = {
     title: 'บทความ | Defense-Tech, AI Governance และการพัฒนาองค์กร',
@@ -35,12 +35,12 @@ export default function BlogPage() {
         <main className="min-h-screen bg-void-navy pb-20 pt-28 md:pb-24 md:pt-32">
             <div className="container mx-auto px-6">
                 <div className="mb-14 max-w-4xl">
-                    <Link
+                    <DocumentLink
                         href="/"
                         className="-ml-2 mb-8 inline-flex min-h-11 items-center gap-2 px-2 text-sm font-medium text-ink-muted transition-colors hover:text-strategic-gold"
                     >
                         <ArrowLeft size={16} aria-hidden="true" /> กลับหน้าแรก
-                    </Link>
+                    </DocumentLink>
                     <p className="mb-4 text-sm font-medium text-atlas-teal">บทความและมุมมองเชิงยุทธศาสตร์</p>
                     <h1 className="font-display text-3xl font-medium leading-tight text-ink-primary md:text-5xl">
                         Defense-Tech, AI Governance และระบบพัฒนาองค์กร
@@ -52,7 +52,7 @@ export default function BlogPage() {
                 </div>
 
                 {featured && (
-                    <Link
+                    <DocumentLink
                         href={`/blog/${featured.slug}`}
                         className="group mb-8 grid overflow-hidden border border-atlas-teal/30 bg-deep-surface transition-colors hover:border-strategic-gold/50 lg:grid-cols-[1.08fr_0.92fr]"
                     >
@@ -90,12 +90,12 @@ export default function BlogPage() {
                                 อ่านบทความ <ArrowRight size={16} aria-hidden="true" />
                             </span>
                         </div>
-                    </Link>
+                    </DocumentLink>
                 )}
 
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {rest.map((post) => (
-                        <Link
+                        <DocumentLink
                             key={post.slug}
                             href={`/blog/${post.slug}`}
                             className="group overflow-hidden border border-subtle-border bg-deep-surface transition-colors hover:border-strategic-gold/40 hover:bg-elevated-surface"
@@ -135,7 +135,7 @@ export default function BlogPage() {
                                     </span>
                                 </div>
                             </div>
-                        </Link>
+                        </DocumentLink>
                     ))}
                 </div>
             </div>
