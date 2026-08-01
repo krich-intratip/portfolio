@@ -1,16 +1,15 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { m, AnimatePresence, useInView } from 'framer-motion';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getLatestPosts } from '@/lib/blog-data';
+import type { BlogPostPreview } from '@/lib/blog-data';
 
 const AUTO_ROTATE_MS = 5000;
 
-export default function BlogCarousel() {
-    const posts = getLatestPosts(5);
+export default function BlogCarousel({ posts }: { posts: BlogPostPreview[] }) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const sectionRef = useRef<HTMLElement | null>(null);
     const isPausedRef = useRef(false);
@@ -35,8 +34,8 @@ export default function BlogCarousel() {
     return (
         <section ref={sectionRef} id="blog" className="py-16 md:py-32 bg-deep-surface/30">
             <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                <m.div
+                    initial={false}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -70,7 +69,7 @@ export default function BlogCarousel() {
                         }}
                     >
                         <AnimatePresence mode="wait">
-                            <motion.div
+                            <m.div
                                 key={currentIndex}
                                 initial={{ opacity: 0, x: 60 }}
                                 animate={{ opacity: 1, x: 0 }}
@@ -126,7 +125,7 @@ export default function BlogCarousel() {
                                         อ่านบทความ <ArrowRight size={16} />
                                     </Link>
                                 </div>
-                            </motion.div>
+                            </m.div>
                         </AnimatePresence>
                     </div>
 
@@ -158,7 +157,7 @@ export default function BlogCarousel() {
                             บทความทั้งหมด <ArrowRight size={16} />
                         </Link>
                     </div>
-                </motion.div>
+                </m.div>
             </div>
         </section>
     );

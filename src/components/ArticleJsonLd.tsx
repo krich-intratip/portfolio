@@ -1,4 +1,5 @@
 import type { BlogPost } from '@/lib/blog-data';
+import { serializeJsonLd } from '@/lib/json-ld';
 
 interface ArticleJsonLdProps {
   post: BlogPost;
@@ -72,7 +73,7 @@ export default function ArticleJsonLd({ post, siteUrl }: ArticleJsonLdProps) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
     />
   );
 }

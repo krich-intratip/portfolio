@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { GraduationCap } from 'lucide-react';
 import { educationItems, profileNarrative, profileSignals } from '@/lib/portfolio-content';
 
@@ -27,8 +27,8 @@ export default function About() {
                 }}
             />
             <div className="container relative z-10 mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                <m.div
+                    initial={false}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -80,7 +80,7 @@ export default function About() {
                             ))}
                         </div>
                     </div>
-                </motion.div>
+                </m.div>
             </div>
         </section>
     );

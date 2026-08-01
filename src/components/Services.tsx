@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Brain, ClipboardCheck, Landmark, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import { advisoryServices } from '@/lib/portfolio-content';
@@ -11,8 +11,8 @@ export default function Services() {
     return (
         <section id="advisory" className="py-16 md:py-32">
             <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                <m.div
+                    initial={false}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -32,9 +32,9 @@ export default function Services() {
                         {advisoryServices.map((service, index) => {
                             const Icon = icons[index];
                             return (
-                                <motion.div
+                                    <m.div
                                     key={service.title}
-                                    initial={{ opacity: 0, y: 18 }}
+                                        initial={false}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.08, duration: 0.52, ease: [0.16, 1, 0.3, 1] }}
@@ -67,11 +67,11 @@ export default function Services() {
                                             ))}
                                         </div>
                                     </div>
-                                </motion.div>
+                                    </m.div>
                             );
                         })}
                     </div>
-                </motion.div>
+                </m.div>
             </div>
         </section>
     );

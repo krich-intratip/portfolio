@@ -8,7 +8,7 @@ colors:
   subtle-border: "#1e2a3d"
   ink-primary: "#e2e8f0"
   ink-secondary: "#94a3b8"
-  ink-muted: "#64748b"
+  ink-muted: "#7c8ca2"
   strategic-gold: "#c9a227"
   gold-light: "#e0b540"
   defense-crimson: "#8b2020"
@@ -152,7 +152,7 @@ A disciplined palette where darkness carries authority and gold carries attentio
 - **Subtle Border** (#1e2a3d): Borders and dividers. Present but never demanding attention.
 - **Ink Primary** (#e2e8f0): Primary text color. Near-white with a cool undertone that sits comfortably on void navy.
 - **Ink Secondary** (#94a3b8): Secondary text, metadata, labels. Meets 4.5:1 contrast on void navy.
-- **Ink Muted** (#64748b): Tertiary text, placeholders, disabled states. Use sparingly; verify contrast per context.
+- **Ink Muted** (#7c8ca2): Tertiary text, placeholders, disabled states. Meets WCAG AA on Elevated Surface and darker backgrounds.
 
 ### Named Rules
 **The Gold Discipline Rule.** Strategic Gold appears on no more than 10% of any given viewport. It marks interactive elements and key emphasis only. If gold decorates more than it directs, it has lost its function.

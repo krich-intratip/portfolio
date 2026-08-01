@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { BadgeCheck } from 'lucide-react';
 import { trustProofs } from '@/lib/portfolio-content';
 
@@ -8,8 +8,8 @@ export default function Achievements() {
     return (
         <section id="recognition" className="bg-deep-surface/30 py-16 md:py-32">
             <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                <m.div
+                    initial={false}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -29,9 +29,9 @@ export default function Achievements() {
 
                     <div className="grid gap-px border border-subtle-border bg-subtle-border/70 md:grid-cols-3">
                         {trustProofs.map((proof, index) => (
-                            <motion.div
+                            <m.div
                                 key={proof.title}
-                                initial={{ opacity: 0, y: 18 }}
+                                initial={false}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.08, duration: 0.52, ease: [0.16, 1, 0.3, 1] }}
@@ -40,10 +40,10 @@ export default function Achievements() {
                                 <BadgeCheck className="mb-5 size-5 text-strategic-gold" aria-hidden="true" />
                                 <h3 className="font-display text-lg font-medium text-ink-primary">{proof.title}</h3>
                                 <p className="mt-4 text-sm leading-[1.8] text-ink-secondary">{proof.body}</p>
-                            </motion.div>
+                            </m.div>
                         ))}
                     </div>
-                </motion.div>
+                </m.div>
             </div>
         </section>
     );

@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { ExternalLink, Network } from 'lucide-react';
 import Image from 'next/image';
 import { initiatives } from '@/lib/portfolio-content';
@@ -12,8 +12,8 @@ export default function Projects() {
     return (
         <section id="initiatives" className="bg-deep-surface/30 py-16 md:py-32">
             <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                <m.div
+                    initial={false}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -28,11 +28,11 @@ export default function Projects() {
                     </div>
 
                     {featured && (
-                        <motion.a
+                        <m.a
                             href={featured.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            initial={{ opacity: 0, y: 18 }}
+                            initial={false}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -79,17 +79,17 @@ export default function Projects() {
                                     </div>
                                 </div>
                             </div>
-                        </motion.a>
+                        </m.a>
                     )}
 
                     <div className="mt-6 grid gap-5 md:grid-cols-2">
                         {rest.map((item, index) => (
-                            <motion.a
+                            <m.a
                                 key={item.title}
                                 href={item.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                initial={{ opacity: 0, y: 18 }}
+                                initial={false}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.06, duration: 0.52, ease: [0.16, 1, 0.3, 1] }}
@@ -127,10 +127,10 @@ export default function Projects() {
                                         </p>
                                     </div>
                                 </div>
-                            </motion.a>
+                            </m.a>
                         ))}
                     </div>
-                </motion.div>
+                </m.div>
             </div>
         </section>
     );

@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { BookOpen } from 'lucide-react';
 import Image from 'next/image';
 import { publications, strategicArc } from '@/lib/portfolio-content';
@@ -16,8 +16,8 @@ export default function Timeline() {
     return (
         <section id="experience" className="py-16 md:py-32">
             <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                <m.div
+                    initial={false}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -37,9 +37,9 @@ export default function Timeline() {
 
                     <div className="grid gap-5 lg:grid-cols-4">
                         {strategicArc.map((item, index) => (
-                            <motion.div
+                            <m.div
                                 key={item.phase}
-                                initial={{ opacity: 0, y: 18 }}
+                                initial={false}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.08, duration: 0.52, ease: [0.16, 1, 0.3, 1] }}
@@ -65,7 +65,7 @@ export default function Timeline() {
                                     </h3>
                                     <p className="mt-4 text-sm leading-[1.8] text-ink-secondary">{item.body}</p>
                                 </div>
-                            </motion.div>
+                            </m.div>
                         ))}
                     </div>
 
@@ -103,7 +103,7 @@ export default function Timeline() {
                             ))}
                         </ol>
                     </div>
-                </motion.div>
+                </m.div>
             </div>
         </section>
     );

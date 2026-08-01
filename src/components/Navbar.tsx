@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
@@ -33,10 +33,10 @@ export default function Navbar() {
     return (
         <nav
             className={cn(
-                'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+                'fixed inset-x-0 top-0 z-50 py-3 transition-colors duration-300 sm:py-4',
                 scrolled
-                    ? 'bg-void-navy/90 border-b border-subtle-border py-3'
-                    : 'bg-transparent py-5'
+                    ? 'border-b border-subtle-border bg-void-navy/90'
+                    : 'border-b border-transparent bg-transparent'
             )}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
@@ -47,7 +47,7 @@ export default function Navbar() {
                 >
                     <span className="relative flex size-11 shrink-0">
                         <Image
-                            src="/assets/peakmaker-logo-mark.png"
+                            src="/assets/peakmaker-logo-mark.webp"
                             alt=""
                             fill
                             sizes="48px"
@@ -73,7 +73,7 @@ export default function Navbar() {
                             className="text-sm font-medium text-ink-secondary hover:text-strategic-gold transition-colors relative group"
                         >
                             {item.name}
-                            <span className="absolute -bottom-1 left-0 w-0 h-px bg-strategic-gold transition-all duration-300 group-hover:w-full" />
+                            <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-[0.01] bg-strategic-gold transition-transform duration-300 group-hover:scale-x-100" />
                         </Link>
                     ))}
                 </div>
@@ -91,11 +91,12 @@ export default function Navbar() {
 
             <AnimatePresence>
                 {mobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="overflow-hidden border-b border-subtle-border bg-void-navy lg:hidden"
+                    <m.div
+                        initial={{ opacity: 0, y: -8, scaleY: 0.98 }}
+                        animate={{ opacity: 1, y: 0, scaleY: 1 }}
+                        exit={{ opacity: 0, y: -8, scaleY: 0.98 }}
+                        transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                        className="absolute inset-x-0 top-full origin-top border-b border-subtle-border bg-void-navy lg:hidden"
                     >
                         <div className="px-6 py-8 flex flex-col gap-6">
                             {navItems.map((item) => (
@@ -109,7 +110,7 @@ export default function Navbar() {
                                 </Link>
                             ))}
                         </div>
-                    </motion.div>
+                    </m.div>
                 )}
             </AnimatePresence>
         </nav>

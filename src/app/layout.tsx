@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Trirong } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import MotionProvider from "@/components/MotionProvider";
 import { SITE_CONFIG } from "@/lib/constants";
 import "./globals.css";
 
@@ -76,10 +75,10 @@ export default function RootLayout({
   return (
     <html lang="th" className={`scroll-smooth ${trirong.variable}`}>
       <body className="font-body antialiased text-ink-primary bg-void-navy">
-        <Navbar />
-        {children}
-        <Analytics />
-        <SpeedInsights />
+        <MotionProvider>
+          <Navbar />
+          {children}
+        </MotionProvider>
       </body>
     </html>
   );

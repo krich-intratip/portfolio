@@ -1,4 +1,5 @@
 import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants';
+import { serializeJsonLd } from '@/lib/json-ld';
 
 export default function ProfileJsonLd() {
   const personId = `${SITE_CONFIG.url}/#person`;
@@ -69,7 +70,7 @@ export default function ProfileJsonLd() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
     />
   );
 }

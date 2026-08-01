@@ -9,6 +9,7 @@ import Achievements from '@/components/Achievements';
 import BlogCarousel from '@/components/BlogCarousel';
 import Contact from '@/components/Contact';
 import ProfileJsonLd from '@/components/ProfileJsonLd';
+import { getLatestPostPreviews } from '@/lib/blog-data';
 
 export const metadata: Metadata = {
   title: 'พลโท ดร.กริช อินทราทิพย์ | Lt.Gen. Krich Intratip, Ph.D.',
@@ -19,6 +20,8 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const latestPosts = getLatestPostPreviews(5);
+
   return (
     <main className="bg-void-navy min-h-screen">
       <ProfileJsonLd />
@@ -29,7 +32,7 @@ export default function Home() {
       <Projects />
       <Services />
       <Achievements />
-      <BlogCarousel />
+      <BlogCarousel posts={latestPosts} />
       <Contact />
     </main>
   );

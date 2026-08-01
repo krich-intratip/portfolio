@@ -33,6 +33,11 @@ export interface BlogSection {
     imageCaption?: string;
 }
 
+export type BlogPostPreview = Pick<
+    BlogPost,
+    'slug' | 'title' | 'excerpt' | 'dateLabel' | 'category' | 'image' | 'readTime'
+>;
+
 export const blogPosts: BlogPost[] = [
     {
         slug: 'ai-governance-thailand-th-aicf',
@@ -773,6 +778,18 @@ export function getLatestPosts(count: number = 5): BlogPost[] {
     return [...blogPosts]
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
         .slice(0, count);
+}
+
+export function getLatestPostPreviews(count: number = 5): BlogPostPreview[] {
+    return getLatestPosts(count).map(({ slug, title, excerpt, dateLabel, category, image, readTime }) => ({
+        slug,
+        title,
+        excerpt,
+        dateLabel,
+        category,
+        image,
+        readTime,
+    }));
 }
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

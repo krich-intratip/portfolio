@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { FileDown, Linkedin, Mail, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
 import { contactIntents } from '@/lib/portfolio-content';
@@ -62,8 +62,8 @@ export default function Contact() {
     return (
         <section id="contact" className="py-16 md:py-32">
             <div className="container relative z-10 mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                <m.div
+                    initial={false}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -127,13 +127,13 @@ export default function Contact() {
                             <h3 className="font-display text-xl font-medium text-ink-primary">ส่งรายละเอียดเบื้องต้น</h3>
 
                             {submitStatus === 'success' && (
-                                <div className="mt-6 border border-strategic-gold/30 bg-strategic-gold/10 px-4 py-3 text-sm text-strategic-gold">
+                                <div role="status" aria-live="polite" className="mt-6 border border-strategic-gold/30 bg-strategic-gold/10 px-4 py-3 text-sm text-strategic-gold">
                                     เปิดอีเมลสำหรับส่งถึง krich.intratip@gmail.com แล้ว
                                 </div>
                             )}
 
                             {submitStatus === 'error' && (
-                                <div className="mt-6 border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+                                <div role="alert" className="mt-6 border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
                                     ส่งข้อมูลไม่สำเร็จ กรุณาส่งอีเมลโดยตรงที่ krich.intratip@gmail.com
                                 </div>
                             )}
@@ -148,6 +148,8 @@ export default function Contact() {
                                             type="text"
                                             id="name"
                                             name="name"
+                                            autoComplete="name"
+                                            maxLength={160}
                                             value={formData.name}
                                             onChange={updateContactField}
                                             required
@@ -163,6 +165,8 @@ export default function Contact() {
                                             type="email"
                                             id="email"
                                             name="email"
+                                            autoComplete="email"
+                                            maxLength={240}
                                             value={formData.email}
                                             onChange={updateContactField}
                                             required
@@ -180,6 +184,7 @@ export default function Contact() {
                                         type="text"
                                         id="subject"
                                         name="subject"
+                                        maxLength={180}
                                         value={formData.subject}
                                         onChange={updateContactField}
                                         required
@@ -195,6 +200,7 @@ export default function Contact() {
                                     <textarea
                                         id="message"
                                         name="message"
+                                        maxLength={4000}
                                         value={formData.message}
                                         onChange={updateContactField}
                                         required
@@ -224,11 +230,11 @@ export default function Contact() {
 
                     <footer className="mt-16 text-center text-sm text-ink-muted">
                         <p>© 2026 Lt.Gen. Krich Intratip, Ph.D. All rights reserved.</p>
-                        <p className="mt-2 text-xs text-ink-muted/70">
-                            Version 2.1.3 · Last updated: 31 July 2026
+                        <p className="mt-2 text-xs text-ink-muted">
+                            Version 2.1.4 · Last updated: 1 August 2026
                         </p>
                     </footer>
-                </motion.div>
+                </m.div>
             </div>
         </section>
     );

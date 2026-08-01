@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import Image from 'next/image';
 import { competencyDomains } from '@/lib/portfolio-content';
 
@@ -58,8 +58,8 @@ export default function Skills() {
     return (
         <section id="competencies" className="bg-deep-surface/30 py-16 md:py-32">
             <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                <m.div
+                    initial={false}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
@@ -79,9 +79,9 @@ export default function Skills() {
 
                     <div className="space-y-4">
                         {competencyDomains.map((domain, index) => (
-                            <motion.div
+                            <m.div
                                 key={domain.domain}
-                                initial={{ opacity: 0, y: 18 }}
+                                initial={false}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.08, duration: 0.52, ease: [0.16, 1, 0.3, 1] }}
@@ -109,10 +109,10 @@ export default function Skills() {
                                         </p>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </m.div>
                         ))}
                     </div>
-                </motion.div>
+                </m.div>
             </div>
         </section>
     );

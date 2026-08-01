@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Quote, Star } from 'lucide-react';
 
 const testimonials = [
@@ -28,8 +28,8 @@ export default function Testimonials() {
     return (
         <section id="testimonials" className="py-24 md:py-32 bg-deep-surface/30">
             <div className="container mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                <m.div
+                    initial={false}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
@@ -44,13 +44,13 @@ export default function Testimonials() {
 
                     <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                         {testimonials.map((testimonial, index) => (
-                            <motion.div
+                            <m.div
                                 key={testimonial.name}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={false}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                                className="relative bg-deep-surface p-8 rounded-[14px] border border-subtle-border hover:bg-elevated-surface hover:border-strategic-gold/30 transition-all group"
+                                className="group relative rounded-[14px] border border-subtle-border bg-deep-surface p-8 transition-colors hover:border-strategic-gold/30 hover:bg-elevated-surface"
                             >
                                 {/* Quote Icon */}
                                 <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -78,10 +78,10 @@ export default function Testimonials() {
                                         {testimonial.position}
                                     </p>
                                 </div>
-                            </motion.div>
+                            </m.div>
                         ))}
                     </div>
-                </motion.div>
+                </m.div>
             </div>
         </section>
     );

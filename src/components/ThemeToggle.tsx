@@ -10,7 +10,7 @@ export default function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="p-2 rounded-md bg-deep-surface border border-subtle-border hover:bg-elevated-surface hover:border-strategic-gold/30 transition-all"
+      className="rounded-md border border-subtle-border bg-deep-surface p-2 transition-colors hover:border-strategic-gold/30 hover:bg-elevated-surface"
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? (
